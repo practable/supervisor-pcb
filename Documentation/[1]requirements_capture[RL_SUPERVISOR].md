@@ -112,6 +112,8 @@ Temperature sensor?
 
 #### Example Logic
 
+![image](https://user-images.githubusercontent.com/97303986/159472858-f033e029-b1d8-4fc6-a4e3-7fb4eec3877f.png)
+
 
 
 
@@ -206,6 +208,11 @@ _What quality assurances or requirements, if any, need to be established?_
 
 #### Notes
 _Any Extra Notes?_
+
+![image](https://user-images.githubusercontent.com/97303986/159473172-18dc4bb7-dcae-4d0c-8c92-9af8b02c49ed.png)
+
+
+
 
 Software Reqirements: 
 
