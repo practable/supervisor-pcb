@@ -112,7 +112,7 @@ Temperature sensor?
 
 #### Example Logic
 
-![image](https://user-images.githubusercontent.com/97303986/159472858-f033e029-b1d8-4fc6-a4e3-7fb4eec3877f.png)
+![image](https://user-images.githubusercontent.com/97303986/159473295-9a8413fd-1f81-4736-8734-684c6dfd33fd.png)
 
 
 
