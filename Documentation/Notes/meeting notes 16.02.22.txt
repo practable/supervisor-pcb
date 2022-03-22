@@ -1,0 +1,33 @@
+
+
+
+
+2nd project
+
+more modular
+
+5v out
+12v out
+atmega328p
+i2c bus out to raspberry pi
+
+look for 8A buck converter
+
+simplified
+
+
+
+
+TODO:
+1. PCB layout Finish. Extra Vout terminal 24v 12 & 5v. if space add an extra USB and DC output
+	EMF Concerns? 
+	Ground Plane on bottom
+	Chunky tracks on top for power
+	
+2. buck conversion board simple PSU with I2c for generic experiments
+3. microcontroller babysitter project for each experiment. 
+
+
+
+
+
