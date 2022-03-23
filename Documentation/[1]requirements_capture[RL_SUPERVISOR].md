@@ -63,7 +63,7 @@ servo motor power supply requirements/driver?
 As ***Spinner*** Plus:
 
 - Stepper Motor
-- 2x limit switches (1 definite, 1 potential)
+- 2x limit switches (1 definite, 1 potential) - OR gate for virtual/spoof limit switch
 
 Limit switches limit movement of stepper motor.
 
@@ -72,16 +72,21 @@ Stepper motor blocked from actuation while govenor is in motion and vice versa.
 
 ##### Pendulum
 
-5v (?) Electromagnet with 4 possible states:
+5v Electromagnet with 4 possible states:
 
 -	Open Circuit
--	Closed Circuit - NOTE: Clarify is this closed i.e. direct short, or closed via a load?
+-	Closed Circuit - direct short via transistor BC547 & flyback diode
+	- #TODO Research: dual transitor pass gate. - Simulate?
 -	Energised (Positive Direction)
 - 	Energised (Negative Direction)
 
-Temperature sensor?
+-	600ppr Optical Encoder
+
+-	Temperature sensor?
 
 #### Supervisor MCU Requirements
+
+- 	SAMD21
 
 - 	Encoder Calibration 
 	- devolved requirement: Must control motor actuation during this process.
@@ -94,7 +99,7 @@ Temperature sensor?
 
 -	Cut power to DC motor in case of out of bounds operation for experiments that require this function.
 
--	(Maybe) Set boundaries of operation for Servo motor. Alert user if approaching limits. Cut power/control if limits breached.
+-	Set boundaries of operation for Servo motor. Cut power/control if limits breached.
 
 - 	Set hard limits of operation for stepper motor using limit switches. Alert the user & cut stepper motor if switches are actuated.
 
@@ -103,6 +108,8 @@ Temperature sensor?
 - 	Prevent actuation of stepper motors if govenor is in motion. Prevent govenor rotation if stepper motor is in motion.
 
 -	Note: in any case where power is cut to hardware, supervisor MCU must be capable of resetting the experimental apparatus to a stable "home" position and return control to the student MCU.
+
+- 	Virtual Limit switches for students
 
 ##### Student MCU Requirements
 
@@ -115,7 +122,19 @@ Temperature sensor?
 	- Electromagnetic actuator.
 	- Temperature Sensor?
 
+
+##### Servo Control
+
+- 	Detect PWM from Student PCB? 
+-	Frequency Counter?
+-	Seperate controller for high frequency signal aquisition.?
+-	Op amp filtering into comparator ? - probably not , temperature issues, tuning, calibration.
+
+
+
 #### Example Logic
+
+#### Power Supply Requirements
 
 
 
@@ -126,7 +145,7 @@ Temperature sensor?
 _Specific requirements for subsystems can be documented at this stage_    <br>
 > a. steady power usage of 20W 1.7A at 12V (Maxxon AMax 32 236668 Graphite brushes, 20 Watt)[Estimated value, may change in future iterations] <br>
 > b. peak power usage of 69W 5.7A at 12V (when motor stalled)  [Estimated value, may change in future iterations] <br>
-> c. 5V power for the Raspberry pis, typically 1A per Raspberry Pi but Max 2.5A; four raspberry pi connections, 1 connection for power to microcontroller monitoring chip. <br>
+> c. 5V power for the Raspberry pis, typically 1A per Raspberry Pi but Max 2.5A.
 
 
 ##### Interface Requirements
@@ -143,9 +162,9 @@ _These specifications are going to be valid for most projects developed using th
 
 #### Optional Features
 _Any features or functions that are optional should be stated here_  <br>
->  1. Report Status & current usage for sustainabilty and maintainance purposes.
+>  1. Report Status & current usage for sustainabilty and maintainance purposes.  #NOTE: do we want to include this feature?
 >  3. Use only connection types that can be operated with one hand. i.e. avoid screw terminals.
->  4. Te
+
 
 #### Design Optimisation
 _What parameters of the design should be minimised/maximised?_
@@ -217,6 +236,35 @@ STUDENT MCU has no direction USB interface, is programmed from SUPERVISOR MCU.
 
 
 
+# DECISIONS THAT NEED TO BE MADE
+
+- MCU Options for Student MCU
+-MCU Options for Supervisor MCU
+
+- USB interface options for MCUs
+
+
+
+- Stepper motor voltage - check specifications. Check current drivers.
+
+
+- Servo PWM monitoring?
+
+
+# DECISIONS THAT have been MADE
+
+- 5v Power Supply - lM2589 Modules 2.5A max?
+- Independent 12v to 5v PSU for servos.
+- DC Motor - 12v - Infineon board
+
+- MCU CH340 for Student
+- Supervisor programmed directly from UART. -> Test this out today.
+
+- ISPs & UART For supervisor
+- ISP & CH340 for student
+
+
+
 
 
 
@@ -239,11 +287,8 @@ System Concept:
 
 ##### Power Distribution:
 
-12vDC input is distributed to motor drivers, 
 
-Main PCB with 2 expansion slots for motor controller daughterboards, 
-allowing control of 1 or 2 DC motors, or 1 DC motor and 1 Stepper motor.
-Connections between MCU and Motor controller should allow either card to be used in either slot.
+
 
 
 
@@ -287,19 +332,7 @@ ________________________________________________________________________________
 
 
 > HL.1. DC/DC converters must be able to provide continuous current draw of 6.7A at 12V ~(80W) for motor power, from supplied 24v input.                   <br>
-> HL.2. DC/DC converters must be able to provide peak current draw of 12A at 12V ~(144W) for motor power, from supplied 24v input, in case of stall condition.[^2]    <br>
-> HL.3. USB power must be able to provide total of 12.5A @ 5v ~(62.5W), from supplied 24v input.                                  <br>
-> HL.4. Each USB channel will have the ability to remotely disable and re-enable power.                                      <br>
-> HL.5. Voltage & Current monitoring of 12v bus, accessable remotely.   <br>   <!-- This is a weak requirement, how often should data be sampled is a nessissary component of this requirement -->
-> HL.6. Current monitoring of 5v bus, accessable remotely  <br>    <!-- This is a weak requirement, how often should data be sampled is a nessissary component of this requirement -->
-> HL.7. Board must have push-fit or bayonet connectors for motors & offboard hardware. <br>
-> HL.8. Power Board will have 5 * 12v outputs from 12v Bus. <br>
-> HL.9. Power Board will have 5 * 5v outputs from 5v Bus. <br>
-> HL.10. Power board will be protected from reversed supply voltages <br>
-> HL.11. Power Board will be protected from over-current conditions<br>
-> HL.12. PCB must have same footprint & mounting screwholes as V1, to aid in assembly <br>
-> HL.13. 5v bus will be protected from over-voltage condition. <br>
-> HL.14. Each power bus will display visual (LED) indication of correct operation or fault conditions (over/under voltage) <br>
+
 
 
 <!-- NOTE: 
