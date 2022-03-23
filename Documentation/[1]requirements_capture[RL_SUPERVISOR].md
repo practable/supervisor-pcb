@@ -55,12 +55,15 @@ Servo position limited to avoid collision.
 
 Servo blocked from actuation while digger is moving, and vice versa.
 
+#TODO:
+servo motor power supply requirements/driver?
+
 ##### Govenor
 
 As ***Spinner*** Plus:
 
 - Stepper Motor
-- 2x limit switches (1 definate, 1 potential)
+- 2x limit switches (1 definite, 1 potential)
 
 Limit switches limit movement of stepper motor.
 
@@ -99,6 +102,8 @@ Temperature sensor?
 
 - 	Prevent actuation of stepper motors if govenor is in motion. Prevent govenor rotation if stepper motor is in motion.
 
+-	Note: in any case where power is cut to hardware, supervisor MCU must be capable of resetting the experimental apparatus to a stable "home" position and return control to the student MCU.
+
 ##### Student MCU Requirements
 
 - 	Bare metal programming experience - The student should have full control of the MCU, the supervisor MCU is responsible for protecting the rest of the experimental apparatus from damage.
@@ -107,12 +112,10 @@ Temperature sensor?
 	- DC Motor Via Motor Controller
 	- Servo Via PWM output
 	- Stepper motor via Stepper Motor Controller.
-	- Electromagnettic actuator.
+	- Electromagnetic actuator.
 	- Temperature Sensor?
 
 #### Example Logic
-
-![image](https://user-images.githubusercontent.com/97303986/159473295-9a8413fd-1f81-4736-8734-684c6dfd33fd.png)
 
 
 
@@ -142,6 +145,7 @@ _These specifications are going to be valid for most projects developed using th
 _Any features or functions that are optional should be stated here_  <br>
 >  1. Report Status & current usage for sustainabilty and maintainance purposes.
 >  3. Use only connection types that can be operated with one hand. i.e. avoid screw terminals.
+>  4. Te
 
 #### Design Optimisation
 _What parameters of the design should be minimised/maximised?_
@@ -177,6 +181,20 @@ On main PCB or Daughterboard?
 
 Could 1 PCB be reconfigured for each experiment using daughterboards.
 
+
+#### Motor Controller Options
+
+Infineon DC Motor Sheild
+https://uk.rs-online.com/web/p/shields-for-arduino/9062874?
+
+L298N Dual Full Bridge Driver
+https://docs.rs-online.com/6243/0900766b80060c26.pdf
+
+Can drive stepper motors & DC Motors.
+
+
+
+
 ### Supervisor Controller Circuit Topology
 
 #### Problem
@@ -209,16 +227,23 @@ _What quality assurances or requirements, if any, need to be established?_
 #### Notes
 _Any Extra Notes?_
 
-![image](https://user-images.githubusercontent.com/97303986/159475241-7e31b5e4-102b-454a-8726-7a453309b4dd.png)
-
-
-
-
-
 Software Reqirements: 
 
 
 
+
+#### Concept
+_Outline any concept or topology that may be worth exploring._
+
+System Concept:
+
+##### Power Distribution:
+
+12vDC input is distributed to motor drivers, 
+
+Main PCB with 2 expansion slots for motor controller daughterboards, 
+allowing control of 1 or 2 DC motors, or 1 DC motor and 1 Stepper motor.
+Connections between MCU and Motor controller should allow either card to be used in either slot.
 
 
 
