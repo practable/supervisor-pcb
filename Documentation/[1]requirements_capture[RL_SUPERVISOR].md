@@ -86,7 +86,8 @@ Stepper motor blocked from actuation while govenor is in motion and vice versa.
 
 #### Supervisor MCU Requirements
 
-- 	SAMD21
+
+-	SAMD21 MCU IC
 
 - 	Encoder Calibration 
 	- devolved requirement: Must control motor actuation during this process.
@@ -328,11 +329,35 @@ it also provides the information required to undertake successful **Verification
 
 
 _______________________________________________________________________________________________________________________________________________________
-## [1.3]Example Requirements Capture - [ISOpower]
+## [1.3]Example Requirements Capture - [RL_SUPERVISOR]
 
+| ID	| Sub-System 		| Requirement 				| Hardware Requirement				| Software Requirement	|
+|---	|---				|---						|---								|---					|
+| R.1	| Supervisor MCU	| SAMD21					|									|						|
+| R.2	| Supervisor MCU	| Encoder Calibration		| Hardwired logic to enable & disable control of motor. Buffers to duplicate digital signal from encoders|	Run calibration on startup or via remote API|
 
-> HL.1. DC/DC converters must be able to provide continuous current draw of 6.7A at 12V ~(80W) for motor power, from supplied 24v input.                   <br>
+- 	Encoder Calibration 
+	- devolved requirement: Must control motor actuation during this process.
 
+- 	Logic to prevent both Supervisor and Student Controllers from actuating hardware at the same time.
+
+-	Depower motors & other actuators and alert user if temperature is approaching max: (90degC)?
+
+-	Track & Report encoder Position & velocity independent of STUDENT MCU.
+
+-	Cut power to DC motor in case of out of bounds operation for experiments that require this function.
+
+-	Set boundaries of operation for Servo motor. Cut power/control if limits breached.
+
+- 	Set hard limits of operation for stepper motor using limit switches. Alert the user & cut stepper motor if switches are actuated.
+
+-	Prevent actuation of the servo while the rotating platform is in motion. Prevent platform rotation if servo is in motion.
+
+- 	Prevent actuation of stepper motors if govenor is in motion. Prevent govenor rotation if stepper motor is in motion.
+
+-	Note: in any case where power is cut to hardware, supervisor MCU must be capable of resetting the experimental apparatus to a stable "home" position and return control to the student MCU.
+
+- 	Virtual Limit switches for students
 
 
 <!-- NOTE: 
