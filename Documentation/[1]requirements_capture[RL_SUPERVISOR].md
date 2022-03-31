@@ -47,7 +47,7 @@ Encoder needs calibration on power up.
 
 As ***Spinner*** Plus:
 
--	Servo 
+-	Servo - CS238MG (4.8 - 6.0v)
 - 	Limit switches? Probably not
 
 Encoder calibrated then used to limit movement of DC motor.
@@ -55,8 +55,6 @@ Servo position limited to avoid collision.
 
 Servo blocked from actuation while digger is moving, and vice versa.
 
-#TODO:
-servo motor power supply requirements/driver?
 
 ##### Govenor
 
@@ -84,46 +82,39 @@ Stepper motor blocked from actuation while govenor is in motion and vice versa.
 
 -	Temperature sensor?
 
+### Features & Functions of the New System
+
 #### Supervisor MCU Requirements
+Concept:
+_Supervisor MCU manages system, performs its own calibrations to track experiment status and monitor for actions that could damage the apparatus_
 
-
--	SAMD21 MCU IC
-
-- 	Encoder Calibration 
-	- devolved requirement: Must control motor actuation during this process.
-
-- 	Logic to prevent both Supervisor and Student Controllers from actuating hardware at the same time.
-
--	Depower motors & other actuators and alert user if temperature is approaching max: (90degC)?
-
--	Track & Report encoder Position & velocity independent of STUDENT MCU.
-
--	Cut power to DC motor in case of out of bounds operation for experiments that require this function.
-
--	Set boundaries of operation for Servo motor. Cut power/control if limits breached.
-
-- 	Set hard limits of operation for stepper motor using limit switches. Alert the user & cut stepper motor if switches are actuated.
-
--	Prevent actuation of the servo while the rotating platform is in motion. Prevent platform rotation if servo is in motion.
-
-- 	Prevent actuation of stepper motors if govenor is in motion. Prevent govenor rotation if stepper motor is in motion.
-
--	Note: in any case where power is cut to hardware, supervisor MCU must be capable of resetting the experimental apparatus to a stable "home" position and return control to the student MCU.
-
-- 	Virtual Limit switches for students
+[X]	-	SAMD21 MCU IC
+[X]	- 	Encoder Calibration 
+		- devolved requirement: Must control motor actuation during this process.
+[X]	- 	Logic to prevent both Supervisor and Student Controllers from actuating hardware at the same time.
+[X]	-	Depower motors & other actuators and alert user if temperature is approaching max: (90degC)?
+[X]	-	Track & Report encoder Position & velocity independent of STUDENT MCU.
+[X]	-	Cut power to DC motor in case of out of bounds operation for experiments that require this function.
+[X]	-	Set boundaries of operation for Servo motor. Cut power/control if limits breached.
+[X]	- 	Set hard limits of operation for stepper motor using limit switches. Alert the user & cut stepper motor if switches are actuated.
+[X]	-	Prevent actuation of the servo while the rotating platform is in motion. Prevent platform rotation if servo is in motion.
+[X]	- 	Prevent actuation of stepper motors if govenor is in motion. Prevent govenor rotation if stepper motor is in motion.
+[X]	-	Note: in any case where power is cut to hardware, supervisor MCU must be capable of resetting the experimental apparatus to a stable "home" position and return control to the student MCU.
+[X]	- 	Virtual Limit switches for students
 
 ##### Student MCU Requirements
+Concept:
+_Bare metal programming experience - The student should have full control of the MCU, the supervisor MCU is responsible for protecting the rest of the experimental apparatus from damage._
 
--	SAMD21 MCU IC
-
-- 	Bare metal programming experience - The student should have full control of the MCU, the supervisor MCU is responsible for protecting the rest of the experimental apparatus from damage.
+[X] -	SAMD21 MCU IC
+- 	
 
 - Control all experimental hardware i.e:
-	- DC Motor Via Motor Controller
-	- Servo Via PWM output
-	- Stepper motor via Stepper Motor Controller.
-	- Electromagnetic actuator.
-	- Temperature Sensor?
+[X]	-	DC Motor Via Motor Controller
+[x]	- Servo Via PWM output
+[x]	- Stepper motor via Stepper Motor Controller.
+[x]	- Electromagnetic actuator.
+[x]	- Temperature Sensor?
 
 
 ##### Servo Control
@@ -335,7 +326,7 @@ High Level Requirements capture the intent and function of a system, without goi
 #### Requirements should be:
 > - Specific           - Document a single feature or function requirement at a time.                                                 <br>
 > - Quantifyable       - Provide quantifyable parameters, boundary limits of operation and/or design tolerences, rather than open ended specifications where possible.<br>
-> - Self Contained     - Do not rely on assumptions to deliver information, as different engineers will make different assumptions, which may cause conflicts 
+> - Self Contained     - Do not rely on assumptions to deliver information, as different engineers will make different assumptions, which may cause conflicts.
 > - Traceable          - Assign each requirement an ID number, this will be used to trace any design decisions through the development process. <br>
 
 _Good requirements are the foundation for successful development of a project, as it allows design decisions to be traced through the development process.
@@ -345,10 +336,60 @@ it also provides the information required to undertake successful **Verification
 _______________________________________________________________________________________________________________________________________________________
 ## [1.3]Example Requirements Capture - [RL_SUPERVISOR]
 
-| ID	| Sub-System 		| Requirement 				| Hardware Requirement				| Software Requirement	|
-|---	|---				|---						|---								|---					|
-| R.1	| Supervisor MCU	| SAMD21					|									|						|
-| R.2	| Supervisor MCU	| Encoder Calibration		| Hardwired logic to enable & disable control of motor. Buffers to duplicate digital signal from encoders|	Run calibration on startup or via remote API|
+| ID	| Sub-System 		| Requirement/Function 								| Notes												|
+|---	|---				|---												|---												|
+| R.1	| Supervisor MCU	| SAMD21											|													|
+| R.2	| Supervisor MCU	| Encoder Calibration								|													|
+| R.3	| Supervisor MCU	| Tracking Of Encoder position throughout experiment|													|
+| R.4	| Supervisor MCU	| Prevent overheating of experimental apparatus 	|													|
+| R.5	| Supervisor MCU	| Enable/Disable stepper motor function 			| TODO: Does it also need control of stepper motor? - Yes in order to reset it |	
+| R.6	| Supervisor MCU	| Enable/Disable Servo actuation 					| TODO: Does it also need control of servo at all?	- Yes in order to reset it |	
+| R.7	| Supervisor MCU	| Enable/Disable DC Motor control for Student & Supervisor	| Ensure that only 1 MCU is in control of actuators at any point in time	|
+| R.8	| Supervisor MCU	| Provide soft or Virtual limits on DC motor movement		|											|
+| R.9	| Supervisor MCU	| Provide soft or Virtual limits on Servo actuation to prevent out of bounds operation		|			|
+| R.10	| Supervisor MCU	| Provide soft or Virtual limits on stepper motor actuation to prevent out of bounds operation			|	
+| R.11	| Supervisor MCU	| Provide hard limits on stepper motor actuation to prevent out of bounds operation using limitswitches		|			|
+| R.12	| Supervisor MCU	| Provide hard limits on stepper motor actuation to prevent out of bounds operation using limitswitches		|			|
+| R.13	| Supervisor MCU	| Block actuation of Servo/Stepper if DC motor is moving & vice versa |	Priority given to the first thing moving? OR Priority given to DC Motor?|
+| R.14	| Supervisor MCU	| Reset experiment to neutral condition in the case limits are breached |								|
+
+|---	|---				|--- 												|---												|
+| R.15	| Student MCU		| SAMD21											|													|
+| R.16	| Student MCU		| Control over experimental hardware inc; DC Motor, Stepper Motor, Servo & Electromagnetic Actuator	|	|
+| R.17	| Student MCU		| Direct access of encoder feedback data			|													|
+| R.18	| Student MCU		| Direct or Virtual access of temperature sensor	|													|
+| R.19	| Student MCU		| Virtual access of Limit switch data (spoofed from Supervisor MCU)	|									|
+| R.20	| Student MCU		| Bare Bones Programming Experience  				|		Can this be quanfied in some way?			|
+
+|---	|---				|--- 												|---												|
+| R.21	| Power Supply		| 5v Power @ 0.5A max for MCUs						|													|
+| R.22	| Power Supply		| 5v Power @ 2.5A max for Raspberry Pi				|													|
+| R.23	| Power Supply		| 5v Power @ 2.5A max for Servo						|													|
+| R.24	| Power Supply		| 12v Power Distribution for DC Motor Driver		|													|
+| R.25	| Power Supply		| 12v Power Distribution for Stepper Motor Driver	|													|
+
+|---	|---				|--- 												|---												|
+| R.21	| Sensors			| Temperature Sensor to track motor temperature (x2?)|													|
+| R.22	| Sensors			| Limit Switch Inputs (x2 definatly) (2x spare/Future Use?)		|													|
+| R.23	| Sensors			| Optical Encoder - Distributed via buffers to both MCU	|													|
+| R.24	| Sensors			| 12v Power Distribution for DC Motor Driver		|													|
+| R.25	| Sensors			| 12v Power Distribution for Stepper Motor Driver	|													|	
+
+#TODO 
+Define relationship between servo and MCU control - how is that going to be tracked?
+
+
+## Devolved Requirements
+_Requirements that are established to meet higher level requirements_
+
+| ID	| Sub-System 		| Requirement/Function 		| Devolved Requirement														| Hardware/Software Requirement	|
+|---	|---				|---						|---																		|---							|
+| DR.2.1| Supervisor MCU	| Encoder Calibration		| Prevent Student MCU from actuating motor while calibration is undertaken	| Both 							|
+| DR.2.2| Supervisor MCU	| Encoder Calibration		| Enable supervisor MCU to actuate motor while calibration is undertaken  	|	 Both							|
+| DR.3.1| Supervisor MCU	| Tracking Encoder			| Duplcation of digital encoder signals to feed both MCU's					|  Hardware						|
+| R.3	| Supervisor MCU	| Encoder Calibration		| Hardwired logic to enable & disable control of motor. Buffers to duplicate digital signal from encoders|	Run calibration on startup or via remote API|
+
+
 
 - 	Encoder Calibration 
 	- devolved requirement: Must control motor actuation during this process.
@@ -374,11 +415,7 @@ ________________________________________________________________________________
 - 	Virtual Limit switches for students
 
 
-<!-- NOTE: 
-High level
-Include a microcontroller which communicates over USB, with a JSON-based interface allowing control over any power switches on board, and can report any measurements made.
-It is my understanding this is not a high level requirement, as it is a specific low level hardware & software requirement. I have modified some of the other requirements
- to make it clear that the data & power channel actuation should be accessable remotly, but have not gone into specifics of how that would be achieved-->
+
 
 
 
