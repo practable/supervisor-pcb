@@ -114,6 +114,8 @@ Stepper motor blocked from actuation while govenor is in motion and vice versa.
 
 ##### Student MCU Requirements
 
+-	SAMD21 MCU IC
+
 - 	Bare metal programming experience - The student should have full control of the MCU, the supervisor MCU is responsible for protecting the rest of the experimental apparatus from damage.
 
 - Control all experimental hardware i.e:
@@ -199,7 +201,7 @@ _Space for discussion and weighing up of features that may or may not be require
 IF integrated:
 On main PCB or Daughterboard?
 
-Could 1 PCB be reconfigured for each experiment using daughterboards.
+Could 1 PCB be reconfigured for each experiment using daughterboards?
 
 
 #### Motor Controller Options
@@ -211,6 +213,19 @@ L298N Dual Full Bridge Driver
 https://docs.rs-online.com/6243/0900766b80060c26.pdf
 
 Can drive stepper motors & DC Motors.
+
+######## Current Guvnor Experiement PCB
+
+DC Motor:
+[Pmod HB3: H-bridge Driver with Feedback Inputs](https://digilent.com/shop/pmod-hb3-h-bridge-driver-with-feedback-inputs/)
+
+Stepper Motor:
+[DRV8825 Module](https://printermods.co.uk/products/sku10919)
+
+
+
+
+
 
 
 
@@ -235,15 +250,14 @@ STUDENT MCU has no direction USB interface, is programmed from SUPERVISOR MCU.
 
 ##### Option C
 
+SUPERVISOR MCU is programmed via UART from the raspberry pi - tested and proven on bench
+STUDENT MCU is programmed via CH340 interface and USB, maintaining a familiure interface for students who may be interacting with the microcontroller
 
+##### Option D
+
+Both MCUs are programmed via USB, but supervisor MCU has a handshake procedure that responds to a specific data packet to "prove" it is the supervisor MCU
 
 # DECISIONS THAT NEED TO BE MADE
-
-- MCU Options for Student MCU
--MCU Options for Supervisor MCU
-
-- USB interface options for MCUs
-
 
 
 - Stepper motor voltage - check specifications. Check current drivers.
@@ -259,7 +273,7 @@ STUDENT MCU has no direction USB interface, is programmed from SUPERVISOR MCU.
 - DC Motor - 12v - Infineon board
 
 - MCU CH340 for Student
-- Supervisor programmed directly from UART. -> Test this out today.
+- Supervisor programmed directly from UART. 
 
 - ISPs & UART For supervisor
 - ISP & CH340 for student
