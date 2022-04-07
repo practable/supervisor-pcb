@@ -343,7 +343,7 @@
     ],
     [
       "b26e1d9c-cfe6-4f55-be1c-17c06d0ac644",
-      "Hardwired Logic"
+      "Output Logic"
     ],
     [
       "fc507f37-311a-4a88-8803-5135386aa883",
@@ -352,6 +352,10 @@
     [
       "283d3eb1-906d-460d-a87d-d328f41afedd",
       "Sensors"
+    ],
+    [
+      "8cce862e-92d4-4b11-b295-b482621a1385",
+      "Input Signal Distribution"
     ]
   ],
   "text_variables": {}

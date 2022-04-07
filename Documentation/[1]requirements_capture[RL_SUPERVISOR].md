@@ -1,4 +1,4 @@
-# [1]   Requirements Capture Form - [Remote Labs V2.0 PCB]
+# [1]   Requirements Capture Form - [RL_SUPERVISOR]
 
 _This form is intended to assist in capturing the requirements for new Open Source Embedded Systems Projects, <br>
 its scope & implementation can be adapted to suit projects of varying complexity._
@@ -9,7 +9,7 @@ _The project brief should contain an outline of the proposed project, with enoug
 information provided can be tailored to project complexity_
 
 
-### Project Brief - [Remote Labs V2.0 PCB]
+### Project Brief - [RL_SUPERVISOR]
 
 Design a PCB to provide power to remote labs experiments, which involve students programming microcontrollers remotely.
 PCB should also provide a supervisory role, blocking actuation of experimental hardware if it is likely to cause damage to the equipment.
@@ -334,7 +334,7 @@ it also provides the information required to undertake successful **Verification
 
 
 _______________________________________________________________________________________________________________________________________________________
-## [1.3]Example Requirements Capture - [RL_SUPERVISOR]
+## [1.3]Requirements Capture - [RL_SUPERVISOR]
 
 | ID	| Sub-System 		| Requirement/Function 								| Notes												|
 |---	|---				|---												|---												|
@@ -352,6 +352,8 @@ ________________________________________________________________________________
 | R.12	| Supervisor MCU	| Provide hard limits on stepper motor actuation to prevent out of bounds operation using limitswitches		|			|
 | R.13	| Supervisor MCU	| Block actuation of Servo/Stepper if DC motor is moving & vice versa |	Priority given to the first thing moving? OR Priority given to DC Motor?|
 | R.14	| Supervisor MCU	| Reset experiment to neutral condition in the case limits are breached |								|
+| R.15	| Supervisor MCU	| Track Motor Driver PCB Temperature via over temp output|													|	
+
 
 |---	|---				|--- 												|---												|
 | R.15	| Student MCU		| SAMD21											|													|
@@ -369,7 +371,7 @@ ________________________________________________________________________________
 | R.25	| Power Supply		| 12v Power Distribution for Stepper Motor Driver	|													|
 
 |---	|---				|--- 												|---												|
-| R.21	| Sensors			| Temperature Sensor to track motor temperature (x2?)|													|
+| R.21	| Sensors			| Temperature Sensor to track motor temperature		|													|
 | R.22	| Sensors			| Limit Switch Inputs (x2 definatly) (2x spare/Future Use?)		|													|
 | R.23	| Sensors			| Optical Encoder - Distributed via buffers to both MCU	|													|
 | R.24	| Sensors			| 12v Power Distribution for DC Motor Driver		|													|
