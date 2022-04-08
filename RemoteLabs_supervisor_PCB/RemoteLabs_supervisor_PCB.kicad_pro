@@ -351,11 +351,19 @@
     ],
     [
       "283d3eb1-906d-460d-a87d-d328f41afedd",
-      "Sensors"
+      "analogSensors"
     ],
     [
       "8cce862e-92d4-4b11-b295-b482621a1385",
-      "Input Signal Distribution"
+      "Digital Sensor Buffers"
+    ],
+    [
+      "3053d1d3-1dd5-4dac-b6cb-5e7828c7a42e",
+      "digitalSensors"
+    ],
+    [
+      "58677001-4fa9-4c82-8bf8-e3f98fe8c902",
+      "Analog Sensor Buffers"
     ]
   ],
   "text_variables": {}

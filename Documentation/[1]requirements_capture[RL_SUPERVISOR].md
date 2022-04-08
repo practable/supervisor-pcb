@@ -371,11 +371,14 @@ ________________________________________________________________________________
 | R.25	| Power Supply		| 12v Power Distribution for Stepper Motor Driver	|													|
 
 |---	|---				|--- 												|---												|
-| R.21	| Sensors			| Temperature Sensor to track motor temperature		|													|
+| R.21	| Sensors			| Temperature Sensor to track motor temperature		|	Thermocouple or Digital Sensor?		https://www.mouser.co.uk/datasheet/2/609/ad8494_8495_8496_8497-1502317.pdf										|
 | R.22	| Sensors			| Limit Switch Inputs (x2 definatly) (2x spare/Future Use?)		|													|
 | R.23	| Sensors			| Optical Encoder - Distributed via buffers to both MCU	|													|
-| R.24	| Sensors			| 12v Power Distribution for DC Motor Driver		|													|
-| R.25	| Sensors			| 12v Power Distribution for Stepper Motor Driver	|													|	
+
+|---	|---				|--- 												|---												|
+| R.21	| DC Motor			| 2A Protection fuse on power supply to motor sheild|													|
+| R.22	| Sensors			| Limit Switch Inputs (x2 definatly) (2x spare/Future Use?)		|													|
+| R.23	| Sensors			| Optical Encoder - Distributed via buffers to both MCU	|													|
 
 #TODO 
 Define relationship between servo and MCU control - how is that going to be tracked?
