@@ -27,7 +27,7 @@ This allows students to upload their own code to a bare bones microcontroller, w
 
 Power Provisions:
 
-12vDC PSU, daisy chained power to 4 x Experiment Boxes
+12vDC 240W PSU, daisy chained power to 4 x Experiment Boxes
 
 Comms:
 
@@ -352,7 +352,7 @@ ________________________________________________________________________________
 | R.12	| Supervisor MCU	| Provide hard limits on stepper motor actuation to prevent out of bounds operation using limitswitches		|			|
 | R.13	| Supervisor MCU	| Block actuation of Servo/Stepper if DC motor is moving & vice versa |	Priority given to the first thing moving? OR Priority given to DC Motor?|
 | R.14	| Supervisor MCU	| Reset experiment to neutral condition in the case limits are breached |								|
-| R.15	| Supervisor MCU	| Track Motor Driver PCB Temperature via over temp output|													|	
+| R.15	| Supervisor MCU	| Track Motor Driver PCB Temperature via over temp output|	  Check - Current Output or Fault Output?!												|	
 
 
 |---	|---				|--- 												|---												|
@@ -380,8 +380,21 @@ ________________________________________________________________________________
 | R.22	| Sensors			| Limit Switch Inputs (x2 definatly) (2x spare/Future Use?)		|													|
 | R.23	| Sensors			| Optical Encoder - Distributed via buffers to both MCU	|													|
 
+
+
+
+
 #TODO 
 Define relationship between servo and MCU control - how is that going to be tracked?
+Clock Speeds? 48MHz?
+External Oscillator/ Internal Oscillator.
+crypto chip?
+
+Device can be identified via unique 128bit serial code saved in registers
+
+
+
+
 
 
 ## Devolved Requirements
