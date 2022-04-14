@@ -33,6 +33,16 @@ Comms:
 
 5 Port switch in one box, ethernet comms from each box in the stack of 5 meet there for connection to LAN
 
+##### Current PCB
+
+Using Arduino Nano 33 IoT
+
+
+
+
+
+
+
 #### Experiment Description
 
 ##### Spinner
@@ -407,6 +417,21 @@ _Requirements that are established to meet higher level requirements_
 | DR.3.1| Supervisor MCU	| Tracking Encoder			| Duplcation of digital encoder signals to feed both MCU's					|  Hardware						|
 | R.3	| Supervisor MCU	| Encoder Calibration		| Hardwired logic to enable & disable control of motor. Buffers to duplicate digital signal from encoders|	Run calibration on startup or via remote API|
 
+### Programming SAMD21
+
+_Programming the Arduino Nano IoT33 via both USB and UART is now solved, however.. What about programming a bare bones SAMD21 if that is the route we decide to go down?_
+
+ Links to various methods foubnd provided below: <br>
+ 
+ https://arduino.stackexchange.com/questions/32116/barebones-arduino-zero-with-atsamd21g18
+ https://www.avdweb.nl/arduino/samd21/sam-d21
+ https://microchipdeveloper.com/atstart:sam-d21-bootloader
+
+ 
+ 
+ 
+ https://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_DataSheet_DS40001882F.pdf
+ 
 
 
 - 	Encoder Calibration 
