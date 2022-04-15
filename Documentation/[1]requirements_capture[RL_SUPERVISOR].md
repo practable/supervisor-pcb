@@ -37,6 +37,10 @@ Comms:
 
 Using Arduino Nano 33 IoT
 
+https://github.com/practable/spinner-nidec/blob/main/hw/pcb/PCB_PIDController.png
+
+
+
 
 
 
@@ -394,13 +398,27 @@ ________________________________________________________________________________
 
 
 
-#TODO 
+#TODO  15/04/2022 Talk to Tim To Resolve Questions
 Define relationship between servo and MCU control - how is that going to be tracked?
 Clock Speeds? 48MHz?
 External Oscillator/ Internal Oscillator.
 crypto chip?
 
 Device can be identified via unique 128bit serial code saved in registers
+
+PURPOSE OF:
+Connection to grey 3D printed lighting strip from microcontroller NeoPixels?!
+~{RST} 
+~{SLP}
+~{EN}
+~{FLT} Faster Light Travel? FiLTer?
+
+Spare Pins Use
+
+Not Enough Pins on Nano 33 IoT unless other functions ristricted, I.E Does motoshield need sleep & reset?
+
+PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins required.
+
 
 
 
