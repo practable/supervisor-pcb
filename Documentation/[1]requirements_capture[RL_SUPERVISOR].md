@@ -16,6 +16,9 @@ PCB should also provide a supervisory role, blocking actuation of experimental h
 
 This allows students to upload their own code to a bare bones microcontroller, without risk of causing hardware damage or unsafe conditions.
 
+###### Further Reading
+[Tim Drysdale - Safety Circuit](https://github.com/timdrysdale/safetycircuit)
+
 #### Current State
 
 ~70 remote labs experiments, each requiring:
@@ -37,7 +40,15 @@ Comms:
 
 Using Arduino Nano 33 IoT
 
+
+Existing Spinner PCB V1? or V0?
 https://github.com/practable/spinner-nidec/blob/main/hw/pcb/PCB_PIDController.png
+
+
+#TODO:
+_Find Repo or KiCad files for Existing motor drive board_
+
+
 
 
 
@@ -266,8 +277,6 @@ Both MCUs are programmed via USB, but supervisor MCU has a handshake procedure t
 
 
 - Stepper motor voltage - check specifications. Check current drivers.
-
-
 - Servo PWM monitoring?
 
 
@@ -399,26 +408,42 @@ ________________________________________________________________________________
 
 
 #TODO  15/04/2022 Talk to Tim To Resolve Questions
-Define relationship between servo and MCU control - how is that going to be tracked?
-Clock Speeds? 48MHz?
-External Oscillator/ Internal Oscillator.
-crypto chip?
 
-Device can be identified via unique 128bit serial code saved in registers
+1. Define relationship between servo and MCU control - how is that going to be tracked?
+2. Clock Speeds? 48MHz?
+2a.	External Oscillator/ Internal Oscillator.
 
-PURPOSE OF:
-Connection to grey 3D printed lighting strip from microcontroller NeoPixels?!
+3. crypto chip / wireless comms - required for bare bones SAMD21 if not using Nano IoT
+
+4. R.E. Identifying correct microcontroller, SAMD21 -- Device can be identified via unique 128bit serial code saved in registers
+
+5.
+PURPOSE OF (as shown on previous PCB):
+Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Purpose
 ~{RST} 
 ~{SLP}
 ~{EN}
 ~{FLT} Faster Light Travel? FiLTer?
 
-Spare Pins Use
 
-Not Enough Pins on Nano 33 IoT unless other functions ristricted, I.E Does motoshield need sleep & reset?
+6.
+Not Enough Pins on Nano 33 IoT unless other functions ristricted, I.E
 
-PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins required.
+- Does Stepper Motor Controller need sleep & reset, or can these be tied to GND/Vcc As required?
+- Does Stepper Motor Controller need Mode functions, or can it be perminantly set to a specific mode - (dipswitches?)
+- Stepper Motor Fault output - is this the overtemp output previously mentioned?
 
+- DC Motor Controller - Current sense outputs - required for both MCUs or just supervisor? - Does this replace temp sensor for this board or is the temp of this
+daughterboard less of an issue. 
+
+7.
+- Added thermocouple input for a moveable temp probe in addition to the fault outputs of motor drivers, is 1 enough?
+
+8.
+PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins / hardware required. Should this be on board or off board
+
+9.
+_Find Repo or KiCad files for Existing motor drive board_
 
 
 

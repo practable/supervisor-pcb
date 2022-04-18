@@ -724,7 +724,7 @@
     (uuid 7c4c4f64-26ff-4e86-aa93-21fe714d901c)
   )
 
-  (hierarchical_label "5V_VCC" (shape input) (at 241.3 33.02 90)
+  (hierarchical_label "VCC" (shape input) (at 241.3 33.02 90)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 395cb196-146a-4a7c-82f1-68dbec20e8a0)
   )
