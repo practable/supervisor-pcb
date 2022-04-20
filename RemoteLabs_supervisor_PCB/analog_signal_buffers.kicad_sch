@@ -744,7 +744,7 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 8b0f3943-8ddd-4a89-b5df-ced2caaa0374)
   )
-  (hierarchical_label "GND_D" (shape input) (at 241.3 59.69 270)
+  (hierarchical_label "GND_A" (shape passive) (at 241.3 59.69 270)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 913faa00-a77f-48c2-9022-84d280328286)
   )

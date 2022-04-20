@@ -419,7 +419,7 @@ ________________________________________________________________________________
 
 5.
 PURPOSE OF (as shown on previous PCB):
-Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Purpose
+Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Purpose - Does student need control of this? Does Supervisor Need control?
 ~{RST} 
 ~{SLP}
 ~{EN}
@@ -433,8 +433,12 @@ Not Enough Pins on Nano 33 IoT unless other functions ristricted, I.E
 - Does Stepper Motor Controller need Mode functions, or can it be perminantly set to a specific mode - (dipswitches?)
 - Stepper Motor Fault output - is this the overtemp output previously mentioned?
 
+6.1.
+https://docs.rs-online.com/91cb/0900766b81490d99.pdf
 - DC Motor Controller - Current sense outputs - required for both MCUs or just supervisor? - Does this replace temp sensor for this board or is the temp of this
 daughterboard less of an issue. 
+
+-DC Motor Driver board Inhibit pins - Does student need control of these or can supervisor just set them high when student is in control?
 
 7.
 - Added thermocouple input for a moveable temp probe in addition to the fault outputs of motor drivers, is 1 enough?
@@ -443,7 +447,10 @@ daughterboard less of an issue.
 PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins / hardware required. Should this be on board or off board
 
 9.
-_Find Repo or KiCad files for Existing motor drive board_
+_Find Repo or KiCad files for Existing motor drive board_     - Emailed but no reply atm
+
+10.
+
 
 
 
