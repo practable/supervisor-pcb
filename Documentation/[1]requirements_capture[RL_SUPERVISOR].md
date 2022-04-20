@@ -410,20 +410,34 @@ ________________________________________________________________________________
 #TODO  15/04/2022 Talk to Tim To Resolve Questions
 
 1. Define relationship between servo and MCU control - how is that going to be tracked?
+- Position does not need to be tracked but DOES need to be limited
+- PWM from student to supervisor. analogRead and entroplate to safe servo positions
+
+
 2. Clock Speeds? 48MHz?
 2a.	External Oscillator/ Internal Oscillator.
+- External Oscillator
 
-3. crypto chip / wireless comms - required for bare bones SAMD21 if not using Nano IoT
+### MCU Options
+AtMega328p
+SAMD21
 
-4. R.E. Identifying correct microcontroller, SAMD21 -- Device can be identified via unique 128bit serial code saved in registers
+
+3. crypto chip / wireless comms - required for bare bones SAMD21 if not using Nano IoT   < Not needed 
+
+4. R.E. Identifying correct microcontroller, SAMD21 -- Device can be identified via unique 128bit serial code saved in registers 
 
 5.
 PURPOSE OF (as shown on previous PCB):
-Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Purpose - Does student need control of this? Does Supervisor Need control?
-~{RST} 
-~{SLP}
-~{EN}
-~{FLT} Faster Light Travel? FiLTer?
+Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Both MCUs to be able to control
+
+~{SLP}    - Always Pull High no need for sleep mode
+~{EN}   	- open circuit is pulled HIGH to enable, pull LOW to DISABLE    -- Needs to be both MCU
+~{RST} - for stepper board and needs to be able to be actuated  - Maybe just supervisor but would be good to have both  
+
+~{FLT} FAULT - LOW WHEN FAULT DETECTED - good to have
+
+
 
 
 6.
@@ -431,25 +445,48 @@ Not Enough Pins on Nano 33 IoT unless other functions ristricted, I.E
 
 - Does Stepper Motor Controller need sleep & reset, or can these be tied to GND/Vcc As required?
 - Does Stepper Motor Controller need Mode functions, or can it be perminantly set to a specific mode - (dipswitches?)
-- Stepper Motor Fault output - is this the overtemp output previously mentioned?
+
+- Stepper Motor Fault output - is this the overtemp output previously mentioned? - Supervisor control NO student control. - DIPSWITCHES if  out of pins
 
 6.1.
 https://docs.rs-online.com/91cb/0900766b81490d99.pdf
-- DC Motor Controller - Current sense outputs - required for both MCUs or just supervisor? - Does this replace temp sensor for this board or is the temp of this
-daughterboard less of an issue. 
+- DC Motor Controller - Current sense outputs -
 
--DC Motor Driver board Inhibit pins - Does student need control of these or can supervisor just set them high when student is in control?
+ ~<470r (1%) Shunt resistor - to calculate current output from IS_1 and IS_2 see datasheet https://docs.rs-online.com/6a9d/0900766b81478095.pdf
+ 
+ 
+- DC Motor Driver board Inhibit pins - Does student need control of these or can supervisor just set them high when student is in control? YES
+Single PWM fed to both PWM input on driver board
+Inhibit pins are fed from student through supervisor - state machine 4 states, off(00), INH1(10), INH2(01), and FAULT (11)
+
 
 7.
-- Added thermocouple input for a moveable temp probe in addition to the fault outputs of motor drivers, is 1 enough?
+- Added thermocouple input for a moveable temp probe in addition to the fault outputs of motor drivers, is 1 enough?  Yes
 
 8.
 PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins / hardware required. Should this be on board or off board
+Yes UART works direct for dev board & raw MCU
+
 
 9.
-_Find Repo or KiCad files for Existing motor drive board_     - Emailed but no reply atm
+_Find Repo or KiCad files for Existing motor drive board_     - Emailed but no reply atm  GOT IT
 
 10.
+
+Find the Name of International Finance office personell - get email or phone & talk directly to them.
+
+Search personell directory for International and Finance.
+Search linkedin
+
+- Emotional blackmail focus on need for interns
+
+11.
+
+Shift Registers.
+
+Try and make shift register relate to single task.
+
+
 
 
 
