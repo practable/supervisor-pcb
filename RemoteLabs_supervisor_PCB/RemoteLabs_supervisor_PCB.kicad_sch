@@ -556,6 +556,10 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 2c07e499-2ecf-470e-aa37-d40c588cf106)
   )
+  (wire (pts (xy 227.33 77.47) (xy 229.87 77.47))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 2fa972b7-722f-4d1a-b8f3-2200569353de)
+  )
   (wire (pts (xy 109.22 66.04) (xy 114.3 66.04))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 30c3512f-1917-4176-931a-9d0f7cfe225e)
@@ -663,10 +667,6 @@
   (wire (pts (xy 111.76 31.75) (xy 114.3 31.75))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 9077f1ae-a1af-406e-88a0-e7e2e8406132)
-  )
-  (wire (pts (xy 208.28 38.1) (xy 229.87 38.1))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 91899bcc-bc49-4b4a-9fe4-d59875c1775b)
   )
   (wire (pts (xy 109.22 69.85) (xy 109.22 66.04))
     (stroke (width 0) (type default) (color 0 0 0 0))
@@ -850,7 +850,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 800f4088-21f7-450a-bd11-a355467a3b50)
   )
-  (text "Is Fault Digi or \nAnalog\nO/P" (at 213.36 96.52 0)
+  (text "Fault is Digital\nLow when fault \ndetected" (at 220.98 106.68 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b126598d-299d-4c25-9403-b059e9a4e9ba)
   )
@@ -946,6 +946,13 @@
     (uuid 654bff4e-53b9-4a9b-ba96-9d019a91e3e9)
     (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 67.3041 25.3206 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "3V3_DC_MCU" (shape input) (at 227.33 77.47 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 66b9721a-64d8-488b-9d77-bf9dc85d4336)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 212.8821 77.3906 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
   (global_label "3V3_DC_MCU" (shape input) (at 69.85 62.23 180) (fields_autoplaced)
@@ -1478,10 +1485,6 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 7d1eb21a-335d-44de-ac18-eef48a319fbc)
     )
-    (pin "!!~{FLT}!!" input (at 149.86 78.74 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid c710f873-1b42-4ee4-9317-ba1ec93311a2)
-    )
     (pin "MODE_1" output (at 149.86 50.8 0)
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 0aac84b6-54ae-42df-a760-d43d925e46f3)
@@ -1586,25 +1589,21 @@
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 0eabb6d6-2e1a-45c9-80f2-03bd3e1e3232)
     )
-    (pin "ENABLE" input (at 229.87 81.28 180)
+    (pin "ENABLE" input (at 229.87 80.01 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 72e2d304-a278-4281-92e7-62c71ba591cb)
     )
-    (pin "MODE_0" input (at 229.87 69.85 180)
+    (pin "MODE_0" input (at 229.87 68.58 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid a78b8c2d-5046-4e8d-87f7-a807f2e1d787)
     )
-    (pin "MODE_1" input (at 229.87 72.39 180)
+    (pin "MODE_1" input (at 229.87 71.12 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 2982f929-c419-4bc9-b9a5-aeea72f1bab9)
     )
-    (pin "MODE_2" input (at 229.87 74.93 180)
+    (pin "MODE_2" input (at 229.87 73.66 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid fa8e2db8-2648-4ea9-a742-013ab267fccd)
-    )
-    (pin "DISABLE" input (at 229.87 78.74 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 2263d91e-e396-4e7f-954e-6928cfc7706b)
     )
     (pin "GND_D" passive (at 264.16 96.52 0)
       (effects (font (size 1.27 1.27)) (justify right))
@@ -1621,6 +1620,14 @@
     (pin "FAULT_OUT" output (at 229.87 92.71 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 99bf8283-f259-4b17-acb8-d193308ea3d7)
+    )
+    (pin "SLEEP" input (at 229.87 77.47 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 028ff8c2-ef3f-417e-a65b-7635ad336e3b)
+    )
+    (pin "RESET" input (at 229.87 82.55 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 64c9235c-b974-4e9f-91bf-d0be809e946f)
     )
   )
 
@@ -1850,10 +1857,6 @@
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 3b0bbe33-4cb8-44cc-ac61-3dcbcf9a5d75)
     )
-    (pin "INH_2" input (at 229.87 38.1 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid af62821b-d6ff-44ba-b489-b0c78e532e25)
-    )
     (pin "IN_2" input (at 229.87 31.75 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 55467849-ffc3-455d-9f44-8286af727924)
@@ -1862,9 +1865,9 @@
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 84b88c49-f026-4263-971d-ae82ee1d8cf5)
     )
-    (pin "INH_1" input (at 229.87 35.56 180)
+    (pin "INHIBIT" input (at 229.87 35.56 180)
       (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 76240a97-6f28-4488-a88c-9b7d787c9ca8)
+      (uuid 6aa9a692-7cf1-42db-a33c-87519c8f4395)
     )
   )
 
@@ -1934,7 +1937,7 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 587461b4-d96e-4e2f-a045-3d42b8879e99)
     )
-    (pin "OUT_M_INH_2" output (at 208.28 38.1 0)
+    (pin "OUT_M_INH_2" output (at 208.28 39.37 0)
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 738d7f0f-1cc8-4cbe-9a97-12a712844fd8)
     )
@@ -2121,10 +2124,10 @@
     (path "/283d3eb1-906d-460d-a87d-d328f41afedd/1a139e28-971a-42fe-aa39-f999f8256a17"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/8cce862e-92d4-4b11-b295-b482621a1385/1b274f9f-14ca-4bae-b091-e56120d79f86"
+    (path "/58677001-4fa9-4c82-8bf8-e3f98fe8c902/1b274f9f-14ca-4bae-b091-e56120d79f86"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/58677001-4fa9-4c82-8bf8-e3f98fe8c902/1b274f9f-14ca-4bae-b091-e56120d79f86"
+    (path "/8cce862e-92d4-4b11-b295-b482621a1385/1b274f9f-14ca-4bae-b091-e56120d79f86"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/586ec748-563a-478a-82db-706fb951336a/27fb4aca-ba26-49b5-85e4-bd4c50f0b54f"
@@ -2163,10 +2166,10 @@
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/6c9ae88a-823c-467b-b2a1-4e6e3e7c5fab"
       (reference "C?") (unit 1) (value "10u") (footprint "Capacitor_SMD:CP_Elec_6.3x5.9")
     )
-    (path "/8cce862e-92d4-4b11-b295-b482621a1385/a23093a8-ca6b-41b9-8efa-cf6603cc916b"
+    (path "/58677001-4fa9-4c82-8bf8-e3f98fe8c902/a23093a8-ca6b-41b9-8efa-cf6603cc916b"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/58677001-4fa9-4c82-8bf8-e3f98fe8c902/a23093a8-ca6b-41b9-8efa-cf6603cc916b"
+    (path "/8cce862e-92d4-4b11-b295-b482621a1385/a23093a8-ca6b-41b9-8efa-cf6603cc916b"
       (reference "C?") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/b26e1d9c-cfe6-4f55-be1c-17c06d0ac644/ba8fcd55-14e1-4042-b721-a0fcfe1f21ad"
@@ -2268,6 +2271,9 @@
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/066ba283-383b-4178-b44f-032a11f9ef38"
       (reference "R1") (unit 1) (value "2k2") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
+    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/12711d54-27d6-4e42-8088-f7a42f7c1094"
+      (reference "R?") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
     (path "/3053d1d3-1dd5-4dac-b6cb-5e7828c7a42e/1646c3f2-8b13-40e6-bd0a-8755e7c99a1c"
       (reference "R?") (unit 1) (value "2k7") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
@@ -2280,8 +2286,20 @@
     (path "/283d3eb1-906d-460d-a87d-d328f41afedd/3907581c-0cfe-4e82-aed8-098afa4b9c6c"
       (reference "R?") (unit 1) (value "1M") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
+    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/5646c51c-d3f4-4339-9f33-10fadba61865"
+      (reference "R?") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/9266ad98-56ad-4979-a534-eef1d9b8c163/5a9a5221-ae94-4768-b191-97e75e809df1"
+      (reference "R?") (unit 1) (value "470r") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/740bcc10-8b55-4692-b5eb-b30fe6818d55"
+      (reference "R?") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/7bc06db4-6fdc-4aae-b383-86fcd3395d18"
       (reference "R?") (unit 1) (value "330r") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/9266ad98-56ad-4979-a534-eef1d9b8c163/83a0c178-0561-47c1-afa2-6579c8ee9f74"
+      (reference "R?") (unit 1) (value "470r") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/283d3eb1-906d-460d-a87d-d328f41afedd/8d64857c-8c3e-4a46-b93d-6ae8d03fb4ca"
       (reference "R?") (unit 1) (value "Resistor_0805") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
@@ -2300,6 +2318,9 @@
     )
     (path "/3053d1d3-1dd5-4dac-b6cb-5e7828c7a42e/f1b66b01-c0bc-4afd-af81-8e0a5087191b"
       (reference "R?") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/758cc32e-478c-4f82-bbbf-2e2e44bc0576"
+      (reference "SW?") (unit 1) (value "Stepper_Mode") (footprint "")
     )
     (path "/1fcb30e3-51c0-4114-9903-50e7d65dc82a"
       (reference "TP?") (unit 1) (value "GND") (footprint "TestPoint:TestPoint_Pad_D1.5mm")

@@ -420,7 +420,7 @@ ________________________________________________________________________________
 
 ### MCU Options
 AtMega328p
-SAMD21
+SAMD21 <- Advantages outweigh negatives of lesser understood hardware
 
 
 3. crypto chip / wireless comms - required for bare bones SAMD21 if not using Nano IoT   < Not needed 
@@ -430,6 +430,10 @@ SAMD21
 5.
 PURPOSE OF (as shown on previous PCB):
 Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Both MCUs to be able to control
+
+
+STEPPER MOTOR DRIVER
+https://protosupplies.com/product/drv8825-high-current-stepper-motor-driver/
 
 ~{SLP}    - Always Pull High no need for sleep mode
 ~{EN}   	- open circuit is pulled HIGH to enable, pull LOW to DISABLE    -- Needs to be both MCU
@@ -460,16 +464,12 @@ Single PWM fed to both PWM input on driver board
 Inhibit pins are fed from student through supervisor - state machine 4 states, off(00), INH1(10), INH2(01), and FAULT (11)
 
 
-7.
-- Added thermocouple input for a moveable temp probe in addition to the fault outputs of motor drivers, is 1 enough?  Yes
 
 8.
 PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins / hardware required. Should this be on board or off board
 Yes UART works direct for dev board & raw MCU
 
 
-9.
-_Find Repo or KiCad files for Existing motor drive board_     - Emailed but no reply atm  GOT IT
 
 10.
 
@@ -486,11 +486,29 @@ Shift Registers.
 
 Try and make shift register relate to single task.
 
+max PWM speed is clock/number of bits - check suiotability for task before commiting.
 
 
 
 
+#TODO 21/04/2022
 
+More Questions to Ask
+
+1. Rotary Encoder Index pin? - Test to see what is required
+
+2. Limit Switches - quantity of inputs, 3 seems high - Solution Only have 1 or 2 max on IoT board, keep the other as an option for the raw MCU option
+
+3. Purpose of Line receiver - datasheet for some encoder devices specify this
+
+4. Applying PWm to both pins and using INH pins does NOT seem to work Belive this is due to full H-Bridge topology - both sides must be active to pass current
+ - Both INH inputs MUST be HIGH and PWM is applied to 1 of IN1 or IN2
+ 
+ BUT we can make it function like this using 2 AND gates.
+ 
+ 
+
+Logic to block simaltanious HIGH
 
 
 

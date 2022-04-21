@@ -18,6 +18,26 @@
 */
 
 
+/*   motorShield Control
+
+      Test Program for infineon BT8982_dev.2 Arduino Shield
+
+
+      Ramps motor speed up slowly in one direction,
+      waits for t time to allow motor to slow
+      Ramps motor speed up slowly in other direction
+      waits for t time to allow motor to slow
+
+      This should prevent motor from approaching stall current and will minimise requirements for testing
+
+      Imogen Heard 18/04/2022
+
+      Test for Supervisor PCB for practicable.io remote Lab Experiments
+
+
+*/
+
+
 
 // Pin Declarations
 
@@ -93,6 +113,8 @@ void calcPWM() {
   }
 }
 
+
+// This is overkill. Instead PWM is fed to both pins on the motor driver board, and the INH pins disable the direction that is not required
 void applyPWMtoActivePins() {
   for (int i = 0; i < 2; i++) {
     if (activePins[i]) {
