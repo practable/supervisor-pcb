@@ -504,13 +504,23 @@ More Questions to Ask
 4. Applying PWm to both pins and using INH pins does NOT seem to work Belive this is due to full H-Bridge topology - both sides must be active to pass current
  - Both INH inputs MUST be HIGH and PWM is applied to 1 of IN1 or IN2
  
- BUT we can make it function like this using 2 AND gates.
+ BUT we can make it function like this using 2 AND gates. 
  
+
+Logic to block simaltanious HIGH ? - This can be handled by supervisor. 
+
+5. at the moment, each subsystem is enabled/disabled by supervisor individually, should there just be 1 master enable/disable to save pins?
+ - eather way I think shift register will be needed.
+
+6. Line driver for optical encoder.
+
+FINAL CHECKS:
+ - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
+ - Suitability of analog buffers - can be tested?
+ - suitability of digital buffers
  
 
-Logic to block simaltanious HIGH
-
-
+7.  Shift Register: http://ediy.com.my/blog/item/114-using-hef4094-shift-registers-with-arduino 4094
 
 ## Devolved Requirements
 _Requirements that are established to meet higher level requirements_
