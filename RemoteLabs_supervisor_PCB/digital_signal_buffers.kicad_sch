@@ -1476,6 +1476,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 37f93928-70ed-41da-9909-6ad5db7fe4d4)
   )
+  (text "Secondary purpose of the buffers,\nto stop student MCU from applying voltages to supervisor \nMCU either inadvertently or deliberatly."
+    (at 196.85 91.44 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 4da00ac4-34a7-4259-bf7a-7a492c08dfae)
+  )
   (text "Aim: To propigate raw signals from sensors to both MCUs, \nto enable bare metal programming experience, but allow\nsupervisor MCU to monitor and track hardware configurations."
     (at 207.01 21.59 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))

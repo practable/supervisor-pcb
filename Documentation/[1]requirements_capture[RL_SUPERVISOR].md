@@ -521,6 +521,10 @@ FINAL CHECKS:
  
 
 7.  Shift Register: http://ediy.com.my/blog/item/114-using-hef4094-shift-registers-with-arduino 4094
+https://www.ti.com/lit/ds/symlink/cd74hc4094.pdf
+
+Example sketch written for shift registers, making them as easy to access as arduino digital pins. given descriptive names D14 - D22
+
 
 ## Devolved Requirements
 _Requirements that are established to meet higher level requirements_
