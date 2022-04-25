@@ -419,24 +419,22 @@ ________________________________________________________________________________
 - External Oscillator
 
 ### MCU Options
+1. Pick MCU
 AtMega328p
-SAMD21 <- Advantages outweigh negatives of lesser understood hardware
-
-
-3. crypto chip / wireless comms - required for bare bones SAMD21 if not using Nano IoT   < Not needed 
-
-4. R.E. Identifying correct microcontroller, SAMD21 -- Device can be identified via unique 128bit serial code saved in registers 
+SAMD21 <- Advantages outweigh negatives of lesser understood hardware    [x]
+3. crypto chip / wireless comms - required for bare bones SAMD21 if not using Nano IoT   < Not needed [x]
+4. R.E. Identifying correct microcontroller, SAMD21 -- Device can be identified via unique 128bit serial code saved in registers  [x]
 
 5.
 PURPOSE OF (as shown on previous PCB):
-Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Both MCUs to be able to control
+Connection to grey 3D printed lighting strip from microcontroller NeoPixels?! - Both MCUs to be able to control [x]
 
 
 STEPPER MOTOR DRIVER
 https://protosupplies.com/product/drv8825-high-current-stepper-motor-driver/
 
-~{SLP}    - Always Pull High no need for sleep mode
-~{EN}   	- open circuit is pulled HIGH to enable, pull LOW to DISABLE    -- Needs to be both MCU
+~{SLP}    - Always Pull High no need for sleep mode  [x]
+~{EN}   	- open circuit is pulled HIGH to enable, pull LOW to DISABLE    -- Needs to be both MCU 
 ~{RST} - for stepper board and needs to be able to be actuated  - Maybe just supervisor but would be good to have both  
 
 ~{FLT} FAULT - LOW WHEN FAULT DETECTED - good to have
@@ -451,23 +449,24 @@ Not Enough Pins on Nano 33 IoT unless other functions ristricted, I.E
 - Does Stepper Motor Controller need Mode functions, or can it be perminantly set to a specific mode - (dipswitches?)
 
 - Stepper Motor Fault output - is this the overtemp output previously mentioned? - Supervisor control NO student control. - DIPSWITCHES if  out of pins
+[x]
 
 6.1.
 https://docs.rs-online.com/91cb/0900766b81490d99.pdf
 - DC Motor Controller - Current sense outputs -
 
- ~<470r (1%) Shunt resistor - to calculate current output from IS_1 and IS_2 see datasheet https://docs.rs-online.com/6a9d/0900766b81478095.pdf
+ ~<470r (1%) Shunt resistor - to calculate current output from IS_1 and IS_2 see datasheet https://docs.rs-online.com/6a9d/0900766b81478095.pdf [x]
  
  
 - DC Motor Driver board Inhibit pins - Does student need control of these or can supervisor just set them high when student is in control? YES
 Single PWM fed to both PWM input on driver board
-Inhibit pins are fed from student through supervisor - state machine 4 states, off(00), INH1(10), INH2(01), and FAULT (11)
+Inhibit pins are fed from student through supervisor - state machine 4 states, off(00), INH1(10), INH2(01), and FAULT (11) [x]
 
 
 
 8.
 PROGRAMMING BARE BONES BOARD. slight confusion...can it be done easily/directly over UART or are additional pins / hardware required. Should this be on board or off board
-Yes UART works direct for dev board & raw MCU
+Yes UART works direct for dev board & raw MCU [x]
 
 
 
@@ -483,10 +482,10 @@ Search linkedin
 11.
 
 Shift Registers.
+[x]
+ry and make shift register relate to single task. 
 
-Try and make shift register relate to single task.
-
-max PWM speed is clock/number of bits - check suiotability for task before commiting.
+max PWM speed is clock/number of bits - check suiotability for task before commiting. - No need not put any PWM channels through shift register. [x]
 
 
 
@@ -495,11 +494,11 @@ max PWM speed is clock/number of bits - check suiotability for task before commi
 
 More Questions to Ask
 
-1. Rotary Encoder Index pin? - Test to see what is required
+1. Rotary Encoder Index pin? - Test to see what is required  - Index doesnt seems to be required - leaving connected anyway [x]
 
-2. Limit Switches - quantity of inputs, 3 seems high - Solution Only have 1 or 2 max on IoT board, keep the other as an option for the raw MCU option
+2. Limit Switches - quantity of inputs, 3 seems high - Solution Only have 1 or 2 max on IoT board, keep the other as an option for the raw MCU option [x]
 
-3. Purpose of Line receiver - datasheet for some encoder devices specify this
+
 
 4. Applying PWm to both pins and using INH pins does NOT seem to work Belive this is due to full H-Bridge topology - both sides must be active to pass current
  - Both INH inputs MUST be HIGH and PWM is applied to 1 of IN1 or IN2
@@ -507,23 +506,48 @@ More Questions to Ask
  BUT we can make it function like this using 2 AND gates. 
  
 
-Logic to block simaltanious HIGH ? - This can be handled by supervisor. 
+Logic to block simaltanious HIGH ? - This can be handled by supervisor.  [x] Implemented
 
 5. at the moment, each subsystem is enabled/disabled by supervisor individually, should there just be 1 master enable/disable to save pins?
- - eather way I think shift register will be needed.
+ - eather way I think shift register will be needed. - Solved [x]
 
-6. Line driver for optical encoder.
 
-FINAL CHECKS:
- - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
- - Suitability of analog buffers - can be tested?
- - suitability of digital buffers
+
  
 
 7.  Shift Register: http://ediy.com.my/blog/item/114-using-hef4094-shift-registers-with-arduino 4094
 https://www.ti.com/lit/ds/symlink/cd74hc4094.pdf
 
-Example sketch written for shift registers, making them as easy to access as arduino digital pins. given descriptive names D14 - D22
+Example sketch written for shift registers, making them as easy to access as arduino digital pins. given descriptive names D14 - D22 [x] Done
+
+#TODO 25/04/2022
+
+1. All output pins from Nano IoT Mirrored to Raw MCUs [x]
+
+2. Test Optical Encoder. [x]  Done - working Index pin does not seem required but left wired incase future use
+
+3. Check logic gates usage - make sure packages assigned correctly
+
+4 Xtal
+
+3. Purpose of Line receiver - datasheet for some encoder devices specify this - hmm maybe still an issue, could use additional buffers - Moved to later todo
+6. Line driver for optical encoder.
+
+7. Got rid of Limit Switch 3 to give option to have all shiftregister pins go to IO pins instead [x]
+
+
+8. Hook Up final lines from student to logic map
+
+9. Prog Header for Student - also look at USB natve
+
+10 Student Xtals
+
+11 Super Xtals
+
+FINAL CHECKS:
+ - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
+ - Suitability of analog buffers - can be tested?
+ - suitability of digital buffers
 
 
 ## Devolved Requirements
