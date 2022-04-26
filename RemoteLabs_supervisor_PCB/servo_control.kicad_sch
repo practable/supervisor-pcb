@@ -114,7 +114,7 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 53679208-2c38-4e14-9b93-0820d4adc005)
   )
-  (hierarchical_label "GND_p" (shape passive) (at 151.13 87.63 0)
+  (hierarchical_label "GND_P" (shape passive) (at 151.13 87.63 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 7dfe888b-4132-4193-bcc2-613dd86092e1)
   )

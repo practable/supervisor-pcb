@@ -588,6 +588,10 @@ Example sketch written for shift registers, making them as easy to access as ard
 
 16. suitability of dropping 12v down to 3v3 ? Not liking - moved to Raspberry pi 5v  - need to check current draw on MCU, quieccent current on ICs?  []
 
+2. ERC fail - EP Pin Not Connected on ATSAMD21G []
+
+3. When ROUTING - Ensure that NET LABELS do not connect across sheets - care taken to ONLY connect through sheets using HIARARCHICAL PINS. - Replace all global labels with NET LABELS? 
+
  - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
  - Suitability of analog buffers - can be tested?
  - suitability of digital buffers
