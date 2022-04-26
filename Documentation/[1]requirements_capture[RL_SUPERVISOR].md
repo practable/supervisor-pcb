@@ -407,16 +407,37 @@ ________________________________________________________________________________
 
 
 
+
 #TODO  15/04/2022 Talk to Tim To Resolve Questions
 
 1. Define relationship between servo and MCU control - how is that going to be tracked?
 - Position does not need to be tracked but DOES need to be limited
-- PWM from student to supervisor. analogRead and entroplate to safe servo positions
+- PWM from student to supervisor. analogRead and entroplate to safe servo positions     [x]
 
 
-2. Clock Speeds? 48MHz?
+2. Clock Speeds? 48MHz?                                     
 2a.	External Oscillator/ Internal Oscillator.
-- External Oscillator
+- External Oscillator     
+
+See: https://blog.thea.codes/understanding-the-sam-d21-clocks/
+
+See Page 1084: https://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_DataSheet_DS40001882F.pdf
+
+See Problems with implementing external oscillators: https://forum.arduino.cc/t/custom-samd-board-external-crystal-problem/659008
+
+"The datasheet for the SAMD21 Family states crystal load capacitance MAX for 32kHz oscillator is 12.5pF. So, you should try lower values." - Klaus_K Arduino Forums (2020)
+
+Specify  9pF - 12.5pF for oscillator capacitors [x]
+
+
+
+External oscillator requires 32.768 kHz Xtal     For running USB in host mode
+
+Xtal might not be 100% required for our use, so specify on board is best but workable if unpopulated.   
+Possible source? 
+https://www.digikey.co.uk/en/products/detail/suntsu-electronics,-inc./SXO32C3B161-32.768K/14616211
+[x]
+
 
 ### MCU Options
 1. Pick MCU
@@ -434,7 +455,7 @@ STEPPER MOTOR DRIVER
 https://protosupplies.com/product/drv8825-high-current-stepper-motor-driver/
 
 ~{SLP}    - Always Pull High no need for sleep mode  [x]
-~{EN}   	- open circuit is pulled HIGH to enable, pull LOW to DISABLE    -- Needs to be both MCU 
+~{EN}   	- open circuit is pulled HIGH to enable, pull LOW to DISABLE    -- Needs to be both MCU  [x]
 ~{RST} - for stepper board and needs to be able to be actuated  - Maybe just supervisor but would be good to have both  
 
 ~{FLT} FAULT - LOW WHEN FAULT DETECTED - good to have
@@ -501,7 +522,7 @@ More Questions to Ask
 
 
 4. Applying PWm to both pins and using INH pins does NOT seem to work Belive this is due to full H-Bridge topology - both sides must be active to pass current
- - Both INH inputs MUST be HIGH and PWM is applied to 1 of IN1 or IN2
+ - Both INH inputs MUST be HIGH and PWM is applied to 1 of IN1 or IN2  [x]
  
  BUT we can make it function like this using 2 AND gates. 
  
@@ -518,7 +539,7 @@ Logic to block simaltanious HIGH ? - This can be handled by supervisor.  [x] Imp
 7.  Shift Register: http://ediy.com.my/blog/item/114-using-hef4094-shift-registers-with-arduino 4094
 https://www.ti.com/lit/ds/symlink/cd74hc4094.pdf
 
-Example sketch written for shift registers, making them as easy to access as arduino digital pins. given descriptive names D14 - D22 [x] Done
+Example sketch written for shift registers, making them as easy to access as arduino digital pins. given descriptive names eg D14 - D22 [x] Done
 
 #TODO 25/04/2022
 
@@ -526,28 +547,57 @@ Example sketch written for shift registers, making them as easy to access as ard
 
 2. Test Optical Encoder. [x]  Done - working Index pin does not seem required but left wired incase future use
 
-3. Check logic gates usage - make sure packages assigned correctly
+3. Check logic gates usage - make sure packages assigned correctly [x] - also checked all ICs and multi package parts
 
-4 Xtal
+4 Xtal [x]
 
 3. Purpose of Line receiver - datasheet for some encoder devices specify this - hmm maybe still an issue, could use additional buffers - Moved to later todo
-6. Line driver for optical encoder.
+6. Line driver for optical encoder.   - Dont think is nessissary but Clarify [x]
 
 7. Got rid of Limit Switch 3 to give option to have all shiftregister pins go to IO pins instead [x]
 
 
-8. Hook Up final lines from student to logic map
+8. Hook Up final lines from student to logic map - Stepper reset? [x]
 
-9. Prog Header for Student - also look at USB natve
+9. Prog Header for Student - also look at USB natve - Done both [x]
 
-10 Student Xtals
+10 Student Xtals [x]
 
-11 Super Xtals
+11 Super Xtals [x]
 
-FINAL CHECKS:
+12 check thermo driver for specifications [x]
+
+13. Final decision on student servo PWM thhrough supervisor? [x]
+
+14. Check shift register outputs the same across both MCUs [x]
+
+
+15 V_USB Usage? - put it on a jumper [x]
+
+
+
+17. Test Points
+
+18. Check logic gate for IC's available [x]
+
+
+
+# FINAL CHECKS & Design Review
+
+1. Line driver for optical encoder.   - Dont think is nessissary but Clarify []
+
+16. suitability of dropping 12v down to 3v3 ? Not liking - moved to Raspberry pi 5v  - need to check current draw on MCU, quieccent current on ICs?  []
+
  - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
  - Suitability of analog buffers - can be tested?
  - suitability of digital buffers
+ 
+ 
+ 
+ # CHANGELOG 26/04/2022
+ 
+ 1. Moved 3v3 regulator from 12v bus to 5V RPI bus, to avoid the large V drop of 12 to 3v3 & save on a DC/DC Module - 3 felt excessive and RPI should be capable of also running microcontrollers and logic
+  - Note can this be estimated?
 
 
 ## Devolved Requirements
@@ -559,6 +609,8 @@ _Requirements that are established to meet higher level requirements_
 | DR.2.2| Supervisor MCU	| Encoder Calibration		| Enable supervisor MCU to actuate motor while calibration is undertaken  	|	 Both							|
 | DR.3.1| Supervisor MCU	| Tracking Encoder			| Duplcation of digital encoder signals to feed both MCU's					|  Hardware						|
 | R.3	| Supervisor MCU	| Encoder Calibration		| Hardwired logic to enable & disable control of motor. Buffers to duplicate digital signal from encoders|	Run calibration on startup or via remote API|
+
+
 
 ### Programming SAMD21
 
