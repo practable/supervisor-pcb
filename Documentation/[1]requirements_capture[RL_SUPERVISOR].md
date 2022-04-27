@@ -588,13 +588,64 @@ Example sketch written for shift registers, making them as easy to access as ard
 
 16. suitability of dropping 12v down to 3v3 ? Not liking - moved to Raspberry pi 5v  - need to check current draw on MCU, quieccent current on ICs?  []
 
-2. ERC fail - EP Pin Not Connected on ATSAMD21G []
+2. ERC fail - EP Pin Not Connected on ATSAMD21G [x] - exposed pin I.E heatsink pin? I have tied to GND for heatsinking purposes
 
-3. When ROUTING - Ensure that NET LABELS do not connect across sheets - care taken to ONLY connect through sheets using HIARARCHICAL PINS. - Replace all global labels with NET LABELS? 
+3. Resistor values for thermocouple - filter - Low Pass as we want the smoothed DC and get rid of the noise. I have assumed ~100Hz is a suitable cutoff, with 10k resistors corner frequency for the basic filter is ~159Hz,
+however this is an abritrary value I have picked. I dont have any experience with smoothing sensor readings using analog filters. The actual circuit given in the application notes is more complex than a basic RC Filter- and I do not
+know how to evaluate it more accuratly.
+
+4. When ROUTING - Ensure that NET LABELS do not connect across sheets - care taken to ONLY connect through sheets using HIARARCHICAL PINS. - Replace all global labels with NET LABELS? [x]
+
+5. Test Points? 
 
  - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
  - Suitability of analog buffers - can be tested?
  - suitability of digital buffers
+ 
+ 
+ # TIMS Notes
+ 
+ 1. add 1k resistors in series to digital buffers to limit current
+ 
+ 
+ Max frequency of OE
+ 
+ motor 4000 rpm
+  /60 = rpS
+  
+ *1000 transitions per revolution (500 pulses)
+ 
+ 33 kHz pulse train
+ 
+ 1/33k = period
+ 
+ period = 30uS  BUT needs to transitioon bothwasy there max = 15uS
+ 
+ / 4.6 (rise time to charge RC circuit)
+ 
+ 3uS max time constant 
+ 
+ 3uS = RC 
+ 
+ 20nS for 
+ 
+ 2. CLR between ANY student / supervisor I/O lines  limit current
+ 
+ 
+ 3. Analog buffers add CLR to student output to avoid them driving high into output of opamp buffer.
+ 
+ 
+ 4. DOUBLE CHECK USB POLARITY
+ 
+ 
+ 5. add addition power header
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
