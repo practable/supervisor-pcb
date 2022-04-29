@@ -40,6 +40,8 @@ Comms:
 
 Using Arduino Nano 33 IoT
 
+https://content.arduino.cc/assets/NANO33IoTV2.0_sch.pdf
+
 
 Existing Spinner PCB V1? or V0?
 https://github.com/practable/spinner-nidec/blob/main/hw/pcb/PCB_PIDController.png
@@ -584,28 +586,28 @@ Example sketch written for shift registers, making them as easy to access as ard
 
 # FINAL CHECKS & Design Review
 
-1. Line driver for optical encoder.   - Dont think is nessissary but Clarify []
+1. Line driver for optical encoder.   - Dont think is nessissary but Clarify [x]  - It essensially has a line driver through buffers
 
-16. suitability of dropping 12v down to 3v3 ? Not liking - moved to Raspberry pi 5v  - need to check current draw on MCU, quieccent current on ICs?  []
+16. suitability of dropping 12v down to 3v3 ? Not liking - moved to Raspberry pi 5v  - need to check current draw on MCU, quieccent current on ICs?  [x]  - Before microcontroller was powered from raspberry pi USB so should not be a problem
 
 2. ERC fail - EP Pin Not Connected on ATSAMD21G [x] - exposed pin I.E heatsink pin? I have tied to GND for heatsinking purposes
 
 3. Resistor values for thermocouple - filter - Low Pass as we want the smoothed DC and get rid of the noise. I have assumed ~100Hz is a suitable cutoff, with 10k resistors corner frequency for the basic filter is ~159Hz,
 however this is an abritrary value I have picked. I dont have any experience with smoothing sensor readings using analog filters. The actual circuit given in the application notes is more complex than a basic RC Filter- and I do not
-know how to evaluate it more accuratly.
+know how to evaluate it more accuratly. [x] - Worst come the worst we can change the value of these resistors
 
-4. When ROUTING - Ensure that NET LABELS do not connect across sheets - care taken to ONLY connect through sheets using HIARARCHICAL PINS. - Replace all global labels with NET LABELS? [x]
+4. When ROUTING - Ensure that NET LABELS do not connect across sheets - care taken to ONLY connect through sheets using HIARARCHICAL PINS. - Replace all global labels with NET LABELS? [x] - Still take care when routing to double check against schem
 
 5. Test Points? 
 
  - Liase with Tim to make sure pin defintions are suitable for tasks, no unforseen errors with pin assignments.
- - Suitability of analog buffers - can be tested?
- - suitability of digital buffers
+ - Suitability of analog buffers - can be tested? [x] Tims seal of approval
+ - suitability of digital buffers - [x] - See max signal speed considerations below.
  
  
  # TIMS Notes
  
- 1. add 1k resistors in series to digital buffers to limit current
+ 1. add 1k resistors in series to digital buffers to limit current  [x]
  
  
  Max frequency of OE
@@ -629,16 +631,16 @@ know how to evaluate it more accuratly.
  
  20nS for 
  
- 2. CLR between ANY student / supervisor I/O lines  limit current
+ 2. CLR between ANY student / supervisor I/O lines  limit current [x]
  
  
- 3. Analog buffers add CLR to student output to avoid them driving high into output of opamp buffer.
+ 3. Analog buffers add CLR to student output to avoid them driving high into output of opamp buffer. [x]
  
  
- 4. DOUBLE CHECK USB POLARITY
+ 4. DOUBLE CHECK USB POLARITY [x][x]
  
  
- 5. add addition power header
+ 5. add addition power header [x]
  
  
  
@@ -653,6 +655,18 @@ know how to evaluate it more accuratly.
  
  1. Moved 3v3 regulator from 12v bus to 5V RPI bus, to avoid the large V drop of 12 to 3v3 & save on a DC/DC Module - 3 felt excessive and RPI should be capable of also running microcontrollers and logic
   - Note can this be estimated?
+ 
+
+# CHANGELOG 28/04/2021 
+ 2. Added Reset Buttons
+ 3. Change 10mH inductor for ferrite bead specified for Arduino Nano IoT 33
+ 
+ 
+ Noticed TL074 Min voltage requirements are too high. Looking for more suitable op-amp with Vcc ~3V3 - Solved [x]
+ 
+ 
+ Look at oscillator - maybe MEMs over Xtal
+ 
 
 
 ## Devolved Requirements
