@@ -3252,6 +3252,12 @@
     (path "/586ec748-563a-478a-82db-706fb951336a/f3da5667-9f1b-4e40-b2eb-317429302661"
       (reference "D7") (unit 1) (value "3V3 Power") (footprint "")
     )
+    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/61deb07b-7611-41f2-916c-67a177b546c4"
+      (reference "D?") (unit 1) (value "Yellow") (footprint "")
+    )
+    (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/8a466427-c023-4e8f-838e-bab2063f2341"
+      (reference "D?") (unit 1) (value "Yellow") (footprint "")
+    )
     (path "/586ec748-563a-478a-82db-706fb951336a/7b56d902-fe20-4bc8-9b02-21b6ea4acbc9"
       (reference "F1") (unit 1) (value "20A") (footprint "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open")
     )
@@ -3491,6 +3497,12 @@
     )
     (path "/586ec748-563a-478a-82db-706fb951336a/cb84d3ef-794c-4b10-b2df-8ba3914a3c7a"
       (reference "R37") (unit 1) (value "330r") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/24e44319-9804-4478-81ef-a119463b8a1b"
+      (reference "R?") (unit 1) (value "330r") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/9fdc8848-47b8-4f5a-a420-f4c378d4d673"
+      (reference "R?") (unit 1) (value "330r") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/758cc32e-478c-4f82-bbbf-2e2e44bc0576"
       (reference "SW1") (unit 1) (value "Stepper_Mode") (footprint "Button_Switch_SMD:SW_DIP_SPSTx03_Slide_6.7x9.18mm_W6.73mm_P2.54mm_LowProfile_JPin")
