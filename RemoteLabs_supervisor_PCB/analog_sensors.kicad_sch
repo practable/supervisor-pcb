@@ -6,7 +6,7 @@
 
   (lib_symbols
     (symbol "000_Capacitor_Electrolytic_Immo:22u" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (id 0) (at 0.635 2.54 0)
+      (property "Reference" "EC" (id 0) (at 0.635 2.54 0)
         (effects (font (size 1.27 1.27)) (justify left))
       )
       (property "Value" "22u" (id 1) (at 0.635 -2.54 0)
@@ -839,7 +839,7 @@
   (symbol (lib_id "000_Capacitor_Electrolytic_Immo:22u") (at 133.985 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 48613c32-6da2-463b-915b-73c79e89f179)
-    (property "Reference" "C37" (id 0) (at 137.795 96.9009 0)
+    (property "Reference" "EC7" (id 0) (at 137.795 96.9009 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10u" (id 1) (at 137.795 99.4409 0)
@@ -951,7 +951,7 @@
   (symbol (lib_id "000_Capacitor_Electrolytic_Immo:22u") (at 135.89 63.5 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid cd92cd0c-d48a-4fa3-9a95-0536d9abd4ca)
-    (property "Reference" "C36" (id 0) (at 139.7 61.3409 0)
+    (property "Reference" "EC8" (id 0) (at 139.7 61.3409 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10u" (id 1) (at 139.7 63.8809 0)

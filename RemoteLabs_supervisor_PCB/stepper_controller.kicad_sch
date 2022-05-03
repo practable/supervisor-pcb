@@ -6,7 +6,7 @@
 
   (lib_symbols
     (symbol "000_Capacitor_Electrolytic_Immo:100u" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (id 0) (at 0.635 2.54 0)
+      (property "Reference" "EC" (id 0) (at 0.635 2.54 0)
         (effects (font (size 1.27 1.27)) (justify left))
       )
       (property "Value" "100u" (id 1) (at 0.635 -2.54 0)
@@ -532,7 +532,7 @@
   (symbol (lib_id "000_Capacitor_Electrolytic_Immo:100u") (at 162.56 88.9 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6714bb92-fc04-491f-b023-8ce933e5ff5a)
-    (property "Reference" "C23" (id 0) (at 166.37 86.7409 0)
+    (property "Reference" "EC11" (id 0) (at 166.37 86.7409 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100u" (id 1) (at 166.37 89.2809 0)
