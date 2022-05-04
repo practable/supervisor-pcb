@@ -3085,11 +3085,20 @@
     (path "/5841138f-45b5-44f1-8a37-3c7876e2034c/05ac3059-4340-4c8d-8f81-8f2ee58e3f4b"
       (reference "A4") (unit 1) (value "DRV8825 High Current Stepper Motor Driver Module") (footprint "Module:Arduino_UNO_R3")
     )
+    (path "/586ec748-563a-478a-82db-706fb951336a/6e4ec914-1d6f-4de0-92c2-01c17f1171f1"
+      (reference "A5") (unit 1) (value "LM2596S DC-DC Module") (footprint "Package_TO_SOT_SMD:TO-263-5_TabPin3")
+    )
+    (path "/586ec748-563a-478a-82db-706fb951336a/5e977a5e-6705-40d0-bba4-ee50f5690c6e"
+      (reference "C1") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+    )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/18728706-fe11-4492-80e9-6eb9f030261a"
       (reference "C1A1") (unit 1) (value "100p") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/a87dc776-f61e-469d-926e-5e407ef7b0a7"
       (reference "C1B1") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+    )
+    (path "/586ec748-563a-478a-82db-706fb951336a/c4a577aa-cfba-416b-97df-f04d0dc16af3"
+      (reference "C2") (unit 1) (value "22u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/df141af5-a5c3-4c31-a6e1-efc6e0bd6342"
       (reference "C2A1") (unit 1) (value "100p") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -3526,12 +3535,6 @@
     (path "/586ec748-563a-478a-82db-706fb951336a/a679dd55-d4a9-4c7a-962a-09f89d6d9c64"
       (reference "TP5") (unit 1) (value "3V3_MCU") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
-    (path "/586ec748-563a-478a-82db-706fb951336a/6e4ec914-1d6f-4de0-92c2-01c17f1171f1"
-      (reference "U1") (unit 1) (value "LM2596S DC-DC Module") (footprint "Package_TO_SOT_SMD:TO-263-5_TabPin3")
-    )
-    (path "/586ec748-563a-478a-82db-706fb951336a/ccea3c7c-53f1-4791-a752-2eb5d4e7f69a"
-      (reference "U2") (unit 1) (value "LM2596S DC-DC Module") (footprint "Package_TO_SOT_SMD:TO-263-5_TabPin3")
-    )
     (path "/586ec748-563a-478a-82db-706fb951336a/615d732b-9d57-4d76-b605-a1afbef21a73"
       (reference "U3") (unit 1) (value "AMS1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
     )
@@ -3702,6 +3705,9 @@
     )
     (path "/58677001-4fa9-4c82-8bf8-e3f98fe8c902/cc5cecc7-7657-4bc8-8814-3ca60708ff2e"
       (reference "U17") (unit 5) (value "NCS20074D") (footprint "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm")
+    )
+    (path "/586ec748-563a-478a-82db-706fb951336a/ac50a692-2d76-40e7-92f3-8e84c02b7199"
+      (reference "U18") (unit 1) (value "R-78C5.0-1.0") (footprint "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT")
     )
     (path "/283d3eb1-906d-460d-a87d-d328f41afedd/49f63b58-87a7-440e-93a6-3c5e058422de"
       (reference "U19") (unit 1) (value "AD8497") (footprint "Package_SO:MSOP-8_3x3mm_P0.65mm")
