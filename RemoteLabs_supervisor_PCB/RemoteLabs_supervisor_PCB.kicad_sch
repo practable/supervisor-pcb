@@ -70,14 +70,14 @@
         )
       )
     )
-    (symbol "000_Pin_Headers_Immo:Conn_01x05_Male" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (symbol "000_Pin_Headers_Immo:Molex_5pin_2.54mm_M" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 7.62 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "Conn_01x05_Male" (id 1) (at 0 -7.62 0)
+      (property "Value" "Molex_5pin_2.54mm_M" (id 1) (at 0 -7.62 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" (id 2) (at 0 0 0)
+      (property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical" (id 2) (at 1.905 -10.16 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "Datasheet" "~" (id 3) (at 0 0 0)
@@ -92,7 +92,7 @@
       (property "ki_fp_filters" "Connector*:*_1x??_*" (id 6) (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Conn_01x05_Male_1_1"
+      (symbol "Molex_5pin_2.54mm_M_1_1"
         (polyline
           (pts
             (xy 1.27 -5.08)
@@ -1812,12 +1812,12 @@
     (pin "1" (uuid a95729a5-dd96-4d56-b442-742154e67548))
   )
 
-  (symbol (lib_id "000_Pin_Headers_Immo:Conn_01x05_Male") (at 76.835 41.91 0) (unit 1)
+  (symbol (lib_id "000_Pin_Headers_Immo:Molex_5pin_2.54mm_M") (at 76.835 41.91 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 20bc3c73-e2bf-488f-a0c1-38700b58a060)
     (property "Reference" "J1" (id 0) (at 76.835 33.02 0))
     (property "Value" "Super_Prog_Header" (id 1) (at 74.295 39.37 90))
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" (id 2) (at 76.835 41.91 0)
+    (property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical" (id 2) (at 78.74 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 76.835 41.91 0)
@@ -2245,12 +2245,12 @@
     (pin "2" (uuid 59d1e03b-1497-4bec-9f1c-b0fbec9ebaab))
   )
 
-  (symbol (lib_id "000_Pin_Headers_Immo:Conn_01x05_Male") (at 73.025 182.245 0) (unit 1)
+  (symbol (lib_id "000_Pin_Headers_Immo:Molex_5pin_2.54mm_M") (at 73.025 182.245 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid e3a5c764-2bf9-4c0b-b94d-393b25109771)
     (property "Reference" "J26" (id 0) (at 73.025 173.355 0))
     (property "Value" "Student_Prog_Header" (id 1) (at 70.485 179.705 90))
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" (id 2) (at 73.025 182.245 0)
+    (property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical" (id 2) (at 74.93 192.405 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 73.025 182.245 0)
@@ -3264,7 +3264,7 @@
       (reference "C6") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/f51bc9d0-b778-4a7d-ab8d-5001d2ab64e6"
-      (reference "C7") (unit 1) (value "1u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C7") (unit 1) (value "1u") (footprint "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R_Pad1.30x1.05mm_HandSolder")
     )
     (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/0204e619-04da-4e69-aaad-63ec75faaa3d"
       (reference "C8") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -3294,7 +3294,7 @@
       (reference "C16") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/6870b48b-975a-4d6e-abfa-505a0108f8d3"
-      (reference "C17") (unit 1) (value "1u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C17") (unit 1) (value "1u") (footprint "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R_Pad1.30x1.05mm_HandSolder")
     )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/5aa831b5-f34c-4177-b0fc-50fc07865184"
       (reference "C18") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -3447,13 +3447,13 @@
       (reference "FB2") (unit 1) (value "BLM18PG471") (footprint "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder")
     )
     (path "/20bc3c73-e2bf-488f-a0c1-38700b58a060"
-      (reference "J1") (unit 1) (value "Super_Prog_Header") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+      (reference "J1") (unit 1) (value "Super_Prog_Header") (footprint "Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical")
     )
     (path "/9f02ea00-3ee8-4183-95b6-7d59f1944b3b"
       (reference "J2") (unit 1) (value "WS2821B Header") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
     )
     (path "/586ec748-563a-478a-82db-706fb951336a/3d412b69-c529-4e16-8a2a-e7a8b0ecba07"
-      (reference "J3") (unit 1) (value "XT60_connector_DC_45A_male") (footprint "Connector_AMASS:AMASS_XT60PW-M")
+      (reference "J3") (unit 1) (value "XT60_60A_male") (footprint "Connector_AMASS:AMASS_XT60PW-M")
     )
     (path "/586ec748-563a-478a-82db-706fb951336a/7e87b1c4-c7af-4837-a2de-ad1fe5674fd5"
       (reference "J4") (unit 1) (value "Strip Lighting") (footprint "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical")
@@ -3522,7 +3522,7 @@
       (reference "J25") (unit 1) (value "Optical Encoder") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
     )
     (path "/e3a5c764-2bf9-4c0b-b94d-393b25109771"
-      (reference "J26") (unit 1) (value "Student_Prog_Header") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+      (reference "J26") (unit 1) (value "Student_Prog_Header") (footprint "Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical")
     )
     (path "/14c3136c-ef8c-4e68-91a4-4c8b13db2bc5"
       (reference "J27") (unit 1) (value "Analog Buffer") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
@@ -3566,20 +3566,17 @@
     (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/5f6dca9f-981a-4233-9841-931e0614bcc8"
       (reference "JP4") (unit 1) (value "Xtal/IC") (footprint "000_Connectors_Immo:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
     )
-    (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/d492626d-bd18-4011-91d9-0b9d2c4eb55f"
-      (reference "JP5") (unit 1) (value "Xtal/IC") (footprint "000_Connectors_Immo:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
-    )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/d9ede1d9-98fb-4bf6-9188-b8434de8eed0"
       (reference "JP6") (unit 1) (value "Xtal/IC") (footprint "000_Connectors_Immo:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
     )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/cd130f32-210c-4d4b-b3b4-3efa8fcf73f9"
       (reference "JP7") (unit 1) (value "Xtal/IC") (footprint "000_Connectors_Immo:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
     )
-    (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/1afbb630-15d4-42df-9faa-8ce8c1fd627a"
-      (reference "JP8") (unit 1) (value "Xtal/IC") (footprint "000_Connectors_Immo:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
-    )
     (path "/0d587a0a-c67c-4fed-9eec-791a57f2bb2e/26e9e77b-c4f0-439a-94a1-c5ad551b03df"
       (reference "JP9") (unit 1) (value "Reset Jumper") (footprint "000_Connectors_Immo:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
+    )
+    (path "/ef79b516-f387-4bff-98aa-61eff96e72d2/27c64e6c-34e2-4309-a9fd-258ec95a64a3"
+      (reference "JP10") (unit 1) (value "Reset Jumper") (footprint "000_Connectors_Immo:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
     )
     (path "/5e0c70ac-7a7e-4605-86e1-28eee540aa4a"
       (reference "NT1") (unit 1) (value "NetTie") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
@@ -3727,9 +3724,6 @@
     )
     (path "/1fcb30e3-51c0-4114-9903-50e7d65dc82a"
       (reference "TP1") (unit 1) (value "GND") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
-    )
-    (path "/586ec748-563a-478a-82db-706fb951336a/95346655-713c-47f9-86ef-c2883667dda4"
-      (reference "TP4") (unit 1) (value "5V_SERVO") (footprint "TestPoint:TestPoint_Pad_D1.5mm")
     )
     (path "/586ec748-563a-478a-82db-706fb951336a/c60d923a-3025-4983-8cf5-e15e10785356"
       (reference "U1") (unit 1) (value "R-78C5.0-1.0") (footprint "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT")
