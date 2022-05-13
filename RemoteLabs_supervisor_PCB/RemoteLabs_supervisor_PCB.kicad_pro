@@ -390,7 +390,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 54, 91)",
-        "track_width": 8.4,
+        "track_width": 3.0,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -410,7 +410,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(130, 167, 57)",
-        "track_width": 0.25,
+        "track_width": 0.3,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -430,7 +430,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 180, 36)",
-        "track_width": 0.25,
+        "track_width": 0.4,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -472,7 +472,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(172, 163, 22)",
-        "track_width": 0.25,
+        "track_width": 0.4,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -633,10 +633,6 @@
           "MODE_0",
           "MODE_1",
           "MODE_2",
-          "Net-(A4-Pad11)",
-          "Net-(A4-Pad12)",
-          "Net-(A4-Pad13)",
-          "Net-(A4-Pad14)",
           "Net-(C11-Pad2)",
           "Net-(C13-Pad1)",
           "Net-(C17-Pad1)",
@@ -670,7 +666,6 @@
           "Net-(J8-Pad5)",
           "Net-(J8-Pad6)",
           "Net-(J8-Pad7)",
-          "Net-(JP3-Pad2)",
           "Net-(R26-Pad2)",
           "Net-(R27-Pad2)",
           "Net-(R28-Pad2)",
@@ -816,9 +811,32 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(155, 24, 24)",
-        "track_width": 8.4,
+        "track_width": 4.0,
         "via_diameter": 0.8,
         "via_drill": 0.4,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "STEP_OP",
+        "nets": [
+          "Net-(A4-Pad11)",
+          "Net-(A4-Pad12)",
+          "Net-(A4-Pad13)",
+          "Net-(A4-Pad14)"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 76, 248)",
+        "track_width": 0.5,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
         "wire_width": 6.0
       }
     ],
