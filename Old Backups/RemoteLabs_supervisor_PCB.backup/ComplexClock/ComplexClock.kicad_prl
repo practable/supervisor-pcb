@@ -62,11 +62,11 @@
       35,
       36
     ],
-    "visible_layers": "7ffffff_80000007",
+    "visible_layers": "fffffff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "RemoteLabs_supervisor_PCB.kicad_prl",
+    "filename": "ComplexClock.kicad_prl",
     "version": 3
   },
   "project": {
