@@ -1,4 +1,123 @@
-19818367073585712
+19845475581883676
+000_Connectors_Immo
+SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm
+SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, open
+solder jumper open
+0
+2
+2
+000_Connectors_Immo
+SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels
+SMD Solder 3-pad Jumper, 1x1.5mm rounded Pads, 0.3mm gap, pads 1-2 bridged with 1 copper strip, labeled with numbers
+net tie solder jumper bridged
+0
+3
+3
+000_Graphics_Immo
+UoE_logo
+
+
+0
+0
+0
+000_Graphics_Immo
+UoE_logo5x5
+
+
+0
+0
+0
+000_Graphics_Immo
+UoE_logo10x10
+
+
+0
+0
+0
+000_Graphics_Immo
+UoE_logo25x25
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_inverted50x50
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_symbol_7x6
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_symbol_10x10
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_symbol_20x20
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_symbol_50x50
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_text_10x4
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_text_20x8
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_text_30x11
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_text_30x11_SM
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_text_50x20
+
+
+0
+0
+0
+000_Graphics_Immo
+practactable.io_text_80x30
+
+
+0
+0
+0
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -6392,6 +6511,20 @@ XT60 female vertical
 2
 Connector_AMASS
 AMASS_XT60-M_1x02_P7.20mm_Vertical
+AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf
+XT60 female vertical
+0
+2
+2
+Connector_AMASS
+AMASS_XT60PW-M
+
+
+0
+4
+4
+Connector_AMASS
+AMASS_XT60PW-M_1x02_P7.20mm_PCB
 AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf
 XT60 female vertical
 0
@@ -55531,6 +55664,13 @@ solder jumper open
 2
 2
 Jumper
+SolderJumper-2_P1.3mm_Open_Pad_1.0x1.5mm Immo
+SMD Solder Jumper, 1x1.5mm, rounded Pads, 0.3mm gap, open
+solder jumper open
+0
+2
+2
+Jumper
 SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm
 SMD Solder Jumper, 1x1.5mm, rounded Pads, 0.3mm gap, open
 solder jumper open
@@ -55642,6 +55782,13 @@ solder jumper open
 0
 5
 3
+Jumper
+SolderJumpermodded1.0x1.5mm
+SMD Solder Jumper, 1x1.5mm, rounded Pads, 0.3mm gap, open
+solder jumper open
+0
+2
+2
 LED_SMD
 LED-APA102-2020
 http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf
@@ -56868,6 +57015,34 @@ carambola2 8devices
 104
 52
 Module
+DRV8825 Stepper Motor Module
+DRV8825 Stepper Motor Driver Module
+DRV8825 Stepper Motor Driver Module Step Drive
+0
+16
+16
+Module
+Infineon Motor Sheild
+Arduino UNO R3, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+Arduino UNO R3
+0
+37
+37
+Module
+Infineon Motor Sheild hiddenPins
+Infineon Full Bridge Motor Driver Shield
+Infineon Full Bridge Motor Driver Shield DC Motor
+0
+37
+37
+Module
+LM2596S DC-DC Module
+TO-263 / D2PAK / DDPAK SMD package, http://www.infineon.com/cms/en/product/packages/PG-TO263/PG-TO263-5-1/
+D2PAK DDPAK TO-263 D2PAK-5 TO-263-5 SOT-426
+0
+4
+4
+Module
 Maple_Mini
 Maple Mini, http://docs.leaflabs.com/static.leaflabs.com/pub/leaflabs/maple-docs/0.0.12/hardware/maple-mini.html
 Maple Mini
@@ -56955,6 +57130,13 @@ MountingEquipment
 DINRailAdapter_3xM3_PhoenixContact_1201578
 https://www.phoenixcontact.com/online/portal/us?uri=pxc-oc-itemdetail:pid=1201578&library=usen&tab=1
 DIN rail adapter universal three M3 clearance holes
+0
+0
+0
+MountingHole
+ISOpower_4xmounting_M3
+Mounting Hole 3.2mm, no annular, M3
+mounting hole 3.2mm no annular m3
 0
 0
 0
@@ -59269,6 +59451,13 @@ net tie
 2
 2
 NetTie
+NetTie-2_SMD_Pad0.5mm_B
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
+0
+2
+2
+NetTie
 NetTie-2_SMD_Pad2.0mm
 Net tie, 2 pin, 2.0mm square SMD pads
 net tie
@@ -59345,6 +59534,27 @@ net tie
 0
 4
 4
+NetTie
+NetTie-8-15A_1oz_2oz
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
+0
+2
+2
+NetTie
+NetTie-8-15A_1oz_2oz_chamf
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
+0
+2
+2
+NetTie
+NetTie-8-15A_1oz_2oz_long
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
+0
+2
+2
 OptoDevice
 ADNS-9800
 Laser Gaming Sensor ADNS-9800
@@ -59464,13 +59674,6 @@ Hamamatsu SiPM
 0
 2
 2
-OptoDevice
-Kingbright_KPS-3227
-3.2mmx2.7mm, light sensor, https://www.kingbright.com/attachments/file/psearch/000/00/00/KPS-3227SP1C(Ver.16).pdf
-KPS-3227 Ambient Light Photo Sensor
-0
-4
-4
 OptoDevice
 Kingbright_KPS-5130
 http://www.kingbright.com/attachments/file/psearch/000/00/00/KPS-5130PD7C(Ver.14).pdf
