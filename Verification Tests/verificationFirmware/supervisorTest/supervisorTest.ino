@@ -64,8 +64,10 @@ void setup() {
   stepperReset(false);
   stepperPulse(false, 500);
   // Still Need Fault Detection
+  stepperFaultDetect();
 
   // Servo Motor Control
+  
 
   // Limit Switches
 
@@ -73,6 +75,8 @@ void setup() {
 
   
 }
+
+
 
 
 

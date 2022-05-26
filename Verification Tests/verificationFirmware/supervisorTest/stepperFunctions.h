@@ -52,7 +52,14 @@ void stepperPulse(bool runMotor = false, uint32_t pulseDelay_mS = 500) {
 }
 
 
-
+void stepperFaultDetect(){
+  stepperFault = digitalRead(STEPP_FAULT);
+  if (stepperFault){
+    Serial.println("Stepper Fault Detected");
+  } else {
+    Serial.println("Stepper Operation Nominal");
+  }
+}
 
 
 #endif
