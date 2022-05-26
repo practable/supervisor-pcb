@@ -18,7 +18,6 @@ student_pinMap.h
 which will list all IO pins referencing their arduino pin numbers with the PCB pin name. 
 
 
-
 An additional
 
 shiftRegister_pinMap.h
@@ -96,4 +95,15 @@ _Test that do not require MCUs to test function_
 
 
 ## Test Firmware Details
+
+
+supervisorTest.ino
+
+studentTest.ino
+
+Each program contains all the functions to cross test all hardware, a config file can be generated for each test which will set each function for that test.
+
+
+
+
 

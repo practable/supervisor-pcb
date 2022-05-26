@@ -5,6 +5,19 @@
     Imogen Heard
     5.05.2022
 
+  Shiftregister pin defintions are tied to bitmasks that can be applied to the shiftregister output
+
+
+  #define Q0 0b00000001
+  #define Q1 0b00000010
+  #define Q2 0b00000100
+  #define Q3 0b00001000
+  #define Q4 0b00010000
+  #define Q5 0b00100000
+  #define Q6 0b01000000
+  #define Q7 0b10000000
+
+
 
 */
 
@@ -21,7 +34,10 @@
 #endif
 
 
-#include "shiftRegister_pinMap.h"
+
+
+
+
 
 class shiftRegister
 {
@@ -32,9 +48,11 @@ class shiftRegister
 
     // Methods
 
-    void begin(uint16_t baudrate = 115200);                                               // Begin function sets up output pins
+    void begin(uint32_t baudrate = 115200);                                               // Begin function sets up output pins
 
     void allWrite(unsigned char pinNumber, bool state);                                   // aims to tie shiftWrite and digitalWrite together such that any pinnumber can be passed to set the correct output. Making operation seamless between shift register pins and arduino
+
+    void allOff();
 
     void shiftWrite(unsigned char bitmask, bool state);                                   // Mirrors function of digitalWrite for shiftRegister channels
 
@@ -47,9 +65,28 @@ class shiftRegister
     // overwrite all shift register outputs
     void overwriteOutput(unsigned char bite);
 
+
+    void overwriteState(unsigned char bite);                                              // Another function here to overwrite shiftstate? Does the same operation as overwriteOutput but also updates shiftState
+
     void printState();                                                                    // Prints the current state of the output bits
 
+    void testShiftReg();                                                                  // Sequentually lights up shiftReg outputs for testing
+
+
+
+#define Q0 0b00000001
+#define Q1 0b00000010
+#define Q2 0b00000100
+#define Q3 0b00001000
+#define Q4 0b00010000
+#define Q5 0b00100000
+#define Q6 0b01000000
+#define Q7 0b10000000
+
+    unsigned char shiftPinArray[8] {Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7};                      // Useful for accessing shift register pins in an array
+
   private:
+
 
     unsigned char setBits(unsigned char currentData, unsigned char bitmask);              // Sets 1 bits in bitmask
 
@@ -64,7 +101,8 @@ class shiftRegister
     char latchPin = 8;
 
 
-    unsigned char shiftState = B00000000;   // Global Variable to hold the state of the shiftRegister
+    unsigned char shiftState = 0b00000000;   // Global Variable to hold the state of the shiftRegister
+
 
 };
 

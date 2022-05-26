@@ -55,6 +55,11 @@
 
 // Shift Register Pins [Output Only] (needs shiftRegister.h to validate)
 
+/*
+   shiftRegister pins are defined using Q0 - Q7 notation. This avoids pin definition conflicts with arduino pins, regardless of the platform used.
+*/
+
+
 #define DC_MOTOR_EN          Q0
 #define STUDENT_M_EN         Q1
 #define STUDENT_STEP_EN      Q2

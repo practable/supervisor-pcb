@@ -23,8 +23,10 @@ shiftRegister::shiftRegister(char pico_pin, char sck_pin, char latch_pin):
 }
 
 
-void shiftRegister::begin(uint16_t baudrate) {
+void shiftRegister::begin(uint32_t baudrate) {
   Serial.begin(baudrate);
+  // while ( !Serial ) delay(10);   // Might be required for Nano IoT 33
+  delay(2000);
   pinMode(dataPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(latchPin, OUTPUT);
@@ -34,15 +36,20 @@ void shiftRegister::begin(uint16_t baudrate) {
 // Aims to mirror the function of digitalWrite but for shift register channels
 void shiftRegister::shiftWrite(unsigned char bitmask, bool state) {
   if (state) {
-    shiftState = setBits(shiftState, bitmask);
+    shiftState = shiftRegister::setBits(shiftState, bitmask);
   } else {
-    bitmask = flipAllBits(bitmask);
-    shiftState = clearBits(shiftState, bitmask);
+    bitmask = shiftRegister::flipAllBits(bitmask);
+    shiftState = shiftRegister::clearBits(shiftState, bitmask);
   }
-  overwriteOutput(shiftState);
+  shiftRegister::overwriteOutput(shiftState);
 }
 
 
+// Another function here to overwrite shiftstate? Does the same operation as overwriteOutput but also updates shiftState
+void shiftRegister::overwriteState(unsigned char bite) {
+  shiftState = bite;
+  shiftRegister::overwriteOutput(shiftState);
+}
 
 
 // Function outputs the exact byte passed to shift register, regardless of previous data
@@ -51,11 +58,16 @@ void shiftRegister::shiftWrite(unsigned char bitmask, bool state) {
 // overwrite all shift register outputs
 void shiftRegister::overwriteOutput(unsigned char bite) {
   digitalWrite(latchPin, HIGH);
+  delay(100);
   shiftOut(dataPin, clockPin, MSBFIRST, bite);
+  delay(100);
   digitalWrite(latchPin, LOW);
 }
 
-#define LARGEST_PINNUMBER D30
+
+
+
+#define LARGEST_PINNUMBER 30
 
 // aims to tie shiftWrite and digitalWrite together such that any pinnumber can be passed to set the correct output.
 // Making operation seamless between shift register pins and arduino
@@ -67,6 +79,12 @@ void shiftRegister::allWrite(unsigned char pinNumber, bool state) {
   } else {
     digitalWrite(pinNumber, state);
   }
+}
+
+
+void shiftRegister::allOff() {
+  shiftState = 0b00000000;
+  shiftRegister::overwriteOutput(shiftState);
 }
 
 
@@ -96,7 +114,7 @@ unsigned char shiftRegister::flipBits(unsigned char currentData, unsigned char b
 
 // Flips all the bits in a byte - very useful for generating bitmasks for mirroring digtalWrite function for shift register
 unsigned char shiftRegister::flipAllBits(unsigned char bits) {
-  bits = flipBits(bits, B11111111);
+  bits = flipBits(bits, 0b11111111);
   return bits;
 }
 
@@ -115,4 +133,21 @@ void shiftRegister::printByte(unsigned char bite) {
 
 void shiftRegister::printState() {
   shiftRegister::printByte(shiftState);
+}
+
+
+// Runs through sequentially turning pins high then low to test all outputs
+void shiftRegister::testShiftReg() {
+  for (int i = 0; i < 8; i++) {
+    shiftRegister::shiftWrite(shiftPinArray[i], HIGH);
+    shiftRegister::printState();
+    delay(200);
+  }
+  delay(1000);
+  for (int i = 0; i < 8; i++) {
+    shiftRegister::shiftWrite(shiftPinArray[i], LOW);
+    shiftRegister::printState();
+    delay(200);
+  }
+  delay(2000);
 }
