@@ -9,13 +9,15 @@
  *  #define DC_MOTOR_DIR2       7
  *  
  *  Enable
- *  #define DC_MOTOR_EN          Q0
+ *  #define DC_MOTOR_EN         Q0
  *  
  *  Sense Pins
  *  #define DC_MOTOR_IS2        A6
  *  #define DC_MOTOR_IS1        A7
  *  
- *  
+ *  Student to Supervisor Pins    // 
+ *  #define STDNT_DC_M_DIR_2    14
+ *  #define STDNT_DC_M_DIR_1    15
  * 
  */
 

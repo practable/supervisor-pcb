@@ -26,9 +26,9 @@
 #ifndef shiftFunctions_h
 #define shiftFunctions_h
 
+#include "shiftRegister.h"        // shiftRegister Library 
 
-
-
+shiftRegister shiftReg(MOSI, SCK, LATCH);  // Shift Register object
 
 
 
