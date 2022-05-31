@@ -44,14 +44,14 @@ void setup() {
   shiftReg.begin();   // Begin opens serial comms and sets shiftReg data pins to output
   shiftReg.allOff();  // Turn off all the shiftReg pins
   shiftReg.printState();   // Prints the current state of the shiftregister to serial monitor for debugging
-  delay(1000);
+//  delay(1000);
 
 
   // The first way to use this API is to write functions for a specific device or channel we wish to enable or disable
   studentMotorEN(false);
   studentStepperEN(false);
   studentPixelEN(false);
-  delay(3000);
+//  delay(3000);
 
   // The other way which might be more useful in testing is to just pass the output we want to overwriteState.
   // This will make setting up tests much easyer, as we can just specify the bitmask to pass to this function to set up the test correctly
@@ -93,7 +93,7 @@ void setup() {
 
   // WS2821b Pixel LED Control
   pixelBegin();
-  pixelChangePalette(hotpink_blue);
+ // pixelChangePalette(hotpink_blue);
 
 
 }
@@ -112,5 +112,5 @@ void loop() {
   servoTest(false);                    // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
 
   // Pixel Loop Test
-  pixelLoop();
+  pixelLoop(true);
 }
