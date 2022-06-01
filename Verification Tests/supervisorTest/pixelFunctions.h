@@ -128,9 +128,9 @@ void FillLEDsFromPaletteColors( uint8_t colorIndex) {
     colorIndex += hue_steps;
   }
   if (PRINT_INDEX) {
-    //    Serial.print("Colour Index: [");
-    //   Serial.print(colorIndex);
-    //   Serial.println("]");
+    Serial.print("Colour Index: [");
+    Serial.print(colorIndex);
+    Serial.println("]");
   }
 }
 

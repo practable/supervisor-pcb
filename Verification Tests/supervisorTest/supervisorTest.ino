@@ -16,11 +16,11 @@
 
 #include "ledFunctions.h"          // Built in LED Flash
 
-//#include "shiftRegister.h"        // shiftRegister Library - Inside shiftFunctions now
-
 #include "shiftFunctions.h"       // Shiftregister functions (defined outside the library and specific to this project)
 
 #include "dcMotorFunctions.h"     // DC Motor Functions
+
+#include "encoderFunctions.h"     // Optical Encoder functions
 
 #include "stepperFunctions.h"     // Stepper Motor Functions
 
