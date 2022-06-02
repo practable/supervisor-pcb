@@ -18,11 +18,7 @@ student_pinMap.h
 which will list all IO pins referencing their arduino pin numbers with the PCB pin name. 
 
 
-An additional
 
-shiftRegister_pinMap.h
-
-will be provided to declare the Shift Register Pins saved as bitmasks to Q0-7 or by giving them new pin numbers following on from the arduino digital pins available. 
 
 
 
@@ -30,12 +26,15 @@ will be provided to declare the Shift Register Pins saved as bitmasks to Q0-7 or
 
 ### Sensor Inputs
 
+[x] if included in program
+
 - Optical Encoder															 	[x]
 - Limit Switches (1 )															[x]
 - Thermocouple [Unavailable due to component supply]							[ ]
-- Motor Driver Current 1														[ ]
-- Motor Driver Current 2														[ ]
-- Stepper Motor Fault Detect													[ ]
+- Motor Driver Current 1														[X]
+- Motor Driver Current 2														[X]
+- Stepper Motor Fault Detect													[X]
+- Student to Supervisor Servo Detection											[x]
 
 
 _All sensor inputs are mirrored over each MCU, therefore the same software written to test the data aquisition can be programmed into both MCUs and measurements compared._

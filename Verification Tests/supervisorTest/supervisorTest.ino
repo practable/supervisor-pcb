@@ -80,6 +80,9 @@
 
 void setup() {
 
+  Serial.begin(115200);
+  while ( !Serial ) delay(10);   // Might be required for Nano IoT 33
+
   // LED BUILTIN
   ledBegin();
   flashBuiltIn(200, 10);

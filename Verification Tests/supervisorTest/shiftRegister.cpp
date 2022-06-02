@@ -26,7 +26,7 @@ shiftRegister::shiftRegister(char pico_pin, char sck_pin, char latch_pin):
 
 
 void shiftRegister::begin(uint32_t baudrate) {
-  Serial.begin(baudrate);
+ // Serial.begin(baudrate);
   // while ( !Serial ) delay(10);   // Might be required for Nano IoT 33
   delay(2000);
   pinMode(dataPin, OUTPUT);
