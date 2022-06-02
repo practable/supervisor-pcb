@@ -70,7 +70,8 @@ void opticalEncoder::encoderDirection() {
     } else {
       rotaryCount--;
     }
-  //  fired = false;   // MOVED TO ITS OWN METHOD. IF THIS CAUSES PROBLEMS PUT BACK HERE
+    fired = false;   // Moved back here and different flag used to trigger maths functions
+    encoderUpdated = true;
   }
   if (rotaryCount > prevCount) {          //
     clockwiseRotation = true;                      //
@@ -89,30 +90,31 @@ void opticalEncoder::encoderDirection() {
 // Function to return the current position of the encoder in degrees from center position (1000)  (-180 to +180)deg
 
 // 180/500 = 0.36 so each pulse is 0.36deg apart - makes sense 360/1000ppt should have seen that coming
-
-int32_t opticalEncoder::calcHeading(int16_t encoderPos) {
-  heading_milliDeg = (encoderPos - ppr) * milliDegPerPulse;
+void opticalEncoder::calcHeading() {
+  heading_milliDeg = (rotaryCount - ppr) * milliDegPerPulse;
   // Serial.println(heading_deg);
   // floatToChar(heading_deg);    // THis returns a global variaable for now for ease No longer a float so not needed here
-  return heading_milliDeg;
+  //  return heading_milliDeg;
 }
 
 
 
 
 void opticalEncoder::plotHeader() {
-  Serial.println("Ticks, Heading");
+  Serial.println("Ticks, Heading, rpm");
 }
 
 
 
 void opticalEncoder::plotEncoder() {
-  float heading_deg = float((calcHeading(rotaryCount)) / 1000.0);
-  Serial.println(heading_deg);
-  floatToChar (heading_deg);                                                // Returns headingString as global variable 
-  char buffer[64];
-  sprintf(buffer, "%u, %s, %i ", rotaryCount, headingString, rpm);    // Needs %u for UNSIGNED
-  Serial.println(buffer);
+  if (encoderUpdated) {
+    float heading_deg = float(heading_milliDeg / 1000.0);
+    // Serial.println(heading_deg);
+    floatToChar (heading_deg);                                                // Returns headingString as global variable
+    char buffer[64];
+    sprintf(buffer, "%u, %s, %i ", rotaryCount, headingString, rpm);    // Needs %u for UNSIGNED
+    Serial.println(buffer);
+  }
 }
 
 
@@ -126,7 +128,7 @@ void opticalEncoder::floatToChar (float finput) {
   float tmpFrac = tmpVal - tmpInt1;  // Get the fraction
   int tmpInt2 = trunc(tmpFrac * 1000);   // Turn into an integer
 
-  tmpInt2 = (tmpInt2 < 0) ? tmpInt2 * -1 : tmpInt2;
+  tmpInt2 = (tmpInt2 < 0) ? tmpInt2 * -1 : tmpInt2;                                     //temp = if (t < 0) {t*-1} else { t}
   // Then print as parts using sprintf - Note 0 padding for fractional bit
   //  sprintf(headingString, "%s%d.%04d", tmpSign, tmpInt1, tmpInt2);
   sprintf(headingString, "%d.%04d", tmpInt1, tmpInt2);
@@ -135,7 +137,7 @@ void opticalEncoder::floatToChar (float finput) {
 
 
 
-void opticalEncoder::testPlot(int A, int B, int C) {
+void opticalEncoder::testPlot(int16_t A, int16_t B, int16_t C) {
   char buffer[64];
   sprintf(buffer, "%i, %i, %i ", A, B, C);
   Serial.println(buffer);
@@ -151,32 +153,37 @@ void opticalEncoder::testInputs() {
   //testPlot(pinAstate, 0, 0);
 }
 
-  pinMode(indexPin, INPUT);
-  pinMode(pinA, INPUT);
-  pinMode(pinB, INPUT);
 
-void opticalEncoder::calcRPM(){
- if (fired){                                                     // uses fired bool which is reset in encodeDirection function, so this must go before that one // actually order is all messes up, might work something different
- int32_t period =  sampleMicros - lastSampleMicros;
- int32_t travel = heading_milliDeg - last_heading_milliDeg;
-lastSampleMicros = sampleMicros;
-last_heading_milliDeg = heading_milliDeg;
+void opticalEncoder::calcRPM() {
+  int32_t travel;
+  int32_t period;
+
+  if (encoderUpdated) {                                                    // uses fired bool which is reset in encodeDirection function, so this must go before that one // actually order is all messes up, might work something different
+    period =  sampleMicros - lastSampleMicros;
+    travel = heading_milliDeg - last_heading_milliDeg;
+    lastSampleMicros = sampleMicros;
+    last_heading_milliDeg = heading_milliDeg;
   }
   // Got the data we need, now we just need maths
 
-  int32_t full_revolution = 360000/travel;    // number of times this time period is needed to complete full revolution
+  int32_t noPeriods = 360000 / travel;  // number of times this time period is needed to complete full revolution
 
-  int32_t timeForFullRevolution = period*full_revolution;  // Say this is = to 0.5 seconds for 1 revolution = 2rps, if = 2 seconds for 1r = 0.5rps
-  float rps = 1/timeForFullRevolution; // revolutions per second
+  int32_t timeForFullRevolution = period * noPeriods; // Say this is = to 0.5 seconds for 1 revolution = 2rps, if = 2 seconds for 1r = 0.5rps
+  float rps = 1 / timeForFullRevolution; // revolutions per second
 
-  rpm = rps*60;
-
-  Serial.println(rpm);
+  rpm = rps * 60;
+  //  Serial.println(rpm);
 }
 
-void opticalEncoder::resetFired(){
-  fired = false;  
+
+
+
+void opticalEncoder::resetFlag() {
+  encoderUpdated = false;
 }
+
+
+
 
 void opticalEncoder::ISR () {
   if (digitalRead (pinA)) {                 // if change is detected on interrupt pin

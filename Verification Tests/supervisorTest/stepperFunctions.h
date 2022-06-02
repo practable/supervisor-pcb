@@ -31,6 +31,7 @@ bool stepPulseState;
 
 void stepperBegin() {
   pinMode(STEPP_STEP, OUTPUT);
+  pinMode(STEPP_FLT, INPUT);
 }
 
 void stepperEnable(bool enable) {
@@ -63,7 +64,7 @@ void stepperPulse(bool runMotor = false, uint32_t pulseDelay_mS = 500) {   // Tr
 
 
 
-void stepperFaultDetect() {
+void stepperFaultDetect(bool active) {
   bool stepperFault = digitalRead(STEPP_FLT);
   if (stepperFault) {
     Serial.println("Stepper Fault Detected");

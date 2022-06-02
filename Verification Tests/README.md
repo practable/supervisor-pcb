@@ -30,11 +30,12 @@ will be provided to declare the Shift Register Pins saved as bitmasks to Q0-7 or
 
 ### Sensor Inputs
 
-- Optical Encoder
-- Limit Switches (1 & 2)
-- Thermocouple [Unavailable due to component supply]
-- Motor Driver Current 1
-- Motor Driver Current 2
+- Optical Encoder															 	[x]
+- Limit Switches (1 )															[x]
+- Thermocouple [Unavailable due to component supply]							[ ]
+- Motor Driver Current 1														[ ]
+- Motor Driver Current 2														[ ]
+- Stepper Motor Fault Detect													[ ]
 
 
 _All sensor inputs are mirrored over each MCU, therefore the same software written to test the data aquisition can be programmed into both MCUs and measurements compared._
@@ -56,28 +57,29 @@ _Note: To fully test the actuator outputs, supervisor MCU must enable outputs fo
 
 #### Supervisor
 
-- LED_BUILTIN  (Pin D13 - SCK)
-- DC Motor
-- Stepper Motor
-- Servo Motor
-- WS2812B LEDs
+- LED_BUILTIN  (Pin D13 - SCK) 													[x]
+- DC Motor																		[x]	
+- Stepper Motor																	[x]														
+- Servo Motor																	[x]
+- WS2812B LEDs																	[x]
 
 
 #### Student
 
-- LED_BUILTIN   (Pin D13 - SCK)
-- DC Motor
-- Stepper Motor
-- Servo Motor - Via analogRead on supervisor (Translate to output for test?)
-- WS2812B LEDs
+- LED_BUILTIN   (Pin D13 - SCK)                                                    [x]
+- DC Motor																			[]
+- Stepper Motor																		[]
+- Servo Motor - Via analogRead on supervisor (Translate to output for test?)		[]
+- WS2812B LEDs																		[]
 
 #### Supervisor Output Control
 _Test each enable pin seperatly to confirm control by student is blocked_
 
-- Student DC Motor Enable
-- Student Stepper Motor Enable
-- Student Servo Enable
-- Student Pixel Enable
+- Student DC Motor Enable														[x]
+- Student Stepper Motor Enable													[x]
+- Student Pixel Enable															[x]
+
+- Student to Supervisor Servo 1													[]
 
 
 

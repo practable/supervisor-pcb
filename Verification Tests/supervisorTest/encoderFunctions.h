@@ -55,6 +55,12 @@ opticalEncoder OE(INDEX_PIN, PIN_A, PIN_B);
 
 
 
+// isr just calls the isr from inside the library
+void isr() {
+  OE.ISR();
+}
+
+
 
 void encoderSetup() {
   Serial.begin(115200);
@@ -64,20 +70,17 @@ void encoderSetup() {
 }
 
 
-void encoderLoop() {                     // Order of operations is important here           
-  OE.encoderDirection();                  // Handles direction and rotaryCount update after trigger by ISR  
-  OE.calcHeading(rotaryCount);             // calculates heading angle in milliDegrees
-  OE.calcRPM();                             // Uses milliDegrees traveled and period to calculate the RPM
-  OE.plotEncoder();                         // Plot all the values to the serial monitor  #TODO: Update to cover new maths outputs and include direction bool clockwise. In begin we can have user setting to change polarity of bool clockwise incase up is reversed
-  OE.resetFired();                          // reset fired now that all maths have been finished #TODO: Make sure all maths functions operate only if(fired); also plotEncoder?
-  // testInputs();
+void encoderLoop(bool active = false) {                     // Order of operations is important here
+  if (active) {
+    OE.encoderDirection();                  // Handles direction and rotaryCount update after trigger by ISR
+    OE.calcHeading();             // calculates heading angle in milliDegrees
+    OE.calcRPM();                             // Uses milliDegrees traveled and period to calculate the RPM
+    OE.plotEncoder();                         // Plot all the values to the serial monitor  #TODO: Update to cover new maths outputs and include direction bool clockwise. In begin we can have user setting to change polarity of bool clockwise incase up is reversed
+    OE.resetFlag();                          // reset fired now that all maths have been finished #TODO: change bool from fired to ensure ticks are not missed due to maths taking to long. now encode direction sets a different bool flag
+    // testInputs();
+  }
 }
 
-
-// isr just calls the isr from inside the library
-void isr(){
-  OE.ISR();
-}
 
 
 

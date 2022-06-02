@@ -62,7 +62,7 @@ class opticalEncoder {
 
     void encoderDirection();     //updates rotaryCount and determines direction of encoder
 
-    float calcHeading(int16_t encoderPos); // Function to return the current position of the encoder in degrees from center position (1000)  (-180 to +180)deg
+    void calcHeading();         // Function to return the current position of the encoder in degrees from center position (1000)  (-180 to +180)deg
 
     void plotHeader();      // Plots a header to serial monitor
 
@@ -77,12 +77,12 @@ class opticalEncoder {
 
     void ISR();            // Interrupt service routine triggered by change on optical encoder pin.
 
-    void resetFired();      // taken reset fired outside of method it was in, so fired can act as trigger for many of the maths functions and then be reset once all new maths is done
+    void resetFlag();      // taken reset fired outside of method it was in, so fired can act as trigger for many of the maths functions and then be reset once all new maths is done
 
 
 
     bool direction;
-    bool clockwiseRotation
+    bool clockwiseRotation;
 
 
 
@@ -92,6 +92,7 @@ class opticalEncoder {
 
     void floatToChar(float f_input);      // returns float input as global char string headingChar
     int32_t heading_milliDeg;
+    int32_t last_heading_milliDeg;
     char headingString[32];
 
     float degPerPulse;                     // save the number of degrees per pulse of the encoder.
@@ -99,7 +100,7 @@ class opticalEncoder {
 
 
     uint16_t rotaryCount;
-    uint16_t previousCount;
+    uint16_t prevCount;
 
     uint16_t ppr;             // pulses per revolution
     uint16_t upperBound;
@@ -111,14 +112,17 @@ class opticalEncoder {
     bool up;
     bool fired;
 
-// Timing movement
-uint32_t sampleMicros;
-uint32_t lastSampleMicros;
+    // Timing movement
+    uint32_t sampleMicros;
+    uint32_t lastSampleMicros;
 
     // Hardware Pins
     int16_t  indexPin;
     int16_t  pinA;
     int16_t  pinB;
+
+    bool calcsComplete; //internal flag to trigger fired reset
+    bool encoderUpdated;   // internal flag for maths functions to run caculations on new data.
 
 
 

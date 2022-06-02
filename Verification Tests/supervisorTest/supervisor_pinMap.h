@@ -1,8 +1,8 @@
 /*  #Remote Labs Supervisor MCU PinMap
-*   
-*     Imogen Heard
-*     25/05/2022
-*
+
+      Imogen Heard
+      25/05/2022
+
 */
 
 #ifndef supervisor_pinMap_h
@@ -13,7 +13,7 @@
 // Arduino Compatable Pins
 
 //Inputs
- 
+
 #define ENCODER_B           2
 #define ENCODER_A           3
 #define ENCODER_INDEX       4
