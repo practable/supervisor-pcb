@@ -124,6 +124,7 @@ void dcMotorSpeed(uint16_t pwmOut = 0) {
 
 float analogToVoltage(int16_t analogValue) {
   float voltage = float(analogValue) * float(ADC_VMAX / ADC_MAXVALUE);
+  Serial.print("ADC to Voltage: ");
   return voltage;
 }
 
@@ -165,22 +166,32 @@ float adc_to_loadCurrent(int16_t adcValue) {
 
 // Ties all hardware and maths functions together for DC Motor Current Sensing
 
+autoDelay printDelay;
+#define PRINT_DELAYTIME
+
 void dcMotorCurrent(bool active) {
   if (active) {
-    int16_t adcReadOne = analogRead(DC_MOTOR_IS1);                              // Take ADC Sample
-    int16_t adcReadTwo = analogRead(DC_MOTOR_IS2);
+    if (printDelay.millisDelay(500)) {
+      int16_t adcReadOne = analogRead(DC_MOTOR_IS1);                              // Take ADC Sample
+      int16_t adcReadTwo = analogRead(DC_MOTOR_IS2);
+      //  Serial.print("ADC Read: ");
+      //  Serial.println(adcReadOne);
 
-    float f_loadCurrentOne_mA = adc_to_loadCurrent(adcReadOne);
-    int i_loadCurrentOne_mA = int(f_loadCurrentOne_mA + 0.5);                             // cast float value back to int for easy printing
+      float f_loadCurrentOne_mA = adc_to_loadCurrent(adcReadOne);
+      Serial.print("Load Current Float: ");
+      Serial.println(f_loadCurrentOne_mA);
+      int i_loadCurrentOne_mA = int(f_loadCurrentOne_mA + 0.5);                             // cast float value back to int for easy printing
+      //  Serial.print("Load Current int: ");
+      //  Serial.println(i_loadCurrentOne_mA);
+      float f_loadCurrentTwo_mA = adc_to_loadCurrent(adcReadTwo);
+      int i_loadCurrentTwo_mA = int(f_loadCurrentTwo_mA + 0.5);                             // cast float value back to int for ea
 
-    float f_loadCurrentTwo_mA = adc_to_loadCurrent(adcReadTwo);
-    int i_loadCurrentTwo_mA = int(f_loadCurrentTwo_mA + 0.5);                             // cast float value back to int for ea
+      char buffer[42];
 
-    char buffer[42];
+      sprintf(buffer, "Load Current One: %i mA, Load Current Two: %i mA", i_loadCurrentOne_mA, i_loadCurrentTwo_mA);
+      //  Serial.println(buffer);
 
-    sprintf(buffer, "Load Current One: %i mA, Load Current Two: %i mA", i_loadCurrentOne_mA, i_loadCurrentTwo_mA);
-    Serial.println(buffer);
-
+    }
   }
 }
 

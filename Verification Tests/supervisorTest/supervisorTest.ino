@@ -11,6 +11,7 @@
 
 */
 
+#include <autoDelay.h>
 
 #include "supervisor_pinMap.h"    // PinMap for Supervisor pcb - Supervisor MCU
 
