@@ -18,7 +18,9 @@
      Imogen Wren
      01/06/2022
 
-
+  #define ENCODER_B           2
+  #define ENCODER_A           3
+  #define ENCODER_INDEX       4
 
 
 */
@@ -34,6 +36,7 @@
 
 */
 
+#include <autoDelay.h>
 #include "opticalEncoder.h"
 
 
@@ -51,11 +54,18 @@ void opticalEncoder::encoderBegin(int16_t pulsePerRevolution) {
   pinMode(pinA, INPUT);
   pinMode(pinB, INPUT);
   rotaryCount = pulsePerRevolution;
+  Serial.print("Rotary Count Setup: ");
+  Serial.println(rotaryCount);
   ppr = pulsePerRevolution;
   lowerBound = (pulsePerRevolution / 2);
+  Serial.print("Lower Bound: ");
+  Serial.println(lowerBound);
   upperBound = pulsePerRevolution + lowerBound;
+  Serial.print("Upper Bound: ");
+  Serial.println(upperBound);
   milliDegPerPulse = (360000 / ppr); // to avoid floats, degree per pulse is saved as a value *1000
-
+  Serial.print("MilliDeg Per Pulse: ");
+  Serial.println(milliDegPerPulse);
 }
 
 
@@ -104,10 +114,11 @@ void opticalEncoder::plotHeader() {
   Serial.println("Ticks, Heading, rpm");
 }
 
-
+autoDelay encodePrint;
+#define ENCODE_PRINT_DELAY 500
 
 void opticalEncoder::plotEncoder() {
-  if (encoderUpdated) {
+  if (encodePrint.millisDelay(ENCODE_PRINT_DELAY)) {
     float heading_deg = float(heading_milliDeg / 1000.0);
     // Serial.println(heading_deg);
     floatToChar (heading_deg);                                                // Returns headingString as global variable
@@ -183,6 +194,10 @@ void opticalEncoder::resetFlag() {
 }
 
 
+void opticalEncoder::encoderCalibrate() {
+  delay(2000);
+  rotaryCount = ppr;
+}
 
 
 void opticalEncoder::ISR () {
@@ -192,5 +207,5 @@ void opticalEncoder::ISR () {
     up = digitalRead (pinB);
   }
   fired = true;
-  sampleMicros = micros();
+  // sampleMicros = micros();
 }

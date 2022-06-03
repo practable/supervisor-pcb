@@ -124,7 +124,6 @@ void dcMotorSpeed(uint16_t pwmOut = 0) {
 
 float analogToVoltage(int16_t analogValue) {
   float voltage = float(analogValue) * float(ADC_VMAX / ADC_MAXVALUE);
-  Serial.print("ADC to Voltage: ");
   return voltage;
 }
 
@@ -145,16 +144,37 @@ float senseCurrent_loadCurrent(float senseCurrent_mA) {
 }
 
 
-#define R_IS              470
 
-float adc_to_loadCurrent(int16_t adcValue) {
-  float voltageOne = analogToVoltage(adcValue);                             // Convert to measured voltage
-  float senseCurrent_mA = voltageToCurrent(voltageOne, R_IS);               // Convert voltage to current(mA) using I = V/R
-  float loadCurrent_mA = senseCurrent_loadCurrent(senseCurrent_mA);      // Use Datasheet Algorithm to estimate load current in mA
-  return loadCurrent_mA;
-
+void showCalculations(int16_t adc, float volts, float I_sense, float I_load) {
+  Serial.print("ADC Read: ");
+  Serial.print(adc);
+  Serial.print("   ADC to Voltage: ");
+  Serial.print(volts);
+  Serial.print("   voltage to (sense)Current: ");
+  Serial.print(I_sense);
+  Serial.print(" mA ");
+  //  Serial.print("   senscurrent - offset: ");
+  //  Serial.print(senseCurrent_mA);
+  //  Serial.print(" mA ");
+  Serial.print("   LoadCurrent: ");
+  Serial.print(I_load);
+  Serial.println(" mA ");
 }
 
+
+
+#define R_IS              470
+#define SHOW_MOTOR_CALCS          false                      // Additional Debug outputs
+
+float adc_to_loadCurrent(int16_t adcValue) {
+  float volts = analogToVoltage(adcValue);                             // Convert to measured voltage
+  float senseCurrent_mA = voltageToCurrent(volts, R_IS);               // Convert voltage to current(mA) using I = V/R
+  float loadCurrent_mA = senseCurrent_loadCurrent(senseCurrent_mA);      // Use Datasheet Algorithm to estimate load current in mA
+  if (SHOW_MOTOR_CALCS) {
+    showCalculations(adcValue, volts, senseCurrent_mA, loadCurrent_mA);
+  }
+  return loadCurrent_mA;
+}
 
 
 
@@ -174,23 +194,14 @@ void dcMotorCurrent(bool active) {
     if (printDelay.millisDelay(500)) {
       int16_t adcReadOne = analogRead(DC_MOTOR_IS1);                              // Take ADC Sample
       int16_t adcReadTwo = analogRead(DC_MOTOR_IS2);
-      //  Serial.print("ADC Read: ");
-      //  Serial.println(adcReadOne);
-
       float f_loadCurrentOne_mA = adc_to_loadCurrent(adcReadOne);
-      Serial.print("Load Current Float: ");
-      Serial.println(f_loadCurrentOne_mA);
       int i_loadCurrentOne_mA = int(f_loadCurrentOne_mA + 0.5);                             // cast float value back to int for easy printing
-      //  Serial.print("Load Current int: ");
-      //  Serial.println(i_loadCurrentOne_mA);
       float f_loadCurrentTwo_mA = adc_to_loadCurrent(adcReadTwo);
       int i_loadCurrentTwo_mA = int(f_loadCurrentTwo_mA + 0.5);                             // cast float value back to int for ea
 
       char buffer[42];
-
       sprintf(buffer, "Load Current One: %i mA, Load Current Two: %i mA", i_loadCurrentOne_mA, i_loadCurrentTwo_mA);
-      //  Serial.println(buffer);
-
+      Serial.println(buffer);
     }
   }
 }

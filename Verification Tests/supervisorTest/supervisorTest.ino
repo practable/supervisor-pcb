@@ -50,17 +50,19 @@
 
 #define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
 
-#define DC_MOTOR_ENABLE           false                     // Needs Testing
-#define DC_MOTOR_DIRECTION        false                     // Needs Testing
-#define DC_MOTOR_SPEED            0                         // Needs Testing
-#define DC_CURRENT_SENSE_ACTIVE   true                     // Needs Testing
+#define DC_MOTOR_ENABLE           true                    // Software Tested
+#define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
+#define DC_MOTOR_SPEED            50                         // Software Tested
+#define DC_CURRENT_SENSE_ACTIVE   false                     // Software Tested - Maths might not be correct but gives (some) usable(ish) data
+
+#define ENCODER_ACTIVE            true                    // Needs Testing
 
 #define STEPPER_ENABLE            false                     // Needs Testing
 #define STEPPER_CLOCKWISE         false                     // Needs Testing
 #define STEPPER_RESET             false                     // Needs Testing
 
 
-#define ENCODER_ACTIVE            false                     // Needs Testing
+
 
 #define STEPPER_ACTIVE            false                     // Needs Testing
 #define STEPPER_DELAY_mS          500                       // Needs Testing
@@ -112,7 +114,7 @@ void setup() {
 
   dcMotorBegin();              // Set control pins to output
   dcMotorEnable(DC_MOTOR_ENABLE );        // Need shift Register to enable board
-  dcMotorDirection(DC_MOTOR_DIRECTION);      // Set DC Motor Direction
+  dcMotorDirection(DC_MOTOR_CLOCKWISE);      // Set DC Motor Direction
   dcMotorSpeed(DC_MOTOR_SPEED);             // Set DC Motor Speed   - default off
   // Still Need Current Sensing
 

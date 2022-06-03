@@ -41,8 +41,8 @@
 
 // Global Variables
 
-bool up;
-bool fired;
+volatile bool up;
+volatile bool fired;
 
 bool direction;
 
@@ -60,14 +60,18 @@ int rpm;
 
 void setup() {
   Serial.begin(115200);
-  attachInterrupt (digitalPinToInterrupt (PIN_A), isr , CHANGE);   // interrupt 0 is pin 2
+  while ( !Serial ) delay(10);   // Might be required for Nano IoT 33
+  Serial.println("TESTING");
   encoderBegin();
+  attachInterrupt (digitalPinToInterrupt (2), isr , CHANGE);   // interrupt 0 is pin 2   // FOR SOME REASON NOT WORKING
+  //  attachInterrupt(2, isr, CHANGE);                               // only works on SAMD boards // Not reccomended // NO CHANGE
+
   plotHeader();
 
 }
 
 
-
+autoDelay alive;
 
 void loop() {
   encoderDirection();
@@ -76,7 +80,11 @@ void loop() {
 
   plotEncoder();
 
-  // testInputs();
+  //testInputs();
+
+  if (alive.secondsDelay(5)) {
+    Serial.println("Still Alive");
+  }
 }
 
 
@@ -91,21 +99,18 @@ void testPlot(int A, int B, int C) {
 
 void plotHeader() {
   Serial.println("Ticks, Heading");
+  delay(100);
+  // Serial.println("FIRING HERE WHY - Part 1");
 }
 
 void encoderBegin() {
   pinMode (INDEX_PIN, INPUT);
   pinMode (PIN_A, INPUT);
   pinMode (PIN_B, INPUT);
+  //  __enable_irq();                 // Enable global interrupts?
 }
 
-void testInputs() {
-  int pinAstate = digitalRead(PIN_A);
-  int pinBstate = digitalRead(PIN_B);
-  int indexState = digitalRead(INDEX_PIN);
-  testPlot(pinAstate, pinBstate, indexState);
-  //testPlot(pinAstate, 0, 0);
-}
+
 
 
 // Function to calculate the velocity of the rotaryEncoder in rpm
@@ -116,7 +121,7 @@ uint32_t sampleDelay_uS = 100;
 autoDelay sampleDelay;
 
 
-// This does not work, probably a sample time issue There will be a way around it but I dont have the time to explore now. 
+// This does not work, probably a sample time issue There will be a way around it but I dont have the time to explore now.
 void calcRPM() {
   if (sampleDelay.microsDelay(sampleDelay_uS)) {
     int currentAngle = rotaryCount;
@@ -155,23 +160,37 @@ float calcHeading(int16_t encoderPos) {
 void floatToChar (float finput) {
   // char *tmpSign = (finput < 0) ? "-" : "";         // Work out what sign to add
   float tmpVal = (finput < 0) ? finput * -1 : finput; // If less than 0, make positive
-
   int tmpInt1 = int(finput);   // cast to int to get before .point
   float tmpFrac = tmpVal - tmpInt1;  // Get the fraction
   int tmpInt2 = trunc(tmpFrac * 1000);   // Turn into an integer
-
   tmpInt2 = (tmpInt2 < 0) ? tmpInt2 * -1 : tmpInt2;
   // Then print as parts using sprintf - Note 0 padding for fractional bit
   //  sprintf(headingString, "%s%d.%04d", tmpSign, tmpInt1, tmpInt2);
   sprintf(headingString, "%d.%04d", tmpInt1, tmpInt2);
 }
 
+autoDelay printDelay;
+#define PRINT_DELAY 10
 
 void plotEncoder() {
-  // calcHeading(rotaryCount);
-  char buffer[64];
-  sprintf(buffer, "%u, %s, %i ", rotaryCount, headingString, rpm);    // Needs %u for UNSIGNED
-  Serial.println(buffer);
+  if (printDelay.millisDelay(PRINT_DELAY)) {
+    // calcHeading(rotaryCount);
+    char buffer[64];
+    sprintf(buffer, "%u, %s, %i ", rotaryCount, headingString, rpm);    // Needs %u for UNSIGNED
+    Serial.println(buffer);
+  }
+}
+
+
+
+void testInputs() {
+  if (printDelay.millisDelay(PRINT_DELAY)) {
+    int pinAstate = digitalRead(PIN_A);
+    int pinBstate = digitalRead(PIN_B);
+    int indexState = digitalRead(INDEX_PIN);
+    testPlot(pinAstate, pinBstate, indexState);
+  }
+  //testPlot(pinAstate, 0, 0);
 }
 
 
@@ -179,13 +198,14 @@ void plotEncoder() {
 void encoderDirection() {
   prevCount = rotaryCount;
   if (fired)  {
+    //  Serial.println("FIRED");
     if (up) {
       rotaryCount++;
     } else {
       rotaryCount--;
     }
     fired = false;
-  }  // end if fired
+  }
 
   if (rotaryCount > prevCount) {          //
     clockwiseRotation = true;                      //
@@ -211,28 +231,3 @@ void isr () {
   }
   fired = true;
 }
-
-
-
-
-/*
-   Printing Floats
-
-
-
-  char str[100];
-  float adc_read = 678.0123;
-
-  char *tmpSign = (adc_read < 0) ? "-" : "";
-  float tmpVal = (adc_read < 0) ? -adc_read : adc_read;
-
-  int tmpInt1 = tmpVal;                  // Get the integer (678).
-  float tmpFrac = tmpVal - tmpInt1;      // Get fraction (0.0123).
-  int tmpInt2 = trunc(tmpFrac * 10000);  // Turn into integer (123).
-
-  // Print as parts, note that you need 0-padding for fractional bit.
-
-  sprintf (str, "adc_read = %s%d.%04d\n", tmpSign, tmpInt1, tmpInt2);
-
-
-*/

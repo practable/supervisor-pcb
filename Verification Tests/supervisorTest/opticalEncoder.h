@@ -18,6 +18,10 @@
      Imogen Wren
      01/06/2022
 
+     
+#define ENCODER_B           2
+#define ENCODER_A           3
+#define ENCODER_INDEX       4
 
 
 
@@ -74,6 +78,8 @@ class opticalEncoder {
 
     void calcRPM();          // Calculates RPM by taking the time between 2 samples and extrapolating that to an entire revolution
 
+    void encoderCalibrate();
+
 
     void ISR();            // Interrupt service routine triggered by change on optical encoder pin.
 
@@ -110,7 +116,7 @@ class opticalEncoder {
     int16_t rpm;
 
     bool up;
-    bool fired;
+    bool fired = false;
 
     // Timing movement
     uint32_t sampleMicros;
