@@ -75,6 +75,8 @@ void opticalEncoder::encoderBegin(int16_t pulsePerRevolution) {
 void opticalEncoder::encoderDirection() {
   prevCount = rotaryCount;
   if (fired)  {
+    lastSampleMicros = sampleMicros;
+    sampleMicros = micros();
     if (up) {
       rotaryCount++;
     } else {
@@ -115,7 +117,7 @@ void opticalEncoder::plotHeader() {
 }
 
 autoDelay encodePrint;
-#define ENCODE_PRINT_DELAY 500
+#define ENCODE_PRINT_DELAY 10
 
 void opticalEncoder::plotEncoder() {
   if (encodePrint.millisDelay(ENCODE_PRINT_DELAY)) {
@@ -123,7 +125,7 @@ void opticalEncoder::plotEncoder() {
     // Serial.println(heading_deg);
     floatToChar (heading_deg);                                                // Returns headingString as global variable
     char buffer[64];
-    sprintf(buffer, "%u, %s, %i ", rotaryCount, headingString, rpm);    // Needs %u for UNSIGNED
+    sprintf(buffer, "%2u,         %2s,           %2i ", rotaryCount, headingString, rpm);    // Needs %u for UNSIGNED
     Serial.println(buffer);
   }
 }
@@ -171,16 +173,21 @@ void opticalEncoder::calcRPM() {
 
   if (encoderUpdated) {                                                    // uses fired bool which is reset in encodeDirection function, so this must go before that one // actually order is all messes up, might work something different
     period =  sampleMicros - lastSampleMicros;
-    travel = heading_milliDeg - last_heading_milliDeg;
-    lastSampleMicros = sampleMicros;
+    //  Serial.println(period);
+    travel = heading_milliDeg - last_heading_milliDeg;    // Travel is only ever going to be 360 or -360 as it records every tick  so this is a silly calculation to have here
+    //  Serial.println(travel);
     last_heading_milliDeg = heading_milliDeg;
   }
   // Got the data we need, now we just need maths
 
-  int32_t noPeriods = 360000 / travel;  // number of times this time period is needed to complete full revolution
+  // int32_t noPeriods = 360000 / period;  // number of times this time period is needed to complete full revolution
+  // Serial.println(noPeriods);
 
-  int32_t timeForFullRevolution = period * noPeriods; // Say this is = to 0.5 seconds for 1 revolution = 2rps, if = 2 seconds for 1r = 0.5rps
-  float rps = 1 / timeForFullRevolution; // revolutions per second
+
+  // int32_t timeForFullRevolution = period * noPeriods; // Say this is = to 0.5 seconds for 1 revolution = 2rps, if = 2 seconds for 1r = 0.5rps
+  int32_t timeForFullRevolution_uS = period * 1000;    // because however long it takes to do 360 milliDeg is gonna take 1000* to do a complete revolution
+
+  float rps = 1 / (timeForFullRevolution_uS * 10e-6); // revolutions per second
 
   rpm = rps * 60;
   //  Serial.println(rpm);
@@ -207,5 +214,5 @@ void opticalEncoder::ISR () {
     up = digitalRead (pinB);
   }
   fired = true;
-  // sampleMicros = micros();
+
 }

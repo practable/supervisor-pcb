@@ -67,9 +67,9 @@ void isr() {
 
 
 void encoderSetup() {
-//  Serial.begin(115200);
-  attachInterrupt (digitalPinToInterrupt (PIN_A), isr , CHANGE);   // interrupt 0 is pin 2
+  //  Serial.begin(115200);
   OE.encoderBegin(PULSES_PER_REVOLUTION);
+  attachInterrupt (digitalPinToInterrupt (PIN_A), isr , CHANGE);   // NOTE DO NOT CALL pinMode() AFTER ATTACHING INTERRUPT> IT STOPS IT WORKING interrupt 0 is pin 2
   OE.encoderCalibrate();
   OE.plotHeader();
 }
@@ -78,8 +78,8 @@ void encoderSetup() {
 void encoderLoop(bool active = false) {                     // Order of operations is important here
   if (active) {
     OE.encoderDirection();                  // Handles direction and rotaryCount update after trigger by ISR
-  //  OE.calcHeading();             // calculates heading angle in milliDegrees
-  //  OE.calcRPM();                             // Uses milliDegrees traveled and period to calculate the RPM
+    OE.calcHeading();             // calculates heading angle in milliDegrees
+    OE.calcRPM();                             // Uses milliDegrees traveled and period to calculate the RPM
     OE.plotEncoder();                         // Plot all the values to the serial monitor  #TODO: Update to cover new maths outputs and include direction bool clockwise. In begin we can have user setting to change polarity of bool clockwise incase up is reversed
     OE.resetFlag();                          // reset fired now that all maths have been finished #TODO: change bool from fired to ensure ticks are not missed due to maths taking to long. now encode direction sets a different bool flag
     // testInputs();
