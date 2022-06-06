@@ -417,7 +417,7 @@
     (uuid f532d7fc-7611-476b-abda-045bc8bee12e)
   )
 
-  (hierarchical_label "VCC" (shape input) (at 114.3 27.94 90)
+  (hierarchical_label "3V3_DC" (shape input) (at 114.3 27.94 90)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 0e573a4f-cc91-43fe-9969-84e0a6ec6bed)
   )
@@ -441,7 +441,7 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid c900f4b9-ae04-4e0b-997b-768792987eb5)
   )
-  (hierarchical_label "VCC" (shape input) (at 135.89 93.98 0)
+  (hierarchical_label "5V_DC" (shape input) (at 135.89 93.98 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid df108113-54c9-4a45-a6da-0a1ccef6a9f9)
   )

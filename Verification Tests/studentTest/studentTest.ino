@@ -1,7 +1,7 @@
-/* supervisor Test Firmware
+/* student Test Firmware
 
     Imogen Wren
-    25.05.2022
+    06.06.2022
 
   Test firmware contains libraries suitable for testing all hardware
 
@@ -13,7 +13,7 @@
 
 #include <autoDelay.h>
 
-#include "supervisor_pinMap.h"    // PinMap for Supervisor pcb - Supervisor MCU
+#include "student_pinMap.h"    // PinMap for Supervisor pcb - Supervisor MCU
 
 #include "testSettings.h"       // settings page sets up active functions for each test
 
@@ -44,9 +44,7 @@
 */
 
 
-#define STUDENT_MOTOR_ENABLE      false                     // Software Tested
-#define STUDENT_STEPPER_ENABLE    false                     // Software Tested
-#define STUDENT_PIXEL_ENABLE      false                     // Software Tested
+
 
 #define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
 
@@ -57,7 +55,7 @@
 
 #define ENCODER_ACTIVE            false                     // Tested Working but maths not accurate
 
-#define STEPPER_ENABLE            false                   // !Needs Testing !      // Doesnt seem to do anything - because magic smoke released?  -- Have I got reset and EN the wrong way around?
+#define STEPPER_ENABLE            false                      // !Needs Testing !      // Doesnt seem to do anything - because magic smoke released?  -- Have I got reset and EN the wrong way around?
 #define STEPPER_CLOCKWISE         false                     // Software Tested
 #define STEPPER_RESET             false                     // Software Tested    // Must be high to enable
 
@@ -69,7 +67,7 @@
 
 #define SERVO_ACTIVE              false                     // Tested but no control
 
-#define STUDENT_SERVO_DETECT      false                     // Needs Testing with 2nd MCU
+
 #define PIXEL_ACTIVE              false                     // Software Tested
 #define LIMIT_SWITCH_ACTIVE       false                    // Tested
 
@@ -97,12 +95,6 @@ void setup() {
   shiftReg.printState();   // Prints the current state of the shiftregister to serial monitor for debugging
   //  delay(1000);
 
-
-  // The first way to use this API is to write functions for a specific device or channel we wish to enable or disable
-  studentMotorEN(STUDENT_MOTOR_ENABLE);
-  studentStepperEN(STUDENT_STEPPER_ENABLE);
-  studentPixelEN(STUDENT_PIXEL_ENABLE);
-  //  delay(3000);
 
   // The other way which might be more useful in testing is to just pass the output we want to overwriteState.
   // This will make setting up tests much easyer, as we can just specify the bitmask to pass to this function to set up the test correctly
@@ -167,7 +159,7 @@ void loop() {
   // Servo Loop Test
   servoTest(SERVO_ACTIVE );                    // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
 
-  studentServoDetect(STUDENT_SERVO_DETECT);
+
 
   // Pixel Loop Test
   pixelLoop(PIXEL_ACTIVE );

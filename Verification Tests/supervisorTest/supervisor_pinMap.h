@@ -21,9 +21,9 @@
 #define STDNT_DC_M_DIR_2    14
 #define STDNT_DC_M_DIR_1    15
 
-#define STEPP_FLT           19
+#define STEPP_FLT           A5     // D19
 
-#define LIMIT_1             18
+#define LIMIT_1             18      //A4
 
 
 #define STDNT_SRVO_RX_1     A2      // STDNT_SRVO_RX_2 Only available on SAMD21 Raw
