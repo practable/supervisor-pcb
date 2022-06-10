@@ -806,7 +806,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 32542479-583c-4860-855d-1a981b7c2a95)
     (property "Reference" "J22" (id 0) (at 76.2 76.2 0))
-    (property "Value" "Thermocouple A" (id 1) (at 76.2 78.74 0))
+    (property "Value" "Thermocouple" (id 1) (at 76.2 78.74 0))
     (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 76.2 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
