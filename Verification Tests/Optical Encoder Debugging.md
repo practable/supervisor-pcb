@@ -9,4 +9,5 @@ software function [x]
 to test
 Physical Connection
 Pin Defintion in software
-buffers 
+buffers
+power to buffers[] 
