@@ -12,6 +12,10 @@
 - Removed component values from PCB Silkscreen
 - Increased text size for component references.
 
+- Changed orientation of Optical Encoder connector as Vcc and GND were reversed
+
+
+
 
 #TODO:
 

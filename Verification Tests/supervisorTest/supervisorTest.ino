@@ -52,19 +52,19 @@
 
 #define DC_MOTOR_ENABLE           false                    // Software Tested
 #define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
-#define DC_MOTOR_SPEED            0                        // Software Tested
-#define DC_CURRENT_SENSE_ACTIVE   false                     // Software Tested - Maths might not be correct but gives (some) usable(ish) data
+#define DC_MOTOR_SPEED            0                       // Software Tested
+#define DC_CURRENT_SENSE_ACTIVE   false                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
-#define ENCODER_ACTIVE            false                     // Tested Working but maths not accurate
+#define ENCODER_ACTIVE            false                    // Tested Working but maths not accurate
 
-#define STEPPER_ENABLE            false                   // !Needs Testing !      // Doesnt seem to do anything - because magic smoke released?  -- Have I got reset and EN the wrong way around?
+#define STEPPER_ENABLE            true                      // !Needs Testing !      // Doesnt seem to do anything - because magic smoke released?  -- Have I got reset and EN the wrong way around?
 #define STEPPER_CLOCKWISE         false                     // Software Tested
-#define STEPPER_RESET             false                     // Software Tested    // Must be high to enable
+#define STEPPER_RESET             true                     // Software Tested    // Must be high to enable
 
 
-#define STEPPER_ACTIVE            false                     // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
+#define STEPPER_ACTIVE            true                     // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
 #define STEPPER_DELAY_mS          500                       // Software Tested
-#define STEPPER_FAULT_ACTIVE      false                     // Tested
+#define STEPPER_FAULT_ACTIVE      true                     // Tested
 
 
 #define SERVO_ACTIVE              false                     // Tested but no control
@@ -88,7 +88,7 @@ void setup() {
 
   // LED BUILTIN
   ledBegin();
-  flashBuiltIn(200, 10);
+ // flashBuiltIn(500, 10);
 
   // ShiftRegister and Enable Pins
 
@@ -157,7 +157,7 @@ void setup() {
 
 void loop() {
   // Optical Encoder Loop
-  encoderLoop(ENCODER_ACTIVE);
+encoderLoop(ENCODER_ACTIVE);
 
   // Stepper loop test
   stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test

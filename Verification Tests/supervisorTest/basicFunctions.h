@@ -17,15 +17,16 @@
 
 
 void ledBegin() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LED_PCB, OUTPUT);
 }
 
 
 void flashBuiltIn(uint32_t delayTime = 1000, byte noLoops = 6) {
   while (noLoops > 0) {
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(LED_PCB, HIGH);
     delay(delayTime);
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(LED_PCB, LOW);
+    delay(delayTime);
     noLoops--;
   }
 }

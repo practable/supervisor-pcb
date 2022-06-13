@@ -14,8 +14,8 @@
 
 //Inputs
 
-#define ENCODER_B           2
-#define ENCODER_A           3
+#define ENCODER_B           3
+#define ENCODER_A           2
 #define ENCODER_INDEX       4
 
 #define STDNT_DC_M_DIR_2    14
@@ -35,6 +35,8 @@
 
 
 // Outputs
+
+#define LED_PCB            13
 
 #define DC_MOTOR_PWM        10
 #define DC_MOTOR_DIR1       12
