@@ -40,6 +40,8 @@ void dcMotorBegin() {
   pinMode(DC_MOTOR_PWM, OUTPUT);
   pinMode(DC_MOTOR_DIR1, OUTPUT);
   pinMode(DC_MOTOR_DIR2, OUTPUT);
+  pinMode(STDNT_DC_M_DIR_1, INPUT);
+  pinMode(STDNT_DC_M_DIR_2, INPUT);
 }
 
 
@@ -216,6 +218,34 @@ void overTempReset() {
 
 }
 
+void studentDCdirectionDectect() {
+  char buffer[64];
+  
+  int DC_Motor_CW = digitalRead(STDNT_DC_M_DIR_1);
+  delay(200);
+  int DC_Motor_ACW = digitalRead(STDNT_DC_M_DIR_2);
+  delay(200);
+  sprintf(buffer, "%i, %i", DC_Motor_CW,DC_Motor_ACW );
+  Serial.println(buffer);
 
-
+  if (DC_Motor_CW == 1 && DC_Motor_ACW == 1)
+  {
+    studentMotorEN(false);
+    Serial.println("ERROR: ILLEGAL H-BRIDGE LOGIC (1,1)");
+  }
+  else if (DC_Motor_CW == 0 && DC_Motor_ACW == 0)
+  {
+    studentMotorEN(false);
+   // Serial.println("ERROR: PLEASE SET MOTOR DIRECTION");
+  }
+  else if (DC_Motor_CW == 1) {
+    dcMotorDirection(true);
+    studentMotorEN(true);
+  //  Serial.println("DC Motor Clockwise");
+  } else if (DC_Motor_ACW == 1) {
+   // Serial.println("DC Motor AntiClockwise");
+    dcMotorDirection(false);
+    studentMotorEN(true);
+  }
+}
 #endif

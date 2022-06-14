@@ -18,8 +18,8 @@
 #define ENCODER_A           2
 #define ENCODER_INDEX       4
 
-#define STDNT_DC_M_DIR_2    14
-#define STDNT_DC_M_DIR_1    15
+#define STDNT_DC_M_DIR_2    A1
+#define STDNT_DC_M_DIR_1    A0
 
 #define STEPP_FLT           A5     // D19
 

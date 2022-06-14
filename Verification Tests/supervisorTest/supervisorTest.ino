@@ -1,7 +1,7 @@
 /* supervisor Test Firmware
 
   Written BY:
-    
+
     Imogen Wren
     Bhavith MANAPOTY
     Eralp CALHAN
@@ -48,7 +48,7 @@
 */
 
 
-#define STUDENT_MOTOR_ENABLE      false                     // Software Tested
+#define STUDENT_MOTOR_ENABLE      true                     // Software Tested
 #define STUDENT_STEPPER_ENABLE    false                     // Software Tested
 #define STUDENT_PIXEL_ENABLE      false                     // Software Tested
 
@@ -56,20 +56,20 @@
 
 #define DC_MOTOR_ENABLE           false                    // Software Tested
 #define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
-#define DC_MOTOR_SPEED            0                       // Software Tested
-#define DC_CURRENT_SENSE_ACTIVE   false                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
+#define DC_MOTOR_SPEED            0                      // Software Tested
+#define DC_CURRENT_SENSE_ACTIVE   true                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
 #define ENCODER_ACTIVE            false                    // Tested Working but maths not accurate
 
 #define STEPPER_ENABLE            false                      // Enable pin now controlled from stepper function not independently
 #define STEPPER_CLOCKWISE         false                     // Stepper direction now controlled from stepper function not independently
 
-#define STEPPER_RESET             true                     // Software Tested // Must be hight to enable  
+#define STEPPER_RESET             false                     // Software Tested // Must be hight to enable  
 
 
-#define STEPPER_ACTIVE            true                    // Software TEsted
+#define STEPPER_ACTIVE            false                    // Software TEsted
 #define NUM_REVOLUTIONS           2
-#define STEPPER_FAULT_ACTIVE      true                     // Tested
+#define STEPPER_FAULT_ACTIVE      false                     // Tested
 
 
 #define SERVO_ACTIVE              false                     // Tested
@@ -113,7 +113,7 @@ void setup() {
 
   // The other way which might be more useful in testing is to just pass the output we want to overwriteState.
   // This will make setting up tests much easyer, as we can just specify the bitmask to pass to this function to set up the test correctly
-  shiftReg.overwriteState(SHIFTREG_OVERWRITE);
+  //shiftReg.overwriteState(SHIFTREG_OVERWRITE);
 
 
 
@@ -136,7 +136,7 @@ void setup() {
 
   stepperBegin();
   //stepperEnable(STEPPER_ENABLE);
- // stepperDirection(STEPPER_CLOCKWISE);
+  // stepperDirection(STEPPER_CLOCKWISE);
   stepperReset(STEPPER_RESET);
 
 
@@ -163,6 +163,9 @@ void setup() {
 
 
 void loop() {
+
+  studentDCdirectionDectect();
+
   // Optical Encoder Loop
   encoderLoop(ENCODER_ACTIVE);
 
