@@ -62,9 +62,9 @@
 #define STEPPER_RESET             true                     // Software Tested    // Must be high to enable
 
 
-#define STEPPER_ACTIVE            false                    // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
+#define STEPPER_ACTIVE            true                    // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
 #define STEPPER_DELAY_mS          500                       // Software Tested
-#define STEPPER_FAULT_ACTIVE      false                     // Tested
+#define STEPPER_FAULT_ACTIVE      true                     // Tested
 
 
 #define SERVO_ACTIVE              false                     // Tested but no control
@@ -130,7 +130,7 @@ void setup() {
   // Stepper Motor Control
 
   stepperBegin();
-  stepperEnable(STEPPER_ENABLE);
+  //stepperEnable(STEPPER_ENABLE);  
   stepperDirection(STEPPER_CLOCKWISE);
   stepperReset(STEPPER_RESET);
 
@@ -162,8 +162,9 @@ void loop() {
 encoderLoop(ENCODER_ACTIVE);
 
   // Stepper loop test
-  stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test
+  //stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test
 
+  stepper_test();
   stepperFaultDetect(STEPPER_FAULT_ACTIVE);
 
   // Servo Loop Test

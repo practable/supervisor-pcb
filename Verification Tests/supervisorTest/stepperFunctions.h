@@ -20,6 +20,7 @@
 
 #ifndef stepperFunctions_h
 #define stepperFunctions_h
+#define no_of_revolutions 2
 
 //#include "supervisor_pinMap.h"
 
@@ -81,6 +82,42 @@ void stepperFaultDetect(bool active) {
     }
   }
 }
+
+void stepper_test(){
+  // Set the spinning direction clockwise:
+  shiftReg.shiftWrite(STEPP_DIR , HIGH);
+  stepperEnable (true);
+  
+  // Spin the stepper motor 5 revolutions fast:
+  for (int i = 0; i < 6400 * no_of_revolutions; i++) {
+    // These four lines result in 1 step:
+    digitalWrite(STEPP_STEP, HIGH);
+    delayMicroseconds(500);
+    digitalWrite(STEPP_STEP, LOW);
+    delayMicroseconds(500);
+    Serial.println("CW");
+  }
+
+  delay(1000);
+
+  // Set the spinning direction counterclockwise:
+  shiftReg.shiftWrite(STEPP_DIR , LOW);
+
+  //Spin the stepper motor 5 revolutions fast:
+  for (int i = 0; i < 6400 * no_of_revolutions; i++) {
+    // These four lines result in 1 step:
+    digitalWrite(STEPP_STEP, HIGH);
+    delayMicroseconds(500);
+    digitalWrite(STEPP_STEP, LOW);
+    delayMicroseconds(500);
+    Serial.println("ACW");
+  }
+  stepperEnable (false);
+  delay(1000);
+  
+}
+  
+
 
 
 #endif
