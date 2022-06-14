@@ -62,15 +62,17 @@
 #define STEPPER_RESET             true                     // Software Tested    // Must be high to enable
 
 
-#define STEPPER_ACTIVE            true                     // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
+#define STEPPER_ACTIVE            false                    // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
 #define STEPPER_DELAY_mS          500                       // Software Tested
-#define STEPPER_FAULT_ACTIVE      true                     // Tested
+#define STEPPER_FAULT_ACTIVE      false                     // Tested
 
 
 #define SERVO_ACTIVE              false                     // Tested but no control
 
 #define STUDENT_SERVO_DETECT      false                     // Needs Testing with 2nd MCU
-#define PIXEL_ACTIVE              false                     // Software Tested
+
+#define PIXEL_ACTIVE              true                     // Software Tested
+
 #define LIMIT_SWITCH_ACTIVE       false                    // Tested
 
 
@@ -135,7 +137,7 @@ void setup() {
 
   // Servo Motor Control
   servoBegin();                          // begin Servo functions
-  servoConstrain(-180, 180);             // Constrain min max travel for servo position
+  servoConstrain(0, 130);             // Constrain min max travel for servo position
 
 
 

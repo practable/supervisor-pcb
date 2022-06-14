@@ -110,13 +110,35 @@ void pixelBegin() {
 
 autoDelay shift_effect;
 
+char paletteNames[][16] = {
+  "tropical",
+  "ragga",
+  "trans",
+  "hotpink_blue",
+  "orange_white",
+  "blue_white",
+  "green_white",
+  "hotpink_blue",
+  "RainbowColors",
+  "RainbowStripe",
+  "CloudColors_p",
+  "PartyColors_p",
+  "LavaColors_p",
+  "OceanColors_p",
+  "ForestColors_p",
+  "HeatColors_p",
+  "hotpink_blue"
+};
 
 // Cycles through banks of palettes based on program type
 void switchPalette() {
   if (shift_effect.secondsDelay(transition_timer)) {
     //    Serial.println("Fading into New Palette");
     currentPalette = nextPalette;
-    nextPalette = select_palette(random(0, NUM_FX));
+    int16_t paletteNumber = random(0, NUM_FX);
+    nextPalette = select_palette(paletteNumber);
+    Serial.print("New Palette: ");
+    Serial.println(paletteNames[paletteNumber]);
   }
 }
 

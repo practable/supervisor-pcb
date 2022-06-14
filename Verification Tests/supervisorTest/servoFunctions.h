@@ -42,14 +42,19 @@ Servo servo;
 
 void servoBegin() {
   servo.attach(SERVO_1);
+  randomSeed(analogRead(A3));
 }
 
 
-int16_t servoMin = -90;            // Upper and Lower limits of Servo Operation
-int16_t servoMax = 90;
+int16_t servoMin = 0;            // Upper and Lower limits of Servo Operation
+int16_t servoMax = 180;
 
 // Change upper and Lower Constraints
 void servoConstrain(int16_t minTravel, int16_t maxTravel) {
+  Serial.print("Servo Min Angle: ");
+  Serial.print(minTravel);
+  Serial.print("    Servo Max Angle: ");
+  Serial.println(maxTravel);
   servoMin = minTravel;
   servoMax = maxTravel;
 }
@@ -58,14 +63,19 @@ void servoConstrain(int16_t minTravel, int16_t maxTravel) {
 bool servoBlocking;
 int32_t servoBlockTime_mS = 20;
 int32_t servoLastUpdate;
+bool servoUpdated;
 
-void servoUpdate(int16_t angle = 0) {    // can pass values between -90 and +90  // Servo library wants between 0 and 180
+void servoUpdate(int16_t angle = 0) {    // Servo library wants between 0 and 180
   if (!servoBlocking) {
-    int16_t new_angle = angle + 90;
-    new_angle = constrain(new_angle, servoMin, servoMax);
-    servo.write(new_angle);
+    angle = constrain(angle, servoMin, servoMax);
+    servo.write(angle);
     servoLastUpdate = millis();
     servoBlocking = true;
+    if (servoUpdated) {
+      Serial.print("Constrained Angle: ");
+      Serial.println(angle);
+      servoUpdated = false;
+    }
   }
   if (millis() -  servoLastUpdate >= servoBlockTime_mS) {
     servoBlocking = false;
@@ -73,12 +83,19 @@ void servoUpdate(int16_t angle = 0) {    // can pass values between -90 and +90 
 }
 
 
-
-
+autoDelay servoDelay;
+#define SERVO_DELAY_mS 5000
+int16_t newAngle;
 
 void servoTest(bool active = false) {
   if (active) {
-    servoUpdate();
+    if (servoDelay.millisDelay(SERVO_DELAY_mS)) {
+      newAngle = random(180);
+      Serial.print("New Angle: ");
+      Serial.println(newAngle);
+      servoUpdated = true;
+    }
+    servoUpdate(newAngle);
   }
 }
 
