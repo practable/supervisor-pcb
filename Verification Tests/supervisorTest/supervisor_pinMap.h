@@ -69,7 +69,7 @@
 #define STEPP_DIR            Q4
 #define STEPP_EN             Q5
 #define STEPP_RST            Q6
-#define SHIFT_REG_7          Q7
+#define STEPP_SLP            Q7
 
 
 

@@ -1,7 +1,10 @@
 /* student Test Firmware
 
+Written By:
     Imogen Wren
-    06.06.2022
+    Bhavith MANAPOTY
+    Eralp CALHAN
+    14.06.2022
 
   Test firmware contains libraries suitable for testing all hardware
 
@@ -152,7 +155,7 @@ void loop() {
   encoderLoop(ENCODER_ACTIVE);
 
   // Stepper loop test
-  stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test
+  stepper_test(STEPPER_ACTIVE );
 
   stepperFaultDetect(STEPPER_FAULT_ACTIVE);
 

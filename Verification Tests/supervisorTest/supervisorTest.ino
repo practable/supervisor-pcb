@@ -1,7 +1,11 @@
 /* supervisor Test Firmware
 
+  Written BY:
+    
     Imogen Wren
-    25.05.2022
+    Bhavith MANAPOTY
+    Eralp CALHAN
+    14.06.2022
 
   Test firmware contains libraries suitable for testing all hardware
 
@@ -57,21 +61,22 @@
 
 #define ENCODER_ACTIVE            false                    // Tested Working but maths not accurate
 
-#define STEPPER_ENABLE            true                      // !Needs Testing !      // Doesnt seem to do anything - because magic smoke released?  -- Have I got reset and EN the wrong way around?
-#define STEPPER_CLOCKWISE         false                     // Software Tested
-#define STEPPER_RESET             true                     // Software Tested    // Must be high to enable
+#define STEPPER_ENABLE            false                      // Enable pin now controlled from stepper function not independently
+#define STEPPER_CLOCKWISE         false                     // Stepper direction now controlled from stepper function not independently
+
+#define STEPPER_RESET             true                     // Software Tested // Must be hight to enable  
 
 
-#define STEPPER_ACTIVE            true                    // Half Tested - Needs Testing  // Pulse is stopped but motor still runs!? Doesnt if pulse pin tied top GND or Vcc - Because magic smoke Released?
-#define STEPPER_DELAY_mS          500                       // Software Tested
+#define STEPPER_ACTIVE            true                    // Software TEsted
+#define NUM_REVOLUTIONS           2
 #define STEPPER_FAULT_ACTIVE      true                     // Tested
 
 
-#define SERVO_ACTIVE              false                     // Tested but no control
+#define SERVO_ACTIVE              false                     // Tested
 
 #define STUDENT_SERVO_DETECT      false                     // Needs Testing with 2nd MCU
 
-#define PIXEL_ACTIVE              true                     // Software Tested
+#define PIXEL_ACTIVE              false                     // Software Tested
 
 #define LIMIT_SWITCH_ACTIVE       false                    // Tested
 
@@ -90,7 +95,7 @@ void setup() {
 
   // LED BUILTIN
   ledBegin();
- // flashBuiltIn(500, 10);
+  // flashBuiltIn(500, 10);
 
   // ShiftRegister and Enable Pins
 
@@ -130,8 +135,8 @@ void setup() {
   // Stepper Motor Control
 
   stepperBegin();
-  //stepperEnable(STEPPER_ENABLE);  
-  stepperDirection(STEPPER_CLOCKWISE);
+  //stepperEnable(STEPPER_ENABLE);
+ // stepperDirection(STEPPER_CLOCKWISE);
   stepperReset(STEPPER_RESET);
 
 
@@ -159,12 +164,14 @@ void setup() {
 
 void loop() {
   // Optical Encoder Loop
-encoderLoop(ENCODER_ACTIVE);
+  encoderLoop(ENCODER_ACTIVE);
 
   // Stepper loop test
   //stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test
 
-  stepper_test();
+  stepper_test(STEPPER_ACTIVE, NUM_REVOLUTIONS);
+
+
   stepperFaultDetect(STEPPER_FAULT_ACTIVE);
 
   // Servo Loop Test

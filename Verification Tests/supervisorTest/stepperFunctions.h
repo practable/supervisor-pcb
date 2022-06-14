@@ -20,7 +20,7 @@
 
 #ifndef stepperFunctions_h
 #define stepperFunctions_h
-#define no_of_revolutions 2
+
 
 //#include "supervisor_pinMap.h"
 
@@ -40,6 +40,14 @@ void stepperEnable(bool enable) {
     shiftReg.shiftWrite(STEPP_EN, HIGH);
   }
   shiftReg.shiftWrite(STEPP_EN, LOW);
+}
+
+void stepperSleep(bool enable){
+  if (enable){
+    shiftReg.shiftWrite(STEPP_SLP, HIGH);
+  } else{
+    shiftReg.shiftWrite(STEPP_SLP, LOW);
+  }
 }
 
 void stepperDirection(bool clockwise = false) {
@@ -76,47 +84,59 @@ void stepperFaultDetect(bool active) {
   if (active) {
     int16_t stepperFault = digitalRead(STEPP_FLT);
     if (stepperFault) {
-    //  Serial.println("Stepper Operation Nominal");
+    
+      //  Serial.println("Stepper Operation Nominal");
     } else {
-      Serial.println("Stepper Fault Detected");     
+      Serial.println("Stepper Fault Detected");
     }
   }
 }
 
-void stepper_test(){
-  // Set the spinning direction clockwise:
-  shiftReg.shiftWrite(STEPP_DIR , HIGH);
-  stepperEnable (true);
-  
-  // Spin the stepper motor 5 revolutions fast:
-  for (int i = 0; i < 6400 * no_of_revolutions; i++) {
-    // These four lines result in 1 step:
-    digitalWrite(STEPP_STEP, HIGH);
-    delayMicroseconds(500);
-    digitalWrite(STEPP_STEP, LOW);
-    delayMicroseconds(500);
-    Serial.println("CW");
+
+
+
+
+
+
+void stepper_test(bool active, uint16_t num_revolutions = 1) {
+  if (active) {
+    // Set the spinning direction clockwise:
+    shiftReg.shiftWrite(STEPP_DIR , HIGH);
+    stepperEnable (true);                          // Enable the driver (Leaving enabled causes motor overheating)
+    stepperSleep(true);                             // Disabling Enable doesnt seem to stop current flow to motor, now added stepper sleep
+
+    // Spin the stepper motor n revolutions fast:
+    for (int i = 0; i < 6400 * num_revolutions; i++) {
+      // These four lines result in 1 step:
+      digitalWrite(STEPP_STEP, HIGH);
+      delayMicroseconds(500);
+      digitalWrite(STEPP_STEP, LOW);
+      delayMicroseconds(500);
+      Serial.println("CW");
+    }
+    stepperEnable (false);                          // disable the driver (Leaving enabled causes motor overheating)
+    stepperSleep(false);  
+    delay(2000);
+
+    // Set the spinning direction counterclockwise:
+    shiftReg.shiftWrite(STEPP_DIR , LOW);
+    stepperEnable (true);                          // Enable the driver (Leaving enabled causes motor overheating)
+     stepperSleep(true);
+    //Spin the stepper motor 5 revolutions fast:
+    for (int i = 0; i < 6400 * num_revolutions; i++) {
+      // These four lines result in 1 step:
+      digitalWrite(STEPP_STEP, HIGH);
+      delayMicroseconds(500);
+      digitalWrite(STEPP_STEP, LOW);
+      delayMicroseconds(500);
+      Serial.println("ACW");
+    }
+    stepperEnable (false);
+    stepperSleep(false);
+    delay(2000);
   }
-
-  delay(1000);
-
-  // Set the spinning direction counterclockwise:
-  shiftReg.shiftWrite(STEPP_DIR , LOW);
-
-  //Spin the stepper motor 5 revolutions fast:
-  for (int i = 0; i < 6400 * no_of_revolutions; i++) {
-    // These four lines result in 1 step:
-    digitalWrite(STEPP_STEP, HIGH);
-    delayMicroseconds(500);
-    digitalWrite(STEPP_STEP, LOW);
-    delayMicroseconds(500);
-    Serial.println("ACW");
-  }
-  stepperEnable (false);
-  delay(1000);
-  
 }
-  
+
 
 
 

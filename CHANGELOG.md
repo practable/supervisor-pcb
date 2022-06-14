@@ -14,10 +14,13 @@
 
 - Changed orientation of Optical Encoder connector as Vcc and GND were reversed
 
+ - Increase CLR for 12v bus LED - DONE NOW 10k
 
 
 
 #TODO:
 
- - Increase CLR for 12v bus LED
+- Add STEPP_SLP To Q7 shift register - How can this be coordinated between 2 MCUs?
+- Stepper motor output make match evisting connectors?
+
 

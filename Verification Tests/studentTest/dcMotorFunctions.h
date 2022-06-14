@@ -199,7 +199,7 @@ void dcMotorCurrent(bool active) {
       float f_loadCurrentTwo_mA = adc_to_loadCurrent(adcReadTwo);
       int i_loadCurrentTwo_mA = int(f_loadCurrentTwo_mA + 0.5);                             // cast float value back to int for ea
 
-      char buffer[42];
+      char buffer[64];
       sprintf(buffer, "Load Current One: %i mA, Load Current Two: %i mA", i_loadCurrentOne_mA, i_loadCurrentTwo_mA);
       Serial.println(buffer);
     }

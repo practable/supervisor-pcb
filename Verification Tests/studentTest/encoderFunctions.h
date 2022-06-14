@@ -49,13 +49,13 @@
 //#include <autoDelay.h>
 
 #include "opticalEncoder.h"
-
-#define INDEX_PIN 4    //Not sure what this pin is actually required for
-#define PIN_A     3
-#define PIN_B     2
-
+/*
+  #define ENCODER_B           3
+  #define ENCODER_A           2
+  #define ENCODER_INDEX       4
+*/
 #define PULSES_PER_REVOLUTION 1000
-opticalEncoder OE(INDEX_PIN, PIN_A, PIN_B);
+opticalEncoder OE(ENCODER_INDEX, ENCODER_A, ENCODER_B);
 
 
 
@@ -69,7 +69,7 @@ void isr() {
 void encoderSetup() {
   //  Serial.begin(115200);
   OE.encoderBegin(PULSES_PER_REVOLUTION);
-  attachInterrupt (digitalPinToInterrupt (PIN_A), isr , CHANGE);   // NOTE DO NOT CALL pinMode() AFTER ATTACHING INTERRUPT> IT STOPS IT WORKING interrupt 0 is pin 2
+  attachInterrupt (digitalPinToInterrupt (ENCODER_A), isr , CHANGE);   // NOTE DO NOT CALL pinMode() AFTER ATTACHING INTERRUPT> IT STOPS IT WORKING interrupt 0 is pin 2
   OE.encoderCalibrate();
   OE.plotHeader();
 }
@@ -82,7 +82,7 @@ void encoderLoop(bool active = false) {                     // Order of operatio
     OE.calcRPM();                             // Uses milliDegrees traveled and period to calculate the RPM
     OE.plotEncoder();                         // Plot all the values to the serial monitor  #TODO: Update to cover new maths outputs and include direction bool clockwise. In begin we can have user setting to change polarity of bool clockwise incase up is reversed
     OE.resetFlag();                          // reset fired now that all maths have been finished #TODO: change bool from fired to ensure ticks are not missed due to maths taking to long. now encode direction sets a different bool flag
-    // testInputs();
+    //  OE.testInputs();
   }
 }
 
