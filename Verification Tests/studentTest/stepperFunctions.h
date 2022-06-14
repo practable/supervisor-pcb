@@ -111,7 +111,7 @@ void stepper_test(bool active, uint16_t num_revolutions = 1) {
     shiftReg.shiftWrite(STEPP_DIR , LOW);
     stepperEnable (true);                          // Enable the driver (Leaving enabled causes motor overheating)
     //Spin the stepper motor 5 revolutions fast:
-    for (int i = 0; i < 6400 * no_of_revolutions; i++) {
+    for (int i = 0; i < 6400 * num_revolutions; i++) {
       // These four lines result in 1 step:
       digitalWrite(STEPP_STEP, HIGH);
       delayMicroseconds(500);

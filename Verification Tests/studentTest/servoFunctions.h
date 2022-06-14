@@ -100,16 +100,6 @@ void servoTest(bool active = false) {
 }
 
 
-// In real version should this use interrupts to more accuratly measure a true PPM signal?
-// either way for now we just do analogRead and send PWM to supervisor to detect
-void studentServoDetect(bool active) {
-  if (active) {
-    int16_t studentServoValue = analogRead(STDNT_SRVO_RX_1);
-
-    Serial.println(studentServoValue);
-
-  }
-}
 
 
 
