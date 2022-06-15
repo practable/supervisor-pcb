@@ -48,15 +48,15 @@
 */
 
 
-#define STUDENT_MOTOR_ENABLE      true                     // Software Tested
+#define STUDENT_MOTOR_ENABLE      false                     // Software Tested
 #define STUDENT_STEPPER_ENABLE    false                     // Software Tested
 #define STUDENT_PIXEL_ENABLE      false                     // Software Tested
 
 #define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
 
-#define DC_MOTOR_ENABLE           false                    // Software Tested
-#define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
-#define DC_MOTOR_SPEED            0                      // Software Tested
+#define DC_MOTOR_ENABLE           true                    // Software Tested
+#define DC_MOTOR_CLOCKWISE        true                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
+#define DC_MOTOR_SPEED            50                      // Software Tested
 #define DC_CURRENT_SENSE_ACTIVE   true                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
 #define ENCODER_ACTIVE            false                    // Tested Working but maths not accurate
@@ -164,7 +164,8 @@ void setup() {
 
 void loop() {
 
-  studentDCdirectionDectect();
+  if(STUDENT_MOTOR_ENABLE)
+    studentDCdirectionDectect();
 
   // Optical Encoder Loop
   encoderLoop(ENCODER_ACTIVE);

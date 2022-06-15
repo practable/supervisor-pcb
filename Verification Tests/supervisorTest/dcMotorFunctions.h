@@ -138,12 +138,29 @@ float voltageToCurrent(float voltage, int16_t resistance) {
 
 
 #define IS_OFFSET_uA      170
-#define DK_ILIS           19.5e3     // Can be caclulated but unsure how. taken typical value for now
+//#define DK_ILIS           19.5e3     // Can be caclulated but unsure how. taken typical value for now
+float dk_ilis(float senseCurrent_mA)
+{
+  float dk_ilis = 1 / senseCurrent_mA;
+  return dk_ilis;
+}
+
 float senseCurrent_loadCurrent(float senseCurrent_mA) {
-  senseCurrent_mA = senseCurrent_mA - (IS_OFFSET_uA * 10e-3);   // FIRST subtract the offset current 10^-3 because we need mA not A (10e-6)
-  float loadCurrent_mA = senseCurrent_mA * DK_ILIS;
+  float dk_ilis_val = dk_ilis(senseCurrent_mA);
+  Serial.print("Sense Current:");
+  Serial.println(senseCurrent_mA);
+  float offset = IS_OFFSET_uA / 1000;
+  float offset_current_mA = senseCurrent_mA - 0.17;
+  Serial.print("Offset Current:");
+  Serial.println(offset_current_mA);
+  float loadCurrent_mA = dk_ilis_val * offset_current_mA;
+//  senseCurrent_mA = senseCurrent_mA - offset;   // FIRST subtract the offset current 10^-3 because we need mA not uA (10e-6)
+//  Serial.println(senseCurrent_mA);
+//  float loadCurrent_mA = senseCurrent_mA * dk_ilis_val;
+//  Serial.println(loadCurrent_mA);
   return loadCurrent_mA;
 }
+
 
 
 
@@ -217,15 +234,21 @@ void dcMotorCurrent(bool active) {
 void overTempReset() {
 
 }
+int analogToDigital(int pin) {
+  if (analogRead(pin) < 512)
+    return 0;
+  else
+    return 1;
+}
 
 void studentDCdirectionDectect() {
   char buffer[64];
-  
-  int DC_Motor_CW = digitalRead(STDNT_DC_M_DIR_1);
+
+  int DC_Motor_CW = analogToDigital(STDNT_DC_M_DIR_1);
   delay(200);
-  int DC_Motor_ACW = digitalRead(STDNT_DC_M_DIR_2);
+  int DC_Motor_ACW = analogToDigital(STDNT_DC_M_DIR_2);
   delay(200);
-  sprintf(buffer, "%i, %i", DC_Motor_CW,DC_Motor_ACW );
+  sprintf(buffer, "%i, %i", DC_Motor_CW, DC_Motor_ACW );
   Serial.println(buffer);
 
   if (DC_Motor_CW == 1 && DC_Motor_ACW == 1)
@@ -236,14 +259,14 @@ void studentDCdirectionDectect() {
   else if (DC_Motor_CW == 0 && DC_Motor_ACW == 0)
   {
     studentMotorEN(false);
-   // Serial.println("ERROR: PLEASE SET MOTOR DIRECTION");
+    // Serial.println("ERROR: PLEASE SET MOTOR DIRECTION");
   }
   else if (DC_Motor_CW == 1) {
     dcMotorDirection(true);
     studentMotorEN(true);
-  //  Serial.println("DC Motor Clockwise");
+    //  Serial.println("DC Motor Clockwise");
   } else if (DC_Motor_ACW == 1) {
-   // Serial.println("DC Motor AntiClockwise");
+    // Serial.println("DC Motor AntiClockwise");
     dcMotorDirection(false);
     studentMotorEN(true);
   }
