@@ -84,7 +84,9 @@ void dcMotorDirection(bool clockwise = true) {
 // Further reading on PWM Output incase we need to change PWM frequency https://docs.arduino.cc/tutorials/generic/secrets-of-arduino-pwm
 #define MAX_MOTOR_SPEED 255                                  // Set a max drive level to constrain motor speed
 void dcMotorSpeed(uint16_t pwmOut = 0) {
+  Serial.print("DC Motor Speed: ");  
   pwmOut = constrain(pwmOut, 0, MAX_MOTOR_SPEED);
+  Serial.println(pwmOut);
   analogWrite(DC_MOTOR_PWM, pwmOut);
 }
 
