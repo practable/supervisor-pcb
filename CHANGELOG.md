@@ -16,11 +16,22 @@
 
  - Increase CLR for 12v bus LED - DONE NOW 10k
 
+- Changed STEPP_EN enable pin from both MCUs to SLP pin on stepper controller
+
+- Changed SHIFT Reg Q7 output to STEPP_EN for Supervisor MCU. No Control for Student MCU 
+- doesnt seem to change anything but at least its there incase
+
+- Tied pull down resistors on stepper MODE inputs to VCC to pull up - standard mode is now finest resolution
+- Tied Mode switches to GND to pull down when actuated.
 
 
 #TODO:
 
 - Add STEPP_SLP To Q7 shift register - How can this be coordinated between 2 MCUs?
+ - NOTE ON ABOVE.
+  CHANGING ENABLE PIN TO OPEN 
+  SLEEP PIN NOW CONTROLLED INSTEAD OF ENABLE
 - Stepper motor output make match evisting connectors?
+
 
 
