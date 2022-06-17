@@ -51,14 +51,13 @@ Written By:
 
 #define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
 
-#define DC_MOTOR_ENABLE           true                    // Software Tested
+#define DC_MOTOR_ENABLE           false                    // Software Tested
 #define DC_MOTOR_CLOCKWISE        false                    // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
-#define DC_MOTOR_SPEED            50                       // Software Tested
+#define DC_MOTOR_SPEED            0                       // Software Tested
 #define DC_CURRENT_SENSE_ACTIVE   false                     // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
 #define ENCODER_ACTIVE            false                     // Tested Working but maths not accurate
 
-#define STEPPER_ENABLE            false                      // !Needs Testing !      // Doesnt seem to do anything - because magic smoke released?  -- Have I got reset and EN the wrong way around?
 #define STEPPER_CLOCKWISE         false                     // Software Tested
 #define STEPPER_RESET             false                     // Software Tested    // Must be high to enable
 
@@ -68,10 +67,10 @@ Written By:
 #define STEPPER_FAULT_ACTIVE      false                     // Tested
 
 
-#define SERVO_ACTIVE              false                     // Tested but no control
+#define SERVO_ACTIVE              true                     // Tested but no control
 
 
-#define PIXEL_ACTIVE              false                     // Software Tested
+#define PIXEL_ACTIVE              true                     // Software Tested
 #define LIMIT_SWITCH_ACTIVE       false                    // Tested
 
 
@@ -123,7 +122,6 @@ void setup() {
   // Stepper Motor Control
 
   stepperBegin();
-  stepperEnable(STEPPER_ENABLE);
   stepperDirection(STEPPER_CLOCKWISE);
   stepperReset(STEPPER_RESET);
 
@@ -155,13 +153,13 @@ void loop() {
   encoderLoop(ENCODER_ACTIVE);
 
   // Stepper loop test
-  stepper_test(STEPPER_ACTIVE );
+  stepper_test(STEPPER_ACTIVE);
 
   stepperFaultDetect(STEPPER_FAULT_ACTIVE);
 
   // Servo Loop Test
-  servoTest(SERVO_ACTIVE );                    // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
-
+//  servoTest(SERVO_ACTIVE );                    // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
+    studentServoTest();
 
 
   // Pixel Loop Test
