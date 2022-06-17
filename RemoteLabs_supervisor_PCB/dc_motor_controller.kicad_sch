@@ -486,7 +486,7 @@
   (no_connect (at 163.83 120.65) (uuid dffca4a1-e32a-4234-96f8-f218f88e09f7))
   (no_connect (at 163.83 123.19) (uuid dffca4a1-e32a-4234-96f8-f218f88e09f8))
   (no_connect (at 163.83 99.06) (uuid e6f4717f-3978-4eee-89bb-528399e73f62))
-  (no_connect (at 163.83 96.52) (uuid e6f4717f-3978-4eee-89bb-528399e73f62))
+  (no_connect (at 163.83 96.52) (uuid e6f4717f-3978-4eee-89bb-528399e73f63))
 
   (wire (pts (xy 163.83 113.03) (xy 166.37 113.03))
     (stroke (width 0) (type default) (color 0 0 0 0))
