@@ -1,4 +1,4 @@
-20265971222888933
+20269283099261858
 Arduino
 Arduino_101_Shield
 https://store.arduino.cc/genuino-101
@@ -622,6 +622,13 @@ Matias ALPS keyswitch ISO enter
 0
 2
 2
+Button_Switch_SMD
+13019319
+LSH GULLWING
+Switch
+0
+4
+4
 Button_Switch_SMD
 Nidec_Copal_SH-7010A
 4-bit rotary coded switch, J-hook, https://www.nidec-copal-electronics.com/e/catalog/switch/sh-7000.pdf
@@ -79134,6 +79141,13 @@ Current transducer
 0
 10
 10
+Sensor_Current
+SOP65P490X110-8N
+8 µMAX+-
+Integrated Circuit
+0
+8
+8
 Sensor_Current
 SOT95P280X145-5N
 U5+2

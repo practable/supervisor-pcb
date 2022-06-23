@@ -1430,8 +1430,8 @@
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/615ce30a-8bf8-4083-a586-1f8f49687081"
       (reference "R7") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
-    (path "/5eb8c919-129e-40b1-9073-45f4fce50973/992b41b2-89f9-4e5f-b292-5a36f5cbed20"
-      (reference "SW1") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:Panasonic_EVQPUK_EVQPUB")
+    (path "/5eb8c919-129e-40b1-9073-45f4fce50973/863dba28-1ed7-4924-b22d-319b4d2d4249"
+      (reference "SW1") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:13019319")
     )
     (path "/5eb8c919-129e-40b1-9073-45f4fce50973/12299576-4716-4785-adfc-9566d09f521e"
       (reference "U10") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
