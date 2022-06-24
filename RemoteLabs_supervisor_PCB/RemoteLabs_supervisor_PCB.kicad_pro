@@ -930,7 +930,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "RemoteLabs_supervisor_PCB.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

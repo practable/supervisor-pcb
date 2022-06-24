@@ -1,4 +1,4 @@
-19845487152520129
+19847158420093507
 000_Connectors_Immo
 SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm
 SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, open
@@ -13,6 +13,13 @@ net tie solder jumper bridged
 0
 3
 3
+000_Connectors_Immo
+big_pin
+Through hole straight pin header, 1x01, 1.27mm pitch, single row
+Through hole pin header THT 1x01 1.27mm single row
+0
+1
+1
 000_Graphics_Immo
 UoE_logo
 
