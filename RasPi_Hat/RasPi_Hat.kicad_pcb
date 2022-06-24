@@ -138,11 +138,11 @@
     (property "Sheetname" "")
     (path "/73338ae1-09d3-4705-ab5f-281da1ea4b8e")
     (attr through_hole)
-    (fp_text reference "J2" (at 5.101 -1.89) (layer "F.SilkS")
+    (fp_text reference "J2" (at 5.101 -1.89) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp a952e82d-3036-462e-84d0-f50a7e154411)
     )
-    (fp_text value "Arduino Serial" (at 5.08 4.08) (layer "F.Fab")
+    (fp_text value "Arduino Serial" (at 5.08 4.08) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp fabd8f5e-8c66-4645-9328-a519bdf466a9)
     )
@@ -210,11 +210,11 @@
     (property "Sheetname" "")
     (path "/022a63ca-82a0-43e7-b6c1-dd5c046a98c2")
     (attr through_hole)
-    (fp_text reference "J1" (at 1.27 -4.12) (layer "F.SilkS")
+    (fp_text reference "J1" (at 13.394 -5.552) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 1b53fafc-41fa-45d6-9956-023f35104535)
     )
-    (fp_text value "Fan" (at 1.249 1.85) (layer "F.Fab")
+    (fp_text value "Fan" (at 1.201 -3.941) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e61ba1a5-b67b-4bb2-b81d-3484ef6e7ac5)
     )
@@ -267,7 +267,7 @@
     (property "Sheetname" "")
     (path "/d2f2d92b-abeb-4e76-905e-7335710ea123")
     (attr through_hole)
-    (fp_text reference "J3" (at 1.27 -2.33 90) (layer "F.SilkS")
+    (fp_text reference "J3" (at 1.27 -2.33 90) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3778d435-23f1-4895-a4ed-2b950e73d575)
     )
@@ -387,8 +387,14 @@
   (gr_arc (start 181.203949 64.243949) (mid 180.443493 66.169853) (end 178.543949 66.993949) (layer "Edge.Cuts") (width 0.1) (tstamp e1039556-7741-4e6d-8427-a2627643f458))
   (gr_arc (start 126.321 54.77) (mid 127.169949 52.930456) (end 129.071 52.23) (layer "Edge.Cuts") (width 0.1) (tstamp e24bcfd9-a5a4-4d70-be89-3052eba8fa39))
   (gr_line (start 178.543949 66.993949) (end 128.85 66.99) (layer "Edge.Cuts") (width 0.1) (tstamp fe1bcdd1-0010-4f06-b2a0-df035e58234b))
-  (gr_text "bhavithmanapoty.com" (at 180.324 59.899 90) (layer "F.Cu") (tstamp 605431d1-4109-46ab-a159-2bef1a47d7bf)
+  (gr_text "bhavithmanapoty.com" (at 180.292 59.543 90) (layer "F.SilkS") (tstamp 039f6c91-e9dc-45d8-a059-075a8d1b7df2)
     (effects (font (size 0.7 0.7) (thickness 0.1)))
+  )
+  (gr_text "Fan\n" (at 132.478 59.822) (layer "F.SilkS") (tstamp ceb667e5-9e67-4988-be0b-e3e042a5c2c9)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text "Arduino Serial" (at 170.727 59.892) (layer "F.SilkS") (tstamp e704de79-7721-4840-8905-5b23500dfb34)
+    (effects (font (size 1 1) (thickness 0.15)))
   )
 
   (segment (start 134.727 62.257) (end 134.727 59.727) (width 1.1) (layer "F.Cu") (net 1) (tstamp 627c3488-8156-4697-a873-12edf712689e))
