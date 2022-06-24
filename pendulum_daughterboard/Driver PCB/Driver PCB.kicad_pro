@@ -353,7 +353,7 @@
     "classes": [
       {
         "bus_width": 12.0,
-        "clearance": 0.1,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -370,7 +370,27 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.5,
+        "clearance": 0.4,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "ANALOG_OUT",
+        "nets": [
+          "CURRENT_SENSE_OUT"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "via_diameter": 1.6,
+        "via_drill": 0.7,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.4,
         "diff_pair_gap": 0.3,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.7,
@@ -388,7 +408,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.5,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -418,6 +438,7 @@
           "Net-(IC2-Pad3)",
           "Net-(J1-Pad4)",
           "Net-(J1-Pad5)",
+          "Net-(Q2-Pad2)",
           "OR_OUT_1",
           "OR_OUT_2",
           "OR_OUT_3",
@@ -438,7 +459,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.6,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -458,7 +479,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.65,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -478,7 +499,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.5,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -498,7 +519,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.5,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,

@@ -1421,21 +1421,6 @@
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/e2695e38-7df5-43f2-a22e-fe0cfbdcd018"
       (reference "NT6") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
     )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/9d3340f2-0bfc-48ff-b0af-09f0927211cc"
-      (reference "NT7") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/36437d1b-cd43-4257-83e5-3ba6e8d27ecc"
-      (reference "NT8") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/2847563d-ab22-45bb-8583-418001733dc3"
-      (reference "NT9") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/83bb5e3e-9396-4898-95e2-851c757520d5"
-      (reference "NT10") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/12f73ec3-a7a4-49b6-a548-e8059a5ad50d"
-      (reference "NT11") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/14515c6c-d825-4972-b615-018cd8742b51"
       (reference "NT12") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
     )
