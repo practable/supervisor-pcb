@@ -929,7 +929,7 @@
     (uuid 9082f915-40a5-41dc-9db5-42ab55bef03a)
     (property "Reference" "D4" (id 0) (at 165.1 92.71 0))
     (property "Value" "1N4002" (id 1) (at 160.02 92.71 0))
-    (property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder" (id 2) (at 162.56 92.71 0)
+    (property "Footprint" "Diode_THT:D_5KPW_P12.70mm_Horizontal" (id 2) (at 162.56 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 162.56 92.71 0)

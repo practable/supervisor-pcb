@@ -1368,7 +1368,7 @@
       (reference "D3") (unit 1) (value "LED") (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/9082f915-40a5-41dc-9db5-42ab55bef03a"
-      (reference "D4") (unit 1) (value "1N4002") (footprint "Diode_THT:D_T-1_P5.08mm_Horizontal")
+      (reference "D4") (unit 1) (value "1N4002") (footprint "Diode_THT:D_5KPW_P12.70mm_Horizontal")
     )
     (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/4f094bd5-0d7e-4a76-972d-c97f979c5e8e"
       (reference "IC1") (unit 1) (value "AND GATES") (footprint "ICPINS:SOIC127P600X175-14N")
@@ -1452,7 +1452,7 @@
       (reference "SW1") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:13019319")
     )
     (path "/5eb8c919-129e-40b1-9073-45f4fce50973/12299576-4716-4785-adfc-9566d09f521e"
-      (reference "U10") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
+      (reference "U1") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
     )
   )
 )
