@@ -1,0 +1,4 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"J2";"Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical";1;"Arduino Serial";;;
+2;"J1";"Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical";1;"Fan";;;
+3;"J3";"PinHeader_2x20_P2.54mm_Vertical";1;"Pi Header";;;
