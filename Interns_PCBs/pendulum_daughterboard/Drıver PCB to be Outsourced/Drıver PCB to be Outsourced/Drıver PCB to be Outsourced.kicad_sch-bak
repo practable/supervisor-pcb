@@ -1010,7 +1010,7 @@
     (property "Value" "10u" (id 1) (at 144.78 149.86 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_3x5.3" (id 2) (at 144.4752 151.13 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 144.4752 151.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 143.51 147.32 0)
@@ -1058,10 +1058,10 @@
     (property "Reference" "C1" (id 0) (at 135.89 144.78 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "470u" (id 1) (at 135.89 149.86 0)
+    (property "Value" "460u" (id 1) (at 135.89 149.86 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_Elec_8x10.2" (id 2) (at 135.5852 151.13 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 135.5852 151.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 134.62 147.32 0)
@@ -1332,10 +1332,10 @@
       (reference "A1") (unit 1) (value "Infineon Motor Shield MOD") (footprint "Audio_Module:Infineon Motor Sheild hiddenPins")
     )
     (path "/6e693a78-a1bf-4a7f-8c1f-510085fc4108"
-      (reference "C1") (unit 1) (value "470u") (footprint "Capacitor_SMD:C_Elec_8x10.2")
+      (reference "C1") (unit 1) (value "460u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/3c70c001-d248-412e-93f6-0eb0062cefbc"
-      (reference "C2") (unit 1) (value "10u") (footprint "Capacitor_SMD:CP_Elec_3x5.3")
+      (reference "C2") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/85f35f61-4dfb-4f91-a35e-e378a90c4aa8"
       (reference "C3") (unit 1) (value "0.1u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -1368,7 +1368,7 @@
       (reference "D3") (unit 1) (value "LED") (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/9082f915-40a5-41dc-9db5-42ab55bef03a"
-      (reference "D4") (unit 1) (value "1N4002") (footprint "Diode_THT:D_T-1_P5.08mm_Horizontal")
+      (reference "D4") (unit 1) (value "1N4002") (footprint "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder")
     )
     (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/4f094bd5-0d7e-4a76-972d-c97f979c5e8e"
       (reference "IC1") (unit 1) (value "AND GATES") (footprint "ICPINS:SOIC127P600X175-14N")
@@ -1389,10 +1389,10 @@
       (reference "J1") (unit 1) (value "AVR-ISP-6") (footprint "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/8eb5a7a9-79f9-4e27-80aa-d0ad528754a4"
-      (reference "J2") (unit 1) (value "Coil") (footprint "Connector_Molex:RSPROPenduinoTerminal")
+      (reference "J2") (unit 1) (value "Coil") (footprint "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Horizontal")
     )
     (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/0ee76692-a45a-44be-9ff7-2a50cdb3a92f"
-      (reference "J4") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical")
+      (reference "J4") (unit 1) (value "Conn_01x04") (footprint "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal")
     )
     (path "/2c010f87-0b48-4671-9fe0-765a8d660baf"
       (reference "J5") (unit 1) (value "DRIVE_GND") (footprint "Connector_Pin:Pin_D1.3mm_L11.0mm")
@@ -1403,29 +1403,11 @@
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/85bf9b10-64ed-464e-9eb3-f813cb04ac87"
       (reference "JP1") (unit 1) (value "Shunt Bypass") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
     )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/5f05d6d7-0a96-4080-8569-47a3c12e7d81"
-      (reference "NT1") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/b8bde77b-5798-4f8e-a7d1-fcc6293b028d"
-      (reference "NT2") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/f97e5d03-ac44-4498-aeef-12bbdb0b668f"
-      (reference "NT3") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/dea40c4d-e82c-4102-825e-bd6c1bb53496"
-      (reference "NT4") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/7ba7c2fc-f186-4e84-b166-c8e7315da497"
-      (reference "NT5") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/e2695e38-7df5-43f2-a22e-fe0cfbdcd018"
-      (reference "NT6") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/c8e8f1cb-49bb-4b5b-b880-c4245dd4e304"
-      (reference "Q1") (unit 1) (value "BC557") (footprint "Package_TO_SOT_SMD:SOT-23")
+      (reference "Q1") (unit 1) (value "BC557") (footprint "Package_TO_SOT_SMD:SOT-523")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/f33f544b-ed7d-43c2-8a83-236ebf6a8903"
-      (reference "Q2") (unit 1) (value "BC547") (footprint "Package_TO_SOT_SMD:SOT-23")
+      (reference "Q2") (unit 1) (value "BC547") (footprint "Package_TO_SOT_SMD:SOT-523")
     )
     (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/d22b68a8-ec94-4aa7-b25a-3b1b7dfb42f6"
       (reference "R1") (unit 1) (value "120") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
@@ -1448,7 +1430,7 @@
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/615ce30a-8bf8-4083-a586-1f8f49687081"
       (reference "R7") (unit 1) (value "10R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
-    (path "/5eb8c919-129e-40b1-9073-45f4fce50973/ef9cdaa8-08f7-4202-9b60-a32cfd974f24"
+    (path "/5eb8c919-129e-40b1-9073-45f4fce50973/863dba28-1ed7-4924-b22d-319b4d2d4249"
       (reference "SW1") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:13019319")
     )
     (path "/5eb8c919-129e-40b1-9073-45f4fce50973/12299576-4716-4785-adfc-9566d09f521e"

@@ -1403,23 +1403,8 @@
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/85bf9b10-64ed-464e-9eb3-f813cb04ac87"
       (reference "JP1") (unit 1) (value "Shunt Bypass") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
     )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/5f05d6d7-0a96-4080-8569-47a3c12e7d81"
+    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/28b9d20f-e685-4a1f-8f78-2f8ef9323968"
       (reference "NT1") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/b8bde77b-5798-4f8e-a7d1-fcc6293b028d"
-      (reference "NT2") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/f97e5d03-ac44-4498-aeef-12bbdb0b668f"
-      (reference "NT3") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/dea40c4d-e82c-4102-825e-bd6c1bb53496"
-      (reference "NT4") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/7ba7c2fc-f186-4e84-b166-c8e7315da497"
-      (reference "NT5") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
-    )
-    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/e2695e38-7df5-43f2-a22e-fe0cfbdcd018"
-      (reference "NT6") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/c8e8f1cb-49bb-4b5b-b880-c4245dd4e304"
       (reference "Q1") (unit 1) (value "BC557") (footprint "Package_TO_SOT_SMD:SOT-23")
