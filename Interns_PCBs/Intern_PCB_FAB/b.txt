@@ -1,0 +1,7 @@
+x=160mm
+y=100mm
+3.1mm holes 5mm each from the edges
+page size
+160 x 100 mm pdf F.CU B.CU SILKSCREEN
+NC DRILLING FILE
+HPGL BOARD OUTLINE
