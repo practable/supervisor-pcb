@@ -1392,7 +1392,7 @@
       (reference "J2") (unit 1) (value "Coil") (footprint "Connector_Molex:RSPROPenduinoTerminal")
     )
     (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/0ee76692-a45a-44be-9ff7-2a50cdb3a92f"
-      (reference "J4") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical")
+      (reference "J4") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/2c010f87-0b48-4671-9fe0-765a8d660baf"
       (reference "J5") (unit 1) (value "DRIVE_GND") (footprint "Connector_Pin:Pin_D1.3mm_L11.0mm")
