@@ -355,7 +355,6 @@
     (property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=863-MC74ACT00DG")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/b53ac062-6c3a-4c36-a74e-fb4c425c5ac9")
     (attr smd)
     (fp_text reference "IC3" (at -0.1778 5.8674) (layer "F.SilkS")
       (effects (font (size 1.27 1.27) (thickness 0.254)))
@@ -466,7 +465,6 @@
     (property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=863-MC74ACT00DG")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/318c0d36-af31-492b-b21c-d3faeb1e6c6f")
     (attr smd)
     (fp_text reference "IC2" (at 0 6.0198) (layer "F.SilkS")
       (effects (font (size 1.27 1.27) (thickness 0.254)))
@@ -2260,7 +2258,6 @@
     (tags "capacitor handsolder")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/706e6764-9a71-4c56-b050-5bfa1f43822f")
     (attr smd)
     (fp_text reference "C5" (at -2.8663 -0.0508) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2488,7 +2485,6 @@
     (tags "capacitor handsolder")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/62ee3eb7-1f5e-4974-9ddd-b121af164c7f")
     (attr smd)
     (fp_text reference "C4" (at 3.302 0) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2530,7 +2526,6 @@
     (tags "capacitor handsolder")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/0947bc11-f444-4310-97c9-8a75f46fffba")
     (attr smd)
     (fp_text reference "C7" (at -0.0908 1.6911 90) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2580,7 +2575,6 @@
     (property "Mouser Price/Stock" "https://www.mouser.com/Search/Refine.aspx?Keyword=863-MC74ACT00DG")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/0da0be9a-12d0-4324-8a15-965af8d278d5")
     (attr smd)
     (fp_text reference "IC4" (at 0.254 6.096 90) (layer "F.SilkS")
       (effects (font (size 1.27 1.27) (thickness 0.254)))
@@ -3036,7 +3030,6 @@
     (tags "capacitor handsolder")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/3cef9ab2-4f1f-49e5-97ee-4926f1505409")
     (attr smd)
     (fp_text reference "C6" (at -0.7835 2.032) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3086,7 +3079,6 @@
     (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/CD74HC08QM96EP?qs=HTr%252BoA4jRimGfHL8uqrZHA%3D%3D")
     (property "Sheetfile" "LED_Circuit.kicad_sch")
     (property "Sheetname" "LED_Circit")
-    (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/4f094bd5-0d7e-4a76-972d-c97f979c5e8e")
     (attr smd)
     (fp_text reference "IC1" (at 0 5.8539) (layer "F.SilkS")
       (effects (font (size 1.27 1.27) (thickness 0.254)))
@@ -3453,7 +3445,6 @@
   (segment (start 125.96752 69.85) (end 127.99952 71.882) (width 0.5) (layer "F.Cu") (net 16) (tstamp 82fe111b-7cdf-4a3d-9f53-f44b39fe0786))
   (segment (start 133.096 59.944) (end 125.96752 67.07248) (width 0.5) (layer "F.Cu") (net 16) (tstamp 8f044480-26c8-4d09-aa5c-b5648ada472d))
   (segment (start 125.96752 67.07248) (end 125.96752 69.85) (width 0.5) (layer "F.Cu") (net 16) (tstamp a6dc5c2d-68ad-40e8-9b95-da7632efa290))
-  (segment (start 125.12704 62.992) (end 125.17652 63.04148) (width 0.5) (layer "F.Cu") (net 17) (tstamp 0be48bb9-2cb3-4ce5-8dd1-002f1bf19f14))
   (segment (start 110.305 64.955) (end 112.268 62.992) (width 0.5) (layer "F.Cu") (net 17) (tstamp 46d02c48-b396-4779-8cf1-7e53ccc3f14c))
   (segment (start 130.56 57.658) (end 125.17652 63.04148) (width 0.5) (layer "F.Cu") (net 17) (tstamp 5909fdf5-46c7-43b8-8231-d43ef38d4e14))
   (segment (start 110.305 67.564) (end 110.305 64.955) (width 0.5) (layer "F.Cu") (net 17) (tstamp a9bfd06b-3646-4b5b-b02d-40f584225d90))
@@ -8257,7 +8248,6 @@
       0adf1fd6-cbec-4440-aa0f-2bce8a0da73e
       0b373cb6-494f-4c34-8ef3-e4c5a251e602
       0bb85e61-84e1-4c41-b056-cde6ef24aa7d
-      0be48bb9-2cb3-4ce5-8dd1-002f1bf19f14
       0beb3824-45f4-46aa-b785-c3b38e34fdde
       0ca060f0-d89f-4be6-8660-8f276045301e
       0caf1d8c-ac95-451c-93c3-940a5b4c446a
