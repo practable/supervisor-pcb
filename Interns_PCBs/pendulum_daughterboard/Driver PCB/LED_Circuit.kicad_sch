@@ -4555,8 +4555,22 @@
     (property "Datasheet" "~" (id 3) (at 156.21 166.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6bb85321-eff9-44a3-9587-4c25fd7bcb85))
-    (pin "2" (uuid 3b13f507-f186-4416-8178-e909ef8c4637))
+
+    (pin "1" (uuid 08b1defd-4d51-4611-b79a-360f7d514f8b))
+    (pin "2" (uuid 23b95d91-9fc2-4696-8d67-7846616f1d2b))
+    (pin "3" (uuid cea73311-52eb-4376-a470-3c01beb261b0))
+    (pin "4" (uuid 40fc64ca-df86-4b14-9584-3a8ad517ae5b))
+    (pin "5" (uuid 52e41423-470a-4737-ac18-5aeb873d2ccb))
+    (pin "6" (uuid 8f018656-e472-47ac-bb34-b725fc1ba7b3))
+    (pin "10" (uuid 0e4283a2-cf76-4c82-81c5-2b1ed1821dfe))
+    (pin "8" (uuid ad73340d-2d61-406b-80de-29751cc94337))
+    (pin "9" (uuid d4ef7e24-93cc-4868-9750-0ed8bb62e355))
+    (pin "11" (uuid 59733208-097a-4387-ad7a-072b7f7d155e))
+    (pin "12" (uuid cbe07071-0cbe-4ad2-96db-3af1de65cdf3))
+    (pin "13" (uuid ce5cd033-4246-43e4-b960-f52a38ecf05a))
+    (pin "14" (uuid 183dcf97-e56c-4627-91d6-2aed5d6e0ce6))
+    (pin "7" (uuid 9701b52b-cb31-4419-a5f8-205b4102b099))
+
   )
 
   (symbol (lib_name "4071_1") (lib_id "4xxx:4071") (at 156.21 91.44 0) (unit 2)
@@ -4800,6 +4814,7 @@
     (pin "13" (uuid 343cf2db-ed9d-4f96-b311-6f11237b2522))
     (pin "14" (uuid 512e4696-4a18-428d-9f65-3b6121afd0b0))
     (pin "7" (uuid 908943b9-b4df-4fd4-906e-a6861449fecb))
+
   )
 
   (symbol (lib_id "Device:R") (at 110.49 135.89 270) (unit 1)
@@ -4815,6 +4830,7 @@
     )
     (pin "1" (uuid deda5c7f-6c50-433d-9279-14639161c17e))
     (pin "2" (uuid c71a2af0-4014-4df3-9109-d974cce76aab))
+>>>>>>
   )
 
   (symbol (lib_id "4xxx:4081") (at 114.3 102.87 0) (unit 4)
@@ -4971,6 +4987,7 @@
     (pin "13" (uuid f5f8e3ef-cc30-44cd-8538-01e6d8489681))
     (pin "14" (uuid 850a74ed-9bdb-4a35-836f-48d99f904bfa))
     (pin "7" (uuid f1322186-09bc-4c82-b2a2-866563e3aedb))
+
   )
 
   (symbol (lib_id "Device:R") (at 120.65 30.48 270) (unit 1)
@@ -5001,6 +5018,7 @@
     )
     (pin "1" (uuid 589f6c7f-d2d6-471c-9f45-2711f41e270f))
     (pin "2" (uuid 3a5a1a46-bc44-4801-b896-43107640ff94))
+
   )
 
   (symbol (lib_name "4011_2") (lib_id "4xxx:4011") (at 62.23 90.17 0) (unit 2)
@@ -5055,6 +5073,8 @@
     (pin "13" (uuid 343cf2db-ed9d-4f96-b311-6f11237b2523))
     (pin "14" (uuid 512e4696-4a18-428d-9f65-3b6121afd0b1))
     (pin "7" (uuid 908943b9-b4df-4fd4-906e-a6861449fecc))
+
+
   )
 
   (symbol (lib_id "Device:R") (at 88.9 40.64 270) (unit 1)
@@ -5070,6 +5090,7 @@
     )
     (pin "1" (uuid 731524cb-7b82-4c7a-a408-10d4e320e8c1))
     (pin "2" (uuid 5b839f55-7e23-4fbc-ac80-209cd3d5ba5d))
+
   )
 
   (symbol (lib_id "4xxx:4011") (at 200.66 149.86 0) (unit 5)
@@ -5139,6 +5160,8 @@
     (pin "13" (uuid ce5cd033-4246-43e4-b960-f52a38ecf05f))
     (pin "14" (uuid 183dcf97-e56c-4627-91d6-2aed5d6e0cea))
     (pin "7" (uuid 9701b52b-cb31-4419-a5f8-205b4102b09d))
+
+
   )
 
   (symbol (lib_id "Device:R") (at 88.9 27.94 270) (unit 1)
