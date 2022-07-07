@@ -36,7 +36,7 @@ void loop() {
  digitalWrite (STU_LED_3, LOW);
  digitalWrite (SUP_LED_1, LOW);
  digitalWrite (SUP_LED_2, LOW);
- digitalWrite (SUP_LED_3, HIGH);
+ digitalWrite (SUP_LED_3, LOW);
  digitalWrite (STU_ENABLE, LOW);
  digitalWrite (DRIVE_IN, LOW);
  digitalWrite (LOAD_IN, LOW);
