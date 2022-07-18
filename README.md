@@ -32,21 +32,7 @@ D8		| LATCH	(Write to Register)	|
 D11		| MOSI (Data)				|
 D13		| SCK						|
 
-#### Pinout Diagrams
-
-_MCU and Shift Register Pinout diagrams_
-
-##### Supervisor MCU
-![image](https://user-images.githubusercontent.com/97303986/179518347-00f5c1d9-c20c-4e0b-83f2-4677034f6406.png)
-![image](https://user-images.githubusercontent.com/97303986/179518406-7dd00fd5-4b67-48b3-ba8c-2fe1260d5cd5.png)
-
-
-
-
-##### Student MCU
-![image](https://user-images.githubusercontent.com/97303986/179518599-dc939728-7318-4e25-8e2e-72a2abc41e82.png)
-![image](https://user-images.githubusercontent.com/97303986/179518696-989c5c41-0c16-4103-9333-e4e6508beffa.png)
-
+_Complete pinout diagrams for both MCUs and Shift Registers can be found at the bottom of this document_
 
 
 ### Powering the System
@@ -372,6 +358,21 @@ __Thermocouple input __J22 Thermocouple__ requires IC __U19 AD8497__ To be popul
 Analog voltage is buffered and distributed to both MCUs, __Pin A3__
 
 
+
+## Pinout Diagrams
+
+_MCU and Shift Register Pinout diagrams_
+
+##### Supervisor MCU
+![image](https://user-images.githubusercontent.com/97303986/179518347-00f5c1d9-c20c-4e0b-83f2-4677034f6406.png)
+![image](https://user-images.githubusercontent.com/97303986/179518406-7dd00fd5-4b67-48b3-ba8c-2fe1260d5cd5.png)
+
+
+
+
+##### Student MCU
+![image](https://user-images.githubusercontent.com/97303986/179518599-dc939728-7318-4e25-8e2e-72a2abc41e82.png)
+![image](https://user-images.githubusercontent.com/97303986/179518696-989c5c41-0c16-4103-9333-e4e6508beffa.png)
 
 
 
