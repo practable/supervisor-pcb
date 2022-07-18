@@ -1,6 +1,6 @@
-# Remote Labs Supervisor PCB V1.0
+# Remote Labs Supervisor PCB V1.2
 
-## Project Brief - [Remote Labs Supervisor PCB V1.0]
+## Project Brief - [Remote Labs Supervisor PCB V1.2]
 Design a PCB to provide power to remote labs experiments, which involve students programming microcontrollers remotely. PCB should also provide a supervisory role, blocking actuation of experimental hardware if it is likely to cause damage to the equipment. <br> <br>
 
 This allows students to upload their own code to a bare bones microcontroller, without risk of causing hardware damage or unsafe conditions. <br>
@@ -8,7 +8,7 @@ This allows students to upload their own code to a bare bones microcontroller, w
 ![RemoteLabs Supervisor PCBV1 0 CAD Design](https://user-images.githubusercontent.com/53580358/168500251-112aadd4-705d-4d79-a080-2df2c9a59aa5.png)
 ![RemoteLabsSupervisorPCBV1 0_3DModel_3](https://user-images.githubusercontent.com/53580358/168500272-4bcbfc67-7582-47d8-b97a-0a91f4ff0915.png)
 
-# Using Remote Labs Supervisor PCB README
+# Using Remote Labs Supervisor PCB 
 
 _This document is intended to be a useage guide for the Remote Labs Supervisor PCB, and document the different use cases and configurations it is capable of._
 
@@ -218,7 +218,7 @@ STUDENT		|A4		|LIMIT_1		| DIGITAL INPUT	| Limit Switch Detection.							| LOW = 
 
 SW1 - Stepper Mode Dipswitches set number of steps per revolution. If UNPOPULATED setting is at MAX RESOLUTION. (1, 1, 1 ) logic for MODE inputs.
 
-
+-----
 
 ## Use Case 3 [Digger Experiment]
 
@@ -262,7 +262,7 @@ STUDENT 	|D9 	|SERVO_1		| PPM or PWM Output	| PPM/PWM used to infer desired posi
 SUPERVISOR	|A2		|STDNT_SRVO_RX_1| ANALOG INPUT or EXTERNAL INTERRUPT	| Detects infered desired position for servo| 
 SUPERVISOR 	|D9 	|SERVO_1		| PPM Output	| PPM Standard sets Servo Position					| 
 
-
+-----
 
 ## Use Case 4 [Pendulum Experiment]
 
@@ -309,7 +309,7 @@ STUDENT		|A7		|DC_MOTOR_IS1	| I_SENSE_1				| ANALOG INPUT	| Current Draw and Fau
 STUDENT		|A6		|DC_MOTOR_IS2	| I_SENSE_2				| DIGITAL INPUT	| Current SIGN reporting (+/-)| HIGH = Positive Current, LOW = Negative Current
 
 
-
+-----
 
 ## Additional Features
 
