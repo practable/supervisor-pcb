@@ -5,8 +5,7 @@ Design a PCB to provide power to remote labs experiments, which involve students
 
 This allows students to upload their own code to a bare bones microcontroller, without risk of causing hardware damage or unsafe conditions. <br>
 ![RemoteLabsSupervisorPCBV1 0_3DModel](https://user-images.githubusercontent.com/53580358/168500296-4f97569d-9abc-4113-9998-3ffd72e1cbd8.png) 
-![RemoteLabs Supervisor PCBV1 0 CAD Design](https://user-images.githubusercontent.com/53580358/168500251-112aadd4-705d-4d79-a080-2df2c9a59aa5.png)
-![RemoteLabsSupervisorPCBV1 0_3DModel_3](https://user-images.githubusercontent.com/53580358/168500272-4bcbfc67-7582-47d8-b97a-0a91f4ff0915.png)
+
 
 # Using Remote Labs Supervisor PCB 
 
@@ -376,5 +375,8 @@ _MCU and Shift Register Pinout diagrams_
 
 
 
+## CAD Renders
 
+![RemoteLabs Supervisor PCBV1 0 CAD Design](https://user-images.githubusercontent.com/53580358/168500251-112aadd4-705d-4d79-a080-2df2c9a59aa5.png)
+![RemoteLabsSupervisorPCBV1 0_3DModel_3](https://user-images.githubusercontent.com/53580358/168500272-4bcbfc67-7582-47d8-b97a-0a91f4ff0915.png)
 
