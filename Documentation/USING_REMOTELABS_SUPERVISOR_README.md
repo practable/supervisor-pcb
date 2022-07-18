@@ -67,7 +67,7 @@ _In this configuration the following external hardware should be connected as fo
 
 DC Motor PWM is routed to Infineon DC Motor Controller module via the following logic:
 
-[INSTERT DIAGRAM HERE]
+![image](https://user-images.githubusercontent.com/97303986/179261400-5589a8e7-a57c-4d85-9150-5109dd07229f.png)
 
 If MOTOR_DIR_A is driven HIGH, PWM is routed from STUDENT_MOTOR_PWM or SUPERVISOR_MOTOR_PWM to MOTOR_OUT_1
 If MOTOR_DIR_B is driven HIGH, PWM is routed from STUDENT_MOTOR_PWM or SUPERVISOR_MOTOR_PWM to MOTOR_OUT_2
@@ -153,7 +153,7 @@ In this configuration the following external hardware should be connected as fol
 
 Stepper Motor Driver inputs are routed via the following logic:
 
-[INSTERT DIAGRAM HERE]
+![image](https://user-images.githubusercontent.com/97303986/179261535-dfac3f53-abda-467a-adae-726d47ff7c55.png)
 
 When MCU_STEP_SELECT is HIGH, inputs are routed from STUDENT MCU. When MCU_STEP_SELECT is LOW, inputs are routed from SUPERVISOR MCU.
 
