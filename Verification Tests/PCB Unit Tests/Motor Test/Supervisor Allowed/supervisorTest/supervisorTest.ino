@@ -55,7 +55,7 @@
 #define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
 
 #define DC_MOTOR_ENABLE           false                    // Software Tested
-#define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
+#define DC_MOTOR_CLOCKWISE        true                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
 #define DC_MOTOR_SPEED            0                      // Software Tested
 #define DC_CURRENT_SENSE_ACTIVE   false                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
