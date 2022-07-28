@@ -85,26 +85,15 @@ void setup() {
   studentMotorEN(STUDENT_MOTOR_ENABLE);
   studentStepperEN(STUDENT_STEPPER_ENABLE);
   studentPixelEN(STUDENT_PIXEL_ENABLE);
-
-
-  // Stepper Motor Control
-  stepperBegin();
-  stepperReset(STEPPER_RESET);
-
-
-  // Servo Motor Control
-  servoBegin();                          // begin Servo functions
-  servoConstrain(0, 130);             // Constrain min max travel for servo position
-
-  // WS2821b Pixel LED Control
-  pixelBegin();
 }
 void loop() {
   if (STUDENT_MOTOR_ENABLE)
     studentDCdirectionDectect();
+    
   studentMotorEN(STUDENT_MOTOR_ENABLE);
   studentStepperEN(STUDENT_STEPPER_ENABLE);
   studentPixelEN(STUDENT_PIXEL_ENABLE);
+  
   Serial.println("Student Motor Enabled");
   Serial.println("Student Stepper Enabled");
   Serial.println("Student LED Enabled");
@@ -116,40 +105,4 @@ void loop() {
   Serial.println("Student Stepper Disabled");
   studentStepperEN(false);
   delay(9000);
-
-
-
-
-
-
-
-
-
-  //  if (STUDENT_MOTOR_ENABLE)
-  //    studentDCdirectionDectect();
-  //
-  //  // Optical Encoder Loop
-  //  encoderLoop(ENCODER_ACTIVE);
-  //
-  //  // Stepper loop test
-  //  //stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test
-  //
-  //  stepper_test(STEPPER_ACTIVE, NUM_REVOLUTIONS);
-  //
-  //
-  //  stepperFaultDetect(STEPPER_FAULT_ACTIVE);
-  //
-  //  // Servo Loop Test
-  //  servoTest(SERVO_ACTIVE );                    // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
-  //
-  //  studentServoDetect(STUDENT_SERVO_DETECT);
-  //
-  //  // Pixel Loop Test
-  //  pixelLoop(PIXEL_ACTIVE );
-  //
-  //  // Limit Switch Test
-  //  limitSwitchLoop(LIMIT_SWITCH_ACTIVE);
-  //
-  //  // DC Motor Current Sensing
-  //  dcMotorCurrent(DC_CURRENT_SENSE_ACTIVE);
 }

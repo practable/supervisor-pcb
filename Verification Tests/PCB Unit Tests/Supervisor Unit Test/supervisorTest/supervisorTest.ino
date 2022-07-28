@@ -8,7 +8,7 @@
     14.06.2022
 
   Unit Test Firmware that tests DC Motor, Stepper Motor, LED, Optical Encoder and Limit Switch.
-  
+
 */
 
 #include <autoDelay.h>
@@ -59,7 +59,7 @@
 #define STEPPER_FAULT_ACTIVE      false                     // Tested
 
 
-#define SERVO_ACTIVE              false                     // Tested
+#define SERVO_ACTIVE              true                     // Tested
 
 #define STUDENT_SERVO_DETECT      false                     // Needs Testing with 2nd MCU
 
@@ -96,6 +96,10 @@ void setup() {
 
   // WS2821b Pixel LED Control
   pixelBegin();
+
+  // Servo Motor Control
+  servoBegin();                          // begin Servo functions
+  servoConstrain(0, 130);             // Constrain min max travel for servo position
 }
 void loop() {
   //MOTOR TEST
@@ -110,9 +114,9 @@ void loop() {
   dcMotorSpeed(DC_MOTOR_SPEED);
   delay(5000);
   dcMotorSpeed(0);
-  delay(2000);
+  delay(1000);
 
-//=================================================
+  //=================================================
 
   //OPTICAL ENCODER UNIT TEST
   Serial.println("ENCODER TEST: (7s)");
@@ -122,16 +126,16 @@ void loop() {
     delay(1);
   }
   encoderLoop(false);
-  delay(2000);
+  delay(1000);
 
-//=================================================
+  //=================================================
 
   //STEPPER MOTOR UNIT TEST
   Serial.println("STEPPER TEST:");
   stepper_test(STEPPER_ACTIVE, NUM_REVOLUTIONS);
-  delay(2000);
+  delay(1000);
 
-//=================================================
+  //=================================================
 
   //LED TEST
   Serial.println("LED TEST: (5s)");
@@ -141,9 +145,9 @@ void loop() {
     delay(1);
   }
   pixelLoop(false);
-  delay(2000);
+  delay(1000);
 
-//=================================================
+  //=================================================
 
   //LIMIT SWITCH TEST
   Serial.println("LIMIT SWITCH TEST: (10s)");
@@ -153,5 +157,16 @@ void loop() {
     delay(1);
   }
   limitSwitchLoop(false);
-  delay(2000);
+  delay(1000);
+
+  //=================================================
+
+  //SERVO TEST
+  Serial.println("SERVO TEST: (5s)");
+  for (int i = 0; i < 6; i++)
+  {
+    servoTest(SERVO_ACTIVE);
+    delay(800);
+  }
+  delay(1000);
 }

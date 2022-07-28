@@ -1,4 +1,4 @@
- /* supervisor Test Firmware
+/* supervisor Test Firmware
 
   Written BY:
 
@@ -55,7 +55,7 @@
 #define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
 
 #define DC_MOTOR_ENABLE           true                    // Software Tested
-#define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
+#define DC_MOTOR_CLOCKWISE        true                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
 #define DC_MOTOR_SPEED            30                      // Software Tested
 #define DC_CURRENT_SENSE_ACTIVE   false                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
@@ -75,7 +75,7 @@
 
 #define STUDENT_SERVO_DETECT      false                     // Needs Testing with 2nd MCU
 
-#define PIXEL_ACTIVE              false                     // Software Tested
+#define PIXEL_ACTIVE              true                     // Software Tested
 
 #define LIMIT_SWITCH_ACTIVE       false                    // Tested
 
