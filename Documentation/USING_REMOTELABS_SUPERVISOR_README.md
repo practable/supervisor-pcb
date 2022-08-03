@@ -59,7 +59,7 @@ __The USB connectors mounted to the __Motherboard__ should not be used if Arduin
 
 -----
 
-## Use Case 1 [Spinner Experiment]
+# Use Case 1 [Spinner Experiment]
 
 _In this configuration the following modules should be mounted to the motherboard:_
 
@@ -139,7 +139,7 @@ Both		|D4		|ENCODER_INDEX	| DIGITAL INPUT							| Used to track center detent of
 
 -----
 
-## Use Case 2 [Governer Experiment]
+# Use Case 2 [Governer Experiment]
 
 In this configuration the following modules should be mounted to the motherboard:
 
@@ -210,7 +210,7 @@ SW1 - Stepper Mode Dipswitches set number of steps per revolution. If UNPOPULATE
 
 
 
-## Use Case 3 [Digger Experiment]
+# Use Case 3 [Digger Experiment]
 
 In this configuration the following modules should be mounted to the motherboard:
 
@@ -254,7 +254,7 @@ SUPERVISOR 	|D9 	|SERVO_1		| PPM Output	| PPM Standard sets Servo Position					|
 
 
 
-## Use Case 4 [Pendulum Experiment]
+# Use Case 4 [Pendulum Experiment]
 
 *NOTE: USE CASE UNTESTED*
 
