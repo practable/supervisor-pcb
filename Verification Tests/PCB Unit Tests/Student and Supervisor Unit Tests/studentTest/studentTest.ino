@@ -77,9 +77,8 @@ void setup() {
 
   // DC Motor Control
   dcMotorBegin();              // Set control pins to output
-  dcMotorEnable(DC_MOTOR_ENABLE );        // Need shift Register to enable board
+  dcMotorEnable(DC_MOTOR_ENABLE);        // Need shift Register to enable board
   dcMotorDirection(DC_MOTOR_CLOCKWISE);      // Set DC Motor Direction
-  dcMotorSpeed(DC_MOTOR_SPEED);             // Set DC Motor Speed   - default off
 
   // Stepper Motor Control
   stepperBegin();
