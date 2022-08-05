@@ -1,47 +1,50 @@
 #include "supervisor_pinMap.h"
 
-#include "shiftFunctions.h"  
+#include "shiftRegister.h"
+
+//Assigning names for the function of the pendulum board
+
+#define STUDENT_LED1 DC_MOTOR_DIR1
+
+#define STUDENT_LED2 DC_MOTOR_DIR2
+
+#define STUDENT_LED3 SERVO_1
+
+#define STUDENT_ENABLE STUDENT_M_EN
+
+#define DRIVE DC_MOTOR_EN
+
+#define LOAD STEPP_STEP
+
+
+
+shiftRegister shiftReg(MOSI, SCK, LATCH);
 
 void setup() {
   // put your setup code here, to run once:
-//  pinMode (STU_LED_1, OUTPUT);
-//  pinMode (STU_LED_2, OUTPUT);
-//  pinMode (STU_LED_3, OUTPUT);
-  pinMode (DC_MOTOR_DIR1, OUTPUT);
-  pinMode (DC_MOTOR_DIR2, OUTPUT);
-  pinMode (SERVO_1, OUTPUT);
-  pinMode (STUDENT_M_EN, OUTPUT);
-  pinMode (DC_MOTOR_EN, OUTPUT);
-  pinMode (STEPP_STEP, OUTPUT);
+  pinMode (STUDENT_LED1, OUTPUT);
+  pinMode (STUDENT_LED2, OUTPUT);
+  pinMode (STUDENT_LED3, OUTPUT);
+  pinMode (STUDENT_ENABLE, OUTPUT);
+  pinMode (DRIVE, OUTPUT);
+  pinMode (LOAD, OUTPUT);
+  shiftReg.begin();
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
- digitalWrite (DC_MOTOR_EN, LOW); //drive
- digitalWrite (STEPP_STEP, LOW); //load
-
- if (digitalRead(DC_MOTOR_EN) == LOW  && digitalRead(STEPP_STEP) == LOW)
-  {
-    digitalWrite(DC_MOTOR_DIR1, HIGH);
-  }
-
-  if ( digitalRead(DC_MOTOR_EN) == HIGH  && digitalRead(STEPP_STEP) == LOW)
-  {
-    digitalWrite(DC_MOTOR_DIR2, HIGH);
-  }
-
-  if (digitalRead(DC_MOTOR_EN) == LOW  && digitalRead(STEPP_STEP) == HIGH)
-  {
-    digitalWrite(SERVO_1, HIGH);
-  }
-
+  shiftReg.shiftWrite(DRIVE, LOW);
   
-  if (digitalRead(DC_MOTOR_EN) == HIGH  && digitalRead(STEPP_STEP) == HIGH)
-  {
-    digitalWrite(SERVO_1, HIGH);
-    digitalWrite(DC_MOTOR_DIR1, HIGH);
-    digitalWrite(DC_MOTOR_DIR2, HIGH);
-  }
+  digitalWrite (LOAD, LOW); //load
+ 
+  shiftReg.shiftWrite(STUDENT_ENABLE, LOW);
+ 
+  digitalWrite(STUDENT_LED1, HIGH); //RED LED
+
+  digitalWrite(STUDENT_LED2, HIGH); //ORANGE LED
+
+  digitalWrite(STUDENT_LED3, HIGH); //GREEN LED
+
 
 }

@@ -1,11 +1,9 @@
 {
   "board": {
-    "active_layer": 33,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
-    "hidden_nets": [
-      "Net-(Q1-Pad1)"
-    ],
+    "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
@@ -38,7 +36,6 @@
       8,
       9,
       10,
-      11,
       12,
       13,
       14,
@@ -64,11 +61,11 @@
       35,
       36
     ],
-    "visible_layers": "000ffff_80000001",
+    "visible_layers": "ffcf0e0_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "Driver PCB Version 4.kicad_prl",
+    "filename": "Driver PCB 3,3V Version.kicad_prl",
     "version": 3
   },
   "project": {
