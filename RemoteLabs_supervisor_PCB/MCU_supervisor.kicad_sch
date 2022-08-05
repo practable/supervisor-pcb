@@ -3513,7 +3513,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid c012cd9b-6af9-45d6-88a5-fe94bb2f770e)
   )
-  (text "For Osc IC\n- R? Unpopulated\n- C? & C? Unpopulated\n- C? ~ 10n\n- All Jumpers 2 - 1\n\nFor Xtal\n- R? = 0ohm to 47ohm \n- C? & C? Value = 2 *(Cxtal -Cstray)\n- Omit C20\n- All Jumpers 2 - 3\n- TCYSH14F - No Idea, probably omit for Xtal"
+  (text "For Osc IC\n- R41 Unpopulated\n- C23 & C36 Unpopulated\n- C20 ~ 10n\n- All Jumpers 2 - 1\n\nFor Xtal\n- R? = 0ohm to 47ohm \n- C? & C? Value = 2 *(Cxtal -Cstray)\n- Omit C20\n- All Jumpers 2 - 3\n- TCYSH14F - No Idea, probably omit for Xtal"
     (at 172.72 113.03 0)
     (effects (font (size 0.8 0.8)) (justify left bottom))
     (uuid c7345093-5790-4b5c-85da-b3f9043f26ab)

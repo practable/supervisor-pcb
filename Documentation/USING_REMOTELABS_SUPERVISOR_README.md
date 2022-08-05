@@ -275,7 +275,7 @@ MCU 		|Pin 	| Pin Name 		|Pendulum PCB Pin Name	| State 		| Pendulum Behaviour 	
 ---			|---	|---			|---					|---			|---					|---
 SUPERVISOR 	|Q0		|DC_MOTOR_EN	| ENABLE	| DIGTAL OUTPUT	| Drive	 |Tried to avoid this being on a shift register - failed can it be moved to another pin? User Thermo A3, and enable
 SUPERVISOR 	|D6		|STEPP_STEP		| PENDULUM_PIN_1		| DIGTAL OUTPUT	| Load					|  
-SUPERVISOR 	|D12	|DC_MOTOR_DIR_1	| PENDULUM_PIN_7		| DIGTAL OUTPUT	| LED_1 Control			| 	
+SUPERVISOR 	|D12	|DC_MOTO    R_DIR_1	| PENDULUM_PIN_7		| DIGTAL OUTPUT	| LED_1 Control			| 	
 SUPERVISOR 	|D7		|DC_MOTOR_DIR_2	| PENDULUM_PIN_8		| DIGTAL OUTPUT	| LED_2 Control			| 
 SUPERVISOR 	|D9		|SERVO_1		| PENDULUM_PIN_6		| DIGTAL OUTPUT	| LED_3 Control			| 
 SUPERVISOR 	|Q1		|STUDENT_M_EN	| PENDULUM_PIN_2		| LOW			| Blocks Student Control, Enables Supervisor Control |
