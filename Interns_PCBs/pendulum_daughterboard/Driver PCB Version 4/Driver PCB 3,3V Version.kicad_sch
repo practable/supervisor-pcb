@@ -1361,7 +1361,7 @@
       (reference "EC4") (unit 1) (value "10u") (footprint "Capacitor_SMD:CP_Elec_4x5.4")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/c65397d5-fe0d-4db4-8d2f-8d7d98b06e98"
-      (reference "IC5") (unit 1) (value "MAX9928FAUA+") (footprint "Sensor_Current:SOP65P490X110-8N")
+      (reference "IC1") (unit 1) (value "MAX9928FAUA+") (footprint "Sensor_Current:SOP65P490X110-8N")
     )
     (path "/5eb8c919-129e-40b1-9073-45f4fce50973/8738cd02-72f3-4d33-ae3f-e323b397db4f"
       (reference "J1") (unit 1) (value "AVR-ISP-6") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
@@ -1386,6 +1386,9 @@
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/a728f320-4165-4433-bfdd-711d7e11cc8b"
       (reference "NT2") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
+    )
+    (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/923b5082-c750-46ba-8978-2f20d2d09b0f"
+      (reference "NT3") (unit 1) (value "NetTie_2") (footprint "NetTie:NetTie-2_SMD_Pad0.5mm")
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/c8e8f1cb-49bb-4b5b-b880-c4245dd4e304"
       (reference "Q1") (unit 1) (value "BC858W") (footprint "Package_TO_SOT_SMD:SOT-23")
@@ -1547,7 +1550,7 @@
       (reference "U6") (unit 1) (value "AMS1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
     )
     (path "/5eb8c919-129e-40b1-9073-45f4fce50973/12299576-4716-4785-adfc-9566d09f521e"
-      (reference "U10") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
+      (reference "U7") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
     )
   )
 )

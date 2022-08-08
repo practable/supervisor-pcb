@@ -399,9 +399,6 @@
         "microvia_drill": 1.6,
         "name": "COIL_NET",
         "nets": [
-          "Net-(D4-Pad2)",
-          "Net-(IC5-Pad3)",
-          "Net-(IC5-Pad6)",
           "Net-(J2-Pad2)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -435,8 +432,21 @@
           "Net-(D3-Pad2)",
           "Net-(J1-Pad4)",
           "Net-(J1-Pad5)",
+          "Net-(Q1-Pad1)",
+          "Net-(Q2-Pad1)",
+          "Net-(R17-Pad1)",
+          "Net-(R19-Pad1)",
+          "Net-(R22-Pad1)",
+          "Net-(R24-Pad1)",
+          "Net-(R25-Pad1)",
+          "Net-(R26-Pad1)",
+          "Net-(R27-Pad1)",
+          "Net-(R28-Pad1)",
+          "Net-(R29-Pad1)",
           "Net-(R30-Pad1)",
+          "Net-(R31-Pad1)",
           "Net-(R32-Pad1)",
+          "Net-(R33-Pad1)",
           "STUDENT_ENABLE",
           "STU_LED_1",
           "STU_LED_2",
@@ -462,8 +472,6 @@
           "unconnected-(A1-Pad4)",
           "unconnected-(A1-Pad6)",
           "unconnected-(A1-Pad8)",
-          "unconnected-(IC5-Pad4)",
-          "unconnected-(IC5-Pad5)",
           "unconnected-(U3-Pad11)",
           "unconnected-(U4-Pad11)"
         ],
@@ -485,6 +493,7 @@
         "microvia_drill": 0.1,
         "name": "DRIVE_3.3V",
         "nets": [
+          "/Linear Voltage Conversion/DRIVE_5V",
           "PEND_3.3V"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
