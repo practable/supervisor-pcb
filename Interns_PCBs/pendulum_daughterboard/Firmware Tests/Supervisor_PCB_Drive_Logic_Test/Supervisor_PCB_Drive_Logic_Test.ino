@@ -34,7 +34,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  shiftReg.shiftWrite(DRIVE, LOW);
+  shiftReg.shiftWrite(DRIVE, HIGH);
   
   digitalWrite (LOAD, LOW); //load
  
