@@ -733,10 +733,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "DRIVE_INPUT" (shape output) (at 177.8 54.61 0) (fields_autoplaced)
+  (global_label "LOAD_INPUT" (shape output) (at 177.8 54.61 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 4fce49d9-063a-44cc-8f69-10d319fbbecc)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 192.0664 54.5306 0)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 191.4012 54.5306 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -782,10 +782,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "LOAD_INPUT" (shape output) (at 177.8 77.47 0) (fields_autoplaced)
+  (global_label "DRIVE_INPUT" (shape output) (at 177.8 77.47 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 61bc03a9-b2c5-42e0-afb6-64afcbcb3378)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 191.4012 77.3906 0)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 192.0664 77.3906 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1263,6 +1263,12 @@
     )
     (path "/5211c356-7b0e-4baf-ab64-1fbe491c28e7/eba99c86-0f42-4e9c-b24d-6187bb60bba7"
       (reference "C9") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+    )
+    (path "/21780cc4-9565-4c48-acf2-9e239c61d608/c37e6299-d39f-48ad-b9e6-545b3ac22c42"
+      (reference "C10") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+    )
+    (path "/21780cc4-9565-4c48-acf2-9e239c61d608/307442c4-2d7f-45ee-8835-fc08eb57c8f2"
+      (reference "C11") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/1a3370a0-6778-4601-bc8e-4c18ed659ac3/90554270-e835-46bf-8bb7-64ab2c34bc4f"
       (reference "D1") (unit 1) (value "LED") (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
