@@ -4575,7 +4575,6 @@
     )
   )
 
-
   (junction (at 205.74 162.56) (diameter 0) (color 0 0 0 0)
     (uuid 01b15e1e-e694-4b05-9af6-9edf026420f3)
   )
@@ -5634,7 +5633,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x04") (at 281.94 86.36 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 0ee76692-a45a-44be-9ff7-2a50cdb3a92f)
-    (property "Reference" "J6" (id 0) (at 281.94 74.93 0))
+    (property "Reference" "J4" (id 0) (at 281.94 74.93 0))
     (property "Value" "Conn_01x04" (id 1) (at 281.94 77.47 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (id 2) (at 281.94 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
