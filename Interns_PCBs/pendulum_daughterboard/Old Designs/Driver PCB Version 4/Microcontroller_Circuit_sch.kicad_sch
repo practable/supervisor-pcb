@@ -619,7 +619,7 @@
   (symbol (lib_id "MCU_Microchip_ATtiny:ATtiny85-20S") (at 190.5 87.63 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 12299576-4716-4785-adfc-9566d09f521e)
-    (property "Reference" "U7" (id 0) (at 204.47 86.3599 0)
+    (property "Reference" "U10" (id 0) (at 204.47 86.3599 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "ATtiny85-20S" (id 1) (at 204.47 88.8999 0)
