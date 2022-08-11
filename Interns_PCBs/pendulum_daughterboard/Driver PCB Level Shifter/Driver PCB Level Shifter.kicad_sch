@@ -1680,7 +1680,7 @@
       (reference "U4") (unit 5) (value "4071") (footprint "Package_SO:SOIC127P600X175-14N")
     )
     (path "/5eb8c919-129e-40b1-9073-45f4fce50973/12299576-4716-4785-adfc-9566d09f521e"
-      (reference "U7") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
+      (reference "U5") (unit 1) (value "ATtiny85-20S") (footprint "Package_SO:SOIC-8W_5.3x5.3mm_P1.27mm")
     )
   )
 )
