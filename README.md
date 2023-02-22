@@ -379,4 +379,6 @@ _MCU and Shift Register Pinout diagrams_
 
 ![RemoteLabs Supervisor PCBV1 0 CAD Design](https://user-images.githubusercontent.com/53580358/168500251-112aadd4-705d-4d79-a080-2df2c9a59aa5.png)
 ![RemoteLabsSupervisorPCBV1 0_3DModel_3](https://user-images.githubusercontent.com/53580358/168500272-4bcbfc67-7582-47d8-b97a-0a91f4ff0915.png)
+![image](https://user-images.githubusercontent.com/97303986/220771336-aec36f43-f6b2-4385-b135-c6cc255c9879.png)
+
 
