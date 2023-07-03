@@ -1,0 +1,1661 @@
+{
+  "board": {
+    "3dviewports": [],
+    "design_settings": {
+      "defaults": {
+        "board_outline_line_width": 0.09999999999999999,
+        "copper_line_width": 0.19999999999999998,
+        "copper_text_italic": false,
+        "copper_text_size_h": 1.5,
+        "copper_text_size_v": 1.5,
+        "copper_text_thickness": 0.3,
+        "copper_text_upright": false,
+        "courtyard_line_width": 0.049999999999999996,
+        "dimension_precision": 4,
+        "dimension_units": 3,
+        "dimensions": {
+          "arrow_length": 1270000,
+          "extension_offset": 500000,
+          "keep_text_aligned": true,
+          "suppress_zeroes": false,
+          "text_position": 0,
+          "units_format": 1
+        },
+        "fab_line_width": 0.09999999999999999,
+        "fab_text_italic": false,
+        "fab_text_size_h": 1.0,
+        "fab_text_size_v": 1.0,
+        "fab_text_thickness": 0.15,
+        "fab_text_upright": false,
+        "other_line_width": 0.15,
+        "other_text_italic": false,
+        "other_text_size_h": 1.0,
+        "other_text_size_v": 1.0,
+        "other_text_thickness": 0.15,
+        "other_text_upright": false,
+        "pads": {
+          "drill": 1.0,
+          "height": 2.0,
+          "width": 2.0
+        },
+        "silk_line_width": 0.15,
+        "silk_text_italic": false,
+        "silk_text_size_h": 1.0,
+        "silk_text_size_v": 1.0,
+        "silk_text_thickness": 0.15,
+        "silk_text_upright": false,
+        "zones": {
+          "45_degree_only": false,
+          "min_clearance": 0.508
+        }
+      },
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
+      "drc_exclusions": [
+        "courtyards_overlap|112638801|33303601|39211402-b9fe-4fbe-b865-b92525ce6e3f|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|112638801|37554801|8ef3eff7-809f-4f2d-8754-572000d32517|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|117261601|33303601|97de2987-507c-4bd8-ae6e-aab51caa6c38|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|117261601|37573601|a7928873-604e-41b4-8f3c-a9332a26491c|b9016350-04d6-478a-bec1-b25b7ff38bb7",
+        "courtyards_overlap|121675531|37570678|a7928873-604e-41b4-8f3c-a9332a26491c|f4600315-2859-4100-b700-20728bd6ae90",
+        "courtyards_overlap|121681201|33303601|a7928873-604e-41b4-8f3c-a9332a26491c|bd9e7851-ccb2-4617-ba3b-e445716ae6f3",
+        "courtyards_overlap|122602162|110725601|4a78cb2b-cd00-486b-b4d8-9d949cfea530|a7a3f6a5-3b85-45a7-9758-8de673b74f39",
+        "courtyards_overlap|125867601|52257701|82393777-34e1-4bbb-88d1-89e4aa816583|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|127719601|40682801|a7928873-604e-41b4-8f3c-a9332a26491c|d989dae8-e7b0-44a9-b416-bd1c69cacea3",
+        "courtyards_overlap|127719601|40682801|d989dae8-e7b0-44a9-b416-bd1c69cacea3|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|128465201|52281601|3bfe518e-5ed2-4867-9e5b-08cfa7fb6ff5|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|130818401|65574801|1fe16229-c621-4586-942a-1a5e24bf02e3|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|131694701|37882001|08fac9fb-bd01-4e29-bb0a-a4ebc41404d7|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|134394901|62774001|511544ba-bbf8-4f33-a977-0fcd63e86ccc|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|136891201|40799301|9b5d8fad-a9d5-4261-94ae-888d349a7fb4|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|139793601|40837401|59655a8a-a10b-45d8-97b7-92779cae6511|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|140724401|54348001|a7928873-604e-41b4-8f3c-a9332a26491c|af8adf60-fd23-4203-acdf-0ca290e807c5",
+        "courtyards_overlap|140724401|54348001|af8adf60-fd23-4203-acdf-0ca290e807c5|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|144439101|51699601|a7928873-604e-41b4-8f3c-a9332a26491c|b225440d-55bd-4809-8185-5ea6dd703474",
+        "courtyards_overlap|144439101|51699601|b225440d-55bd-4809-8185-5ea6dd703474|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|151755301|54043201|3c973484-83b4-4b9f-b8eb-40b27afa08cf|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|154694401|40936801|a7928873-604e-41b4-8f3c-a9332a26491c|e33663f2-81b1-48fd-9c1e-c36e0227eabe",
+        "courtyards_overlap|154694401|40936801|e33663f2-81b1-48fd-9c1e-c36e0227eabe|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|155310301|51394801|a7928873-604e-41b4-8f3c-a9332a26491c|ee7ec54b-711a-4b23-bab9-26cad74efdce",
+        "courtyards_overlap|155310301|51394801|ee7ec54b-711a-4b23-bab9-26cad74efdce|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|158155101|38136001|24217754-65f8-4058-9ca8-8216e58d0e1a|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|158816001|77515601|82e59a42-c476-4a44-afa9-44352baae650|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|161457601|77515601|a7928873-604e-41b4-8f3c-a9332a26491c|b5370146-7c44-45d2-9690-dc465b620837",
+        "courtyards_overlap|168441001|39893201|00c8a1c2-a1d5-4598-9f78-253afd23639f|a7928873-604e-41b4-8f3c-a9332a26491c",
+        "courtyards_overlap|168441001|42433201|a7928873-604e-41b4-8f3c-a9332a26491c|faa455ea-93b0-4a12-9af2-c32e7eee6d37",
+        "courtyards_overlap|168441001|44973201|a7928873-604e-41b4-8f3c-a9332a26491c|bbd1c20a-f2a3-4e77-8533-55f3b9a5efa3",
+        "courtyards_overlap|184869201|90135201|06a9ae71-e3c1-4cc3-b2e3-a63700a1b326|51f88087-859c-4bc7-a7f1-d8cac8d2db4e",
+        "courtyards_overlap|186316915|38743001|0581cfc8-a68e-4f23-acd6-6ad4854bcd78|c9eca091-1eea-443e-97ed-24518ab35e5f",
+        "courtyards_overlap|56371601|48056401|770e1af7-abe4-4f50-9e07-aaeeeeda7425|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|56728801|55850301|137a7213-3484-4517-87fb-445aeea88cde|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|56858801|96835201|a43a3659-882e-4070-9e47-a5404e6e1e6a|b480ff03-7cab-42b4-91d0-4a8efdc14314",
+        "courtyards_overlap|56964401|108770401|a43a3659-882e-4070-9e47-a5404e6e1e6a|f2266ac4-6863-413a-9b83-62c15f9ec3b5",
+        "courtyards_overlap|56964401|108770401|f2266ac4-6863-413a-9b83-62c15f9ec3b5|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|57084401|37671701|64d51e30-2903-4536-99d5-906f339b1f1a|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|57186001|51968001|04e7ba59-3bd7-4a62-a1c4-ba759fe84e42|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|57409689|31206401|7778230f-f910-4a2e-99e2-9b1e861be1ad|f48199cf-bc70-4608-a6c6-d28303061c72",
+        "courtyards_overlap|57592401|78964301|a43a3659-882e-4070-9e47-a5404e6e1e6a|f2a890da-4680-40ce-b207-f4f38e533c52",
+        "courtyards_overlap|57673201|63428001|7778230f-f910-4a2e-99e2-9b1e861be1ad|dc17e151-85cb-4597-871e-ac2e8629b14b",
+        "courtyards_overlap|57810401|83667601|7139156b-2052-4ab2-89c5-dcffdf426f7e|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|58181388|33157601|7778230f-f910-4a2e-99e2-9b1e861be1ad|92fe29d8-c5ff-43fc-bf1a-8ccec26af661",
+        "courtyards_overlap|58256103|87274001|2b6301a3-5467-4fc1-bb31-50e77447df18|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|58547001|105105201|a43a3659-882e-4070-9e47-a5404e6e1e6a|c8391c5c-d809-4916-90c5-6ae8b29f5c89",
+        "courtyards_overlap|58587601|84951201|5e06cb04-0c54-4e7e-90eb-5dd13205d35b|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|58898301|60030801|6b77bf77-de96-48f8-be92-62612c7f7189|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|58913201|55908901|7778230f-f910-4a2e-99e2-9b1e861be1ad|ffee5a36-5bf2-4c4a-b1fe-60fb5fb6d661",
+        "courtyards_overlap|58964070|76758801|a43a3659-882e-4070-9e47-a5404e6e1e6a|e8114f3b-2f27-4cbc-82e5-8ea668dafa63",
+        "courtyards_overlap|59414001|50960001|7778230f-f910-4a2e-99e2-9b1e861be1ad|7932276f-e466-46ab-8dd0-14c93ec225da",
+        "courtyards_overlap|59537201|109646401|8470e88a-4561-440d-a9ed-06e09e74cee0|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|59603601|63444001|7778230f-f910-4a2e-99e2-9b1e861be1ad|a10cdecd-53db-4a94-874a-3261fddc42c8",
+        "courtyards_overlap|59818124|91223486|a43a3659-882e-4070-9e47-a5404e6e1e6a|a620e621-1b7e-4b19-8287-961a171e5b5f",
+        "courtyards_overlap|60030801|104719901|9e476baf-fafa-4406-b556-1eac836b4e2d|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|60060601|78890401|a43a3659-882e-4070-9e47-a5404e6e1e6a|ac9e6c46-44b8-4d55-a41d-775fd311b6e4",
+        "courtyards_overlap|60256001|113244401|a43a3659-882e-4070-9e47-a5404e6e1e6a|a6c62207-e47b-4cb7-87a4-29e345d3d7b5",
+        "courtyards_overlap|60770401|83493601|9a064237-81c6-4294-a4e7-2aadc7d202ff|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|60772001|31407201|7778230f-f910-4a2e-99e2-9b1e861be1ad|8367ac6f-a401-42a3-80d6-61003e3b96b7",
+        "courtyards_overlap|61093846|40521596|7778230f-f910-4a2e-99e2-9b1e861be1ad|ba379001-8a2f-4d3a-935e-d0598e96bab4",
+        "courtyards_overlap|61127401|55776401|3e9918f5-fe20-41be-989a-3532ae9c8232|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|61584801|63462801|745fe90e-c09f-4980-939d-c86bb79f5d7c|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|62309701|76439201|a43a3659-882e-4070-9e47-a5404e6e1e6a|f8b07d01-903e-4e3f-8f6f-cdece65f4143",
+        "courtyards_overlap|62367601|104719901|a43a3659-882e-4070-9e47-a5404e6e1e6a|e85479a1-246b-4094-ab2f-e2441217b8b6",
+        "courtyards_overlap|62636401|59812939|7778230f-f910-4a2e-99e2-9b1e861be1ad|aba076c8-6076-4aad-ba55-ee571a49789c",
+        "courtyards_overlap|62636401|60030801|6b77bf77-de96-48f8-be92-62612c7f7189|aba076c8-6076-4aad-ba55-ee571a49789c",
+        "courtyards_overlap|63058001|50321601|76e18e6c-5c22-4b66-9b86-0d0d73f7c400|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|63515201|63462801|63398651-4f6e-4e62-9035-ee4c0ea976b7|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|63703201|54559201|1a7f6efa-ef60-433d-acc0-6f9a9126bc57|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|63891601|79167501|a43a3659-882e-4070-9e47-a5404e6e1e6a|ef2be787-d7f6-4c7f-890f-118a5221e338",
+        "courtyards_overlap|64196401|109401301|919d6ac8-d98a-4062-ab2e-bc89b789e944|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|64501201|84458501|238d17ee-78a7-4138-8b95-c10b225a8e62|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|64755201|57983901|7778230f-f910-4a2e-99e2-9b1e861be1ad|e61ab269-9ed2-4997-9d04-ff45179c9616",
+        "courtyards_overlap|65159314|104728401|49fb3fcb-e2cb-4d87-9fef-1064751f6f1d|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|66279201|49377201|773a6110-b6de-4760-af86-4512c04abc39|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|66565601|31204801|7778230f-f910-4a2e-99e2-9b1e861be1ad|ae6839cd-d76e-41ae-9d9d-d53496654de7",
+        "courtyards_overlap|66565601|31204801|ae6839cd-d76e-41ae-9d9d-d53496654de7|7778230f-f910-4a2e-99e2-9b1e861be1ad",
+        "courtyards_overlap|66634801|84734001|3084e334-bf87-4108-a171-28c9d8e0dd00|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|66715601|104712401|18cb0eba-8a8a-4f65-bcfb-e4b573f41717|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|66787201|97078401|5c5eaa92-cce1-4c12-a008-9dfd9b3268d6|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|66836401|88645601|4dcf12f0-d22f-49eb-aa1b-3474b4dab3ed|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "courtyards_overlap|66915199|21272924|7778230f-f910-4a2e-99e2-9b1e861be1ad|e8b9f5a2-9c61-4573-a103-20f29d774825",
+        "courtyards_overlap|67069601|53332001|7778230f-f910-4a2e-99e2-9b1e861be1ad|f28dc298-8497-4d7a-b050-43d8f1dd7baa",
+        "courtyards_overlap|67114507|109672001|840ad091-023c-4369-b33c-3d0a4b61211f|a43a3659-882e-4070-9e47-a5404e6e1e6a",
+        "items_not_allowed|60935600|79840400|b2597dc7-a46c-4652-a487-2c9f8b6a9377|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|60935600|81940400|c1e88083-4a39-4bfe-8241-629b70a717a1|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|62585600|79840400|46610e55-9b1c-4e1e-a805-d1734b356126|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|62585600|81940400|39717b0a-ef1d-46c0-a95d-a2da31fc4240|00000000-0000-0000-0000-000000000000"
+      ],
+      "meta": {
+        "version": 2
+      },
+      "rule_severities": {
+        "annular_width": "error",
+        "clearance": "error",
+        "copper_edge_clearance": "error",
+        "courtyards_overlap": "error",
+        "diff_pair_gap_out_of_range": "error",
+        "diff_pair_uncoupled_length_too_long": "error",
+        "drill_out_of_range": "error",
+        "duplicate_footprints": "warning",
+        "extra_footprint": "warning",
+        "footprint_type_mismatch": "error",
+        "hole_clearance": "error",
+        "hole_near_hole": "error",
+        "invalid_outline": "error",
+        "item_on_disabled_layer": "error",
+        "items_not_allowed": "error",
+        "length_out_of_range": "error",
+        "malformed_courtyard": "error",
+        "microvia_drill_out_of_range": "error",
+        "missing_courtyard": "ignore",
+        "missing_footprint": "warning",
+        "net_conflict": "warning",
+        "npth_inside_courtyard": "ignore",
+        "padstack": "error",
+        "pth_inside_courtyard": "ignore",
+        "shorting_items": "error",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
+        "skew_out_of_range": "error",
+        "through_hole_pad_without_hole": "error",
+        "too_many_vias": "error",
+        "track_dangling": "warning",
+        "track_width": "error",
+        "tracks_crossing": "error",
+        "unconnected_items": "error",
+        "unresolved_variable": "error",
+        "via_dangling": "warning",
+        "zone_has_empty_net": "error",
+        "zones_intersect": "error"
+      },
+      "rules": {
+        "allow_blind_buried_vias": false,
+        "allow_microvias": false,
+        "max_error": 0.005,
+        "min_clearance": 0.0,
+        "min_copper_edge_clearance": 0.0,
+        "min_hole_clearance": 0.25,
+        "min_hole_to_hole": 0.25,
+        "min_microvia_diameter": 0.19999999999999998,
+        "min_microvia_drill": 0.09999999999999999,
+        "min_silk_clearance": 0.0,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.19999999999999998,
+        "min_via_annular_width": 0.049999999999999996,
+        "min_via_diameter": 0.39999999999999997,
+        "solder_mask_clearance": 0.0,
+        "solder_mask_min_width": 0.0,
+        "use_height_for_length_calcs": true
+      },
+      "track_widths": [
+        0.0
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
+      "zones_allow_external_fillets": false,
+      "zones_use_no_outline": true
+    },
+    "layer_presets": [],
+    "viewports": []
+  },
+  "boards": [],
+  "cvpcb": {
+    "equivalence_files": []
+  },
+  "erc": {
+    "erc_exclusions": [],
+    "meta": {
+      "version": 0
+    },
+    "pin_map": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    ],
+    "rule_severities": {
+      "bus_definition_conflict": "error",
+      "bus_entry_needed": "error",
+      "bus_to_bus_conflict": "error",
+      "bus_to_net_conflict": "error",
+      "conflicting_netclasses": "error",
+      "different_unit_footprint": "error",
+      "different_unit_net": "error",
+      "duplicate_reference": "error",
+      "duplicate_sheet_names": "error",
+      "endpoint_off_grid": "warning",
+      "extra_units": "error",
+      "global_label_dangling": "warning",
+      "hier_label_mismatch": "error",
+      "label_dangling": "error",
+      "lib_symbol_issues": "warning",
+      "missing_bidi_pin": "warning",
+      "missing_input_pin": "warning",
+      "missing_power_pin": "error",
+      "missing_unit": "warning",
+      "multiple_net_names": "warning",
+      "net_not_bus_member": "warning",
+      "no_connect_connected": "warning",
+      "no_connect_dangling": "warning",
+      "pin_not_connected": "error",
+      "pin_not_driven": "error",
+      "pin_to_pin": "error",
+      "power_pin_not_driven": "error",
+      "similar_labels": "warning",
+      "simulation_model_issue": "error",
+      "unannotated": "error",
+      "unit_value_mismatch": "error",
+      "unresolved_variable": "error",
+      "wire_dangling": "error"
+    }
+  },
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  },
+  "meta": {
+    "filename": "supervisor-pcb-version-3.0.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "12V_DC_BUS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 54, 91)",
+        "track_width": 3.0,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "3V3_DC_MCU",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(130, 167, 57)",
+        "track_width": 0.3,
+        "via_diameter": 0.7,
+        "via_drill": 0.35,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "5V_DC_LED",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 180, 36)",
+        "track_width": 0.4,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "5V_DC_RPI",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 117, 35)",
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "5V_DC_SERVO",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(172, 163, 22)",
+        "track_width": 0.4,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "ANALOG",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(78, 105, 255)",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "A_GND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(122, 51, 131)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "DIGITAL",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(57, 183, 157)",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "D_GND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(69, 19, 21)",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "GND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(207, 105, 30)",
+        "track_width": 0.3,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "PB_GND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(102, 22, 54)",
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "P_GND",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(155, 24, 24)",
+        "track_width": 4.0,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "STEP_OP",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 76, 248)",
+        "track_width": 0.5,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      }
+    ],
+    "meta": {
+      "version": 3
+    },
+    "net_colors": null,
+    "netclass_assignments": null,
+    "netclass_patterns": [
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC1"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC2"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC3"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/Power Input & Distribution/01"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/Power Input & Distribution/12V"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/Power Input & Distribution/12V_DC"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "12V_DC_BUS"
+      },
+      {
+        "netclass": "3V3_DC_MCU",
+        "pattern": "3V3_DC_MCU"
+      },
+      {
+        "netclass": "5V_DC_LED",
+        "pattern": "5V_DC_LED"
+      },
+      {
+        "netclass": "5V_DC_RPI",
+        "pattern": "/Power Input & Distribution/5_to_3v3_reg"
+      },
+      {
+        "netclass": "5V_DC_RPI",
+        "pattern": "5V_DC_RPI"
+      },
+      {
+        "netclass": "5V_DC_RPI",
+        "pattern": "USB_BUS"
+      },
+      {
+        "netclass": "5V_DC_SERVO",
+        "pattern": "5V_DC_SERVO"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_IN_C"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_A1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_A2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_B1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_B2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_C1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_C2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB1B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB2B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB3"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB3B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB4"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB4B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Output Logic/STUDENT_MOTOR_PWM"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Student MCU/SERVO_1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "A_BUFFER_IN"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "A_BUFFER_OUT_A"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "A_BUFFER_OUT_B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "M_I_SENSE_1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "M_I_SENSE_2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "SERVO_1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "SERVO_2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "STPPR_FAULT"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "STU_STP_FLT"
+      },
+      {
+        "netclass": "A_GND",
+        "pattern": "GNDA"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/DC Motor Controller/ENABLE"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/DC Motor Controller/IN_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/DC Motor Controller/IN_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_A"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_B"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_C"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_D"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_E"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_A1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_B1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_C1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_D1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_E1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_F1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/DIRECTION_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/MCU_PIXEL_SELECT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/MCU_STEP_SELECT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STEP_RST_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_DIRECTION"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_MOTOR_EN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_PIXEL_DATA"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_STEP"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_STEP_RST"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_DIRECTION"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_MOTOR_EN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_MOTOR_PWM"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_PIXEL_DATA"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_STEP"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_STEP_RST"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Power Input & Distribution/02"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/DC_MOTOR_DIR1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/DC_MOTOR_DIR2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/HSE_IN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/HSE_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/LATCH"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/MCU_RESET"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/MODE_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/MOSI"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/PROG_RX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/PROG_TX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SCK"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SERVO_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_3"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_7"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SPARE_3"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/USB_N"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/USB_P"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/HSE_IN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/HSE_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/LATCH"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/MCU_RESET"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/MOSI"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/PROG_RX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/PROG_TX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/SCK"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_DC_M_DIR_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_DC_M_DIR_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_SRVO_RX_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_SRVO_RX_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/USB_N"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/USB_P"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "LIMIT_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "LIMIT_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "MODE_0"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "MODE_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "MODE_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C11-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C13-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C17-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C20-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C21-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C3-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C31-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C32-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C5-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C7-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D2-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D4-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D7-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D8-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D9-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad5)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J2-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J22-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J22-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J27-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J28-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad5)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad7)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R26-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R27-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R28-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R29-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R30-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R31-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U11-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U11-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U12-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U12-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad12)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad8)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U8-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "OE_A"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "OE_B"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "OE_IDX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A1-Pad18)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A1-Pad27)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A1-Pad30)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A2-Pad18)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A2-Pad27)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A2-Pad30)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad12)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad13)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad14)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad15)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad16)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad30)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad31)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad32)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad33)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad34)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad35)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad36)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad37)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad8)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J13-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad7)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J7-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U14-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U19-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U5-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U5-Pad9)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U7-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U7-Pad9)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U8-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U8-Pad12)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U8-Pad8)"
+      },
+      {
+        "netclass": "D_GND",
+        "pattern": "GNDD"
+      },
+      {
+        "netclass": "PB_GND",
+        "pattern": "/Power Input & Distribution/PGND0"
+      },
+      {
+        "netclass": "PB_GND",
+        "pattern": "GND_PB"
+      },
+      {
+        "netclass": "P_GND",
+        "pattern": "GNDPWR"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(A4-Pad13)"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(A4-Pad14)"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(J19-Pad3)"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(J19-Pad4)"
+      }
+    ]
+  },
+  "pcbnew": {
+    "last_paths": {
+      "gencad": "",
+      "idf": "",
+      "netlist": "",
+      "specctra_dsn": "",
+      "step": "RemoteLabs_supervisor_PCB.step",
+      "vrml": ""
+    },
+    "page_layout_descr_file": ""
+  },
+  "schematic": {
+    "annotate_start_num": 0,
+    "drawing": {
+      "dashed_lines_dash_length_ratio": 12.0,
+      "dashed_lines_gap_length_ratio": 3.0,
+      "default_line_thickness": 6.0,
+      "default_text_size": 50.0,
+      "field_names": [],
+      "intersheets_ref_own_page": false,
+      "intersheets_ref_prefix": "",
+      "intersheets_ref_short": false,
+      "intersheets_ref_show": false,
+      "intersheets_ref_suffix": "",
+      "junction_size_choice": 3,
+      "label_size_ratio": 0.375,
+      "pin_symbol_size": 25.0,
+      "text_offset_ratio": 0.15
+    },
+    "legacy_lib_dir": "",
+    "legacy_lib_list": [],
+    "meta": {
+      "version": 1
+    },
+    "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "fix_passive_vals": false,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 0,
+      "workbook_filename": ""
+    },
+    "page_layout_descr_file": "",
+    "plot_directory": "",
+    "spice_adjust_passive_values": false,
+    "spice_current_sheet_as_root": false,
+    "spice_external_command": "spice \"%I\"",
+    "spice_model_current_sheet_as_root": true,
+    "spice_save_all_currents": false,
+    "spice_save_all_voltages": false,
+    "subpart_first_id": 65,
+    "subpart_id_separator": 0
+  },
+  "sheets": [
+    [
+      "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
+      ""
+    ],
+    [
+      "586ec748-563a-478a-82db-706fb951336a",
+      "Power Input & Distribution"
+    ],
+    [
+      "ef79b516-f387-4bff-98aa-61eff96e72d2",
+      "Student MCU"
+    ],
+    [
+      "0d587a0a-c67c-4fed-9eec-791a57f2bb2e",
+      "Supervisor MCU"
+    ],
+    [
+      "9266ad98-56ad-4979-a534-eef1d9b8c163",
+      "DC Motor Controller"
+    ],
+    [
+      "5841138f-45b5-44f1-8a37-3c7876e2034c",
+      "Stepper Motor Controller"
+    ],
+    [
+      "b26e1d9c-cfe6-4f55-be1c-17c06d0ac644",
+      "Output Logic"
+    ],
+    [
+      "fc507f37-311a-4a88-8803-5135386aa883",
+      "Servo Control"
+    ],
+    [
+      "283d3eb1-906d-460d-a87d-d328f41afedd",
+      "analogSensors"
+    ],
+    [
+      "8cce862e-92d4-4b11-b295-b482621a1385",
+      "Digital Sensor Buffers"
+    ],
+    [
+      "3053d1d3-1dd5-4dac-b6cb-5e7828c7a42e",
+      "digitalSensors"
+    ],
+    [
+      "58677001-4fa9-4c82-8bf8-e3f98fe8c902",
+      "Analog Sensor Buffers"
+    ]
+  ],
+  "text_variables": {}
+}
