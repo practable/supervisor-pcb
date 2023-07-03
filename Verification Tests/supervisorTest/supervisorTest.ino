@@ -73,7 +73,7 @@
 
 #define SERVO_ACTIVE              false                     // Tested
 
-#define STUDENT_SERVO_DETECT      true                     // Needs Testing with 2nd MCU
+#define STUDENT_SERVO_DETECT      false                    // Needs Testing with 2nd MCU
 
 #define PIXEL_ACTIVE              false                     // Software Tested
 
