@@ -1,5 +1,6 @@
 {
   "board": {
+    "3dviewports": [],
     "design_settings": {
       "defaults": {
         "board_outline_line_width": 0.09999999999999999,
@@ -220,7 +221,8 @@
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },
-    "layer_presets": []
+    "layer_presets": [],
+    "viewports": []
   },
   "boards": [],
   "cvpcb": {
@@ -404,18 +406,23 @@
     "rule_severities": {
       "bus_definition_conflict": "error",
       "bus_entry_needed": "error",
-      "bus_label_syntax": "error",
       "bus_to_bus_conflict": "error",
       "bus_to_net_conflict": "error",
+      "conflicting_netclasses": "error",
       "different_unit_footprint": "error",
       "different_unit_net": "error",
       "duplicate_reference": "error",
       "duplicate_sheet_names": "error",
+      "endpoint_off_grid": "warning",
       "extra_units": "error",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
       "lib_symbol_issues": "warning",
+      "missing_bidi_pin": "warning",
+      "missing_input_pin": "warning",
+      "missing_power_pin": "error",
+      "missing_unit": "warning",
       "multiple_net_names": "warning",
       "net_not_bus_member": "warning",
       "no_connect_connected": "warning",
@@ -425,6 +432,7 @@
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
+      "simulation_model_issue": "error",
       "unannotated": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
@@ -442,7 +450,7 @@
   "net_settings": {
     "classes": [
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -456,10 +464,10 @@
         "track_width": 0.25,
         "via_diameter": 0.6,
         "via_drill": 0.3,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -468,25 +476,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "12V_DC_BUS",
-        "nets": [
-          "/DC Motor Controller/HC",
-          "/DC Motor Controller/HC1",
-          "/DC Motor Controller/HC2",
-          "/DC Motor Controller/HC3",
-          "/Power Input & Distribution/01",
-          "/Power Input & Distribution/12V",
-          "/Power Input & Distribution/12V_DC",
-          "12V_DC_BUS"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 54, 91)",
         "track_width": 3.0,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -495,18 +493,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "3V3_DC_MCU",
-        "nets": [
-          "3V3_DC_MCU"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(130, 167, 57)",
         "track_width": 0.3,
         "via_diameter": 0.7,
         "via_drill": 0.35,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -515,18 +510,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "5V_DC_LED",
-        "nets": [
-          "5V_DC_LED"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 180, 36)",
         "track_width": 0.4,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -535,20 +527,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "5V_DC_RPI",
-        "nets": [
-          "/Power Input & Distribution/5_to_3v3_reg",
-          "5V_DC_RPI",
-          "USB_BUS"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 117, 35)",
         "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -557,18 +544,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "5V_DC_SERVO",
-        "nets": [
-          "5V_DC_SERVO"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(172, 163, 22)",
         "track_width": 0.4,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -577,43 +561,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "ANALOG",
-        "nets": [
-          "/Analog Sensor Buffers/A_IN_C",
-          "/Analog Sensor Buffers/A_OUT_A1",
-          "/Analog Sensor Buffers/A_OUT_A2",
-          "/Analog Sensor Buffers/A_OUT_B1",
-          "/Analog Sensor Buffers/A_OUT_B2",
-          "/Analog Sensor Buffers/A_OUT_C1",
-          "/Analog Sensor Buffers/A_OUT_C2",
-          "/Analog Sensor Buffers/DB1",
-          "/Analog Sensor Buffers/DB1B",
-          "/Analog Sensor Buffers/DB2",
-          "/Analog Sensor Buffers/DB2B",
-          "/Analog Sensor Buffers/DB3",
-          "/Analog Sensor Buffers/DB3B",
-          "/Analog Sensor Buffers/DB4",
-          "/Analog Sensor Buffers/DB4B",
-          "/Output Logic/STUDENT_MOTOR_PWM",
-          "/Student MCU/SERVO_1",
-          "A_BUFFER_IN",
-          "A_BUFFER_OUT_A",
-          "A_BUFFER_OUT_B",
-          "M_I_SENSE_1",
-          "M_I_SENSE_2",
-          "SERVO_1",
-          "SERVO_2",
-          "STPPR_FAULT",
-          "STU_STP_FLT"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(78, 105, 255)",
         "track_width": 0.25,
         "via_diameter": 0.6,
         "via_drill": 0.3,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -622,18 +578,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "A_GND",
-        "nets": [
-          "GNDA"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(122, 51, 131)",
         "track_width": 0.25,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -642,182 +595,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "DIGITAL",
-        "nets": [
-          "/DC Motor Controller/ENABLE",
-          "/DC Motor Controller/IN_1",
-          "/DC Motor Controller/IN_2",
-          "/Digital Sensor Buffers/D_IN_A",
-          "/Digital Sensor Buffers/D_IN_B",
-          "/Digital Sensor Buffers/D_IN_C",
-          "/Digital Sensor Buffers/D_IN_D",
-          "/Digital Sensor Buffers/D_IN_E",
-          "/Digital Sensor Buffers/D_OUT_A1",
-          "/Digital Sensor Buffers/D_OUT_B1",
-          "/Digital Sensor Buffers/D_OUT_C1",
-          "/Digital Sensor Buffers/D_OUT_D1",
-          "/Digital Sensor Buffers/D_OUT_E1",
-          "/Digital Sensor Buffers/D_OUT_F1",
-          "/Output Logic/DIRECTION_OUT",
-          "/Output Logic/MCU_PIXEL_SELECT",
-          "/Output Logic/MCU_STEP_SELECT",
-          "/Output Logic/STEP_RST_OUT",
-          "/Output Logic/STUDENT_DIRECTION",
-          "/Output Logic/STUDENT_MOTOR_EN",
-          "/Output Logic/STUDENT_PIXEL_DATA",
-          "/Output Logic/STUDENT_STEP",
-          "/Output Logic/STUDENT_STEP_RST",
-          "/Output Logic/SUPERVISOR_DIRECTION",
-          "/Output Logic/SUPERVISOR_MOTOR_EN",
-          "/Output Logic/SUPERVISOR_MOTOR_PWM",
-          "/Output Logic/SUPERVISOR_PIXEL_DATA",
-          "/Output Logic/SUPERVISOR_STEP",
-          "/Output Logic/SUPERVISOR_STEP_RST",
-          "/Power Input & Distribution/02",
-          "/Student MCU/DC_MOTOR_DIR1",
-          "/Student MCU/DC_MOTOR_DIR2",
-          "/Student MCU/HSE_IN",
-          "/Student MCU/HSE_OUT",
-          "/Student MCU/LATCH",
-          "/Student MCU/MCU_RESET",
-          "/Student MCU/MODE_2",
-          "/Student MCU/MOSI",
-          "/Student MCU/PROG_RX",
-          "/Student MCU/PROG_TX",
-          "/Student MCU/SCK",
-          "/Student MCU/SERVO_2",
-          "/Student MCU/SHIFT_1",
-          "/Student MCU/SHIFT_2",
-          "/Student MCU/SHIFT_3",
-          "/Student MCU/SHIFT_7",
-          "/Student MCU/SPARE_3",
-          "/Student MCU/USB_N",
-          "/Student MCU/USB_P",
-          "/Supervisor MCU/HSE_IN",
-          "/Supervisor MCU/HSE_OUT",
-          "/Supervisor MCU/LATCH",
-          "/Supervisor MCU/MCU_RESET",
-          "/Supervisor MCU/MOSI",
-          "/Supervisor MCU/PROG_RX",
-          "/Supervisor MCU/PROG_TX",
-          "/Supervisor MCU/SCK",
-          "/Supervisor MCU/STDNT_DC_M_DIR_1",
-          "/Supervisor MCU/STDNT_DC_M_DIR_2",
-          "/Supervisor MCU/STDNT_SRVO_RX_1",
-          "/Supervisor MCU/STDNT_SRVO_RX_2",
-          "/Supervisor MCU/USB_N",
-          "/Supervisor MCU/USB_P",
-          "LIMIT_1",
-          "LIMIT_2",
-          "MODE_0",
-          "MODE_1",
-          "MODE_2",
-          "Net-(C11-Pad2)",
-          "Net-(C13-Pad1)",
-          "Net-(C17-Pad1)",
-          "Net-(C20-Pad1)",
-          "Net-(C21-Pad2)",
-          "Net-(C3-Pad1)",
-          "Net-(C31-Pad2)",
-          "Net-(C32-Pad2)",
-          "Net-(C5-Pad1)",
-          "Net-(C7-Pad1)",
-          "Net-(D2-Pad2)",
-          "Net-(D4-Pad4)",
-          "Net-(D7-Pad1)",
-          "Net-(D8-Pad2)",
-          "Net-(D9-Pad2)",
-          "Net-(J12-Pad1)",
-          "Net-(J12-Pad2)",
-          "Net-(J12-Pad3)",
-          "Net-(J12-Pad4)",
-          "Net-(J12-Pad5)",
-          "Net-(J12-Pad6)",
-          "Net-(J2-Pad2)",
-          "Net-(J22-Pad1)",
-          "Net-(J22-Pad2)",
-          "Net-(J27-Pad1)",
-          "Net-(J28-Pad1)",
-          "Net-(J8-Pad1)",
-          "Net-(J8-Pad2)",
-          "Net-(J8-Pad3)",
-          "Net-(J8-Pad4)",
-          "Net-(J8-Pad5)",
-          "Net-(J8-Pad6)",
-          "Net-(J8-Pad7)",
-          "Net-(R26-Pad2)",
-          "Net-(R27-Pad2)",
-          "Net-(R28-Pad2)",
-          "Net-(R29-Pad2)",
-          "Net-(R30-Pad2)",
-          "Net-(R31-Pad2)",
-          "Net-(U10-Pad10)",
-          "Net-(U10-Pad11)",
-          "Net-(U10-Pad3)",
-          "Net-(U10-Pad4)",
-          "Net-(U11-Pad10)",
-          "Net-(U11-Pad11)",
-          "Net-(U12-Pad10)",
-          "Net-(U12-Pad11)",
-          "Net-(U20-Pad10)",
-          "Net-(U20-Pad12)",
-          "Net-(U20-Pad2)",
-          "Net-(U20-Pad4)",
-          "Net-(U20-Pad6)",
-          "Net-(U20-Pad8)",
-          "Net-(U8-Pad2)",
-          "OE_A",
-          "OE_B",
-          "OE_IDX",
-          "unconnected-(A1-Pad18)",
-          "unconnected-(A1-Pad27)",
-          "unconnected-(A1-Pad30)",
-          "unconnected-(A2-Pad18)",
-          "unconnected-(A2-Pad27)",
-          "unconnected-(A2-Pad30)",
-          "unconnected-(A3-Pad1)",
-          "unconnected-(A3-Pad11)",
-          "unconnected-(A3-Pad12)",
-          "unconnected-(A3-Pad13)",
-          "unconnected-(A3-Pad14)",
-          "unconnected-(A3-Pad15)",
-          "unconnected-(A3-Pad16)",
-          "unconnected-(A3-Pad2)",
-          "unconnected-(A3-Pad3)",
-          "unconnected-(A3-Pad30)",
-          "unconnected-(A3-Pad31)",
-          "unconnected-(A3-Pad32)",
-          "unconnected-(A3-Pad33)",
-          "unconnected-(A3-Pad34)",
-          "unconnected-(A3-Pad35)",
-          "unconnected-(A3-Pad36)",
-          "unconnected-(A3-Pad37)",
-          "unconnected-(A3-Pad4)",
-          "unconnected-(A3-Pad8)",
-          "unconnected-(J13-Pad4)",
-          "unconnected-(J5-Pad2)",
-          "unconnected-(J5-Pad3)",
-          "unconnected-(J5-Pad6)",
-          "unconnected-(J5-Pad7)",
-          "unconnected-(J7-Pad4)",
-          "unconnected-(U14-Pad11)",
-          "unconnected-(U19-Pad4)",
-          "unconnected-(U5-Pad10)",
-          "unconnected-(U5-Pad9)",
-          "unconnected-(U7-Pad10)",
-          "unconnected-(U7-Pad9)",
-          "unconnected-(U8-Pad10)",
-          "unconnected-(U8-Pad12)",
-          "unconnected-(U8-Pad8)"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(57, 183, 157)",
         "track_width": 0.25,
         "via_diameter": 0.6,
         "via_drill": 0.3,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -826,18 +612,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "D_GND",
-        "nets": [
-          "GNDD"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(69, 19, 21)",
         "track_width": 0.25,
         "via_diameter": 0.6,
         "via_drill": 0.3,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -846,16 +629,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "GND",
-        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(207, 105, 30)",
         "track_width": 0.3,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -864,19 +646,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "PB_GND",
-        "nets": [
-          "/Power Input & Distribution/PGND0",
-          "GND_PB"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(102, 22, 54)",
         "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -885,18 +663,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "P_GND",
-        "nets": [
-          "GNDPWR"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(155, 24, 24)",
         "track_width": 4.0,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -905,24 +680,877 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "STEP_OP",
-        "nets": [
-          "Net-(A4-Pad13)",
-          "Net-(A4-Pad14)",
-          "Net-(J19-Pad3)",
-          "Net-(J19-Pad4)"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(255, 76, 248)",
         "track_width": 0.5,
         "via_diameter": 0.6,
         "via_drill": 0.3,
-        "wire_width": 6.0
+        "wire_width": 6
       }
     ],
     "meta": {
-      "version": 2
+      "version": 3
     },
-    "net_colors": null
+    "net_colors": null,
+    "netclass_assignments": null,
+    "netclass_patterns": [
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC1"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC2"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/DC Motor Controller/HC3"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/Power Input & Distribution/01"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/Power Input & Distribution/12V"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "/Power Input & Distribution/12V_DC"
+      },
+      {
+        "netclass": "12V_DC_BUS",
+        "pattern": "12V_DC_BUS"
+      },
+      {
+        "netclass": "3V3_DC_MCU",
+        "pattern": "3V3_DC_MCU"
+      },
+      {
+        "netclass": "5V_DC_LED",
+        "pattern": "5V_DC_LED"
+      },
+      {
+        "netclass": "5V_DC_RPI",
+        "pattern": "/Power Input & Distribution/5_to_3v3_reg"
+      },
+      {
+        "netclass": "5V_DC_RPI",
+        "pattern": "5V_DC_RPI"
+      },
+      {
+        "netclass": "5V_DC_RPI",
+        "pattern": "USB_BUS"
+      },
+      {
+        "netclass": "5V_DC_SERVO",
+        "pattern": "5V_DC_SERVO"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_IN_C"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_A1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_A2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_B1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_B2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_C1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/A_OUT_C2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB1B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB2B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB3"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB3B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB4"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Analog Sensor Buffers/DB4B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Output Logic/STUDENT_MOTOR_PWM"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "/Student MCU/SERVO_1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "A_BUFFER_IN"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "A_BUFFER_OUT_A"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "A_BUFFER_OUT_B"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "M_I_SENSE_1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "M_I_SENSE_2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "SERVO_1"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "SERVO_2"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "STPPR_FAULT"
+      },
+      {
+        "netclass": "ANALOG",
+        "pattern": "STU_STP_FLT"
+      },
+      {
+        "netclass": "A_GND",
+        "pattern": "GNDA"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/DC Motor Controller/ENABLE"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/DC Motor Controller/IN_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/DC Motor Controller/IN_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_A"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_B"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_C"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_D"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_IN_E"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_A1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_B1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_C1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_D1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_E1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Digital Sensor Buffers/D_OUT_F1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/DIRECTION_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/MCU_PIXEL_SELECT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/MCU_STEP_SELECT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STEP_RST_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_DIRECTION"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_MOTOR_EN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_PIXEL_DATA"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_STEP"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/STUDENT_STEP_RST"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_DIRECTION"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_MOTOR_EN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_MOTOR_PWM"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_PIXEL_DATA"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_STEP"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Output Logic/SUPERVISOR_STEP_RST"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Power Input & Distribution/02"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/DC_MOTOR_DIR1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/DC_MOTOR_DIR2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/HSE_IN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/HSE_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/LATCH"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/MCU_RESET"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/MODE_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/MOSI"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/PROG_RX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/PROG_TX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SCK"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SERVO_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_3"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SHIFT_7"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/SPARE_3"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/USB_N"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Student MCU/USB_P"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/HSE_IN"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/HSE_OUT"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/LATCH"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/MCU_RESET"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/MOSI"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/PROG_RX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/PROG_TX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/SCK"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_DC_M_DIR_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_DC_M_DIR_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_SRVO_RX_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/STDNT_SRVO_RX_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/USB_N"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "/Supervisor MCU/USB_P"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "LIMIT_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "LIMIT_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "MODE_0"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "MODE_1"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "MODE_2"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C11-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C13-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C17-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C20-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C21-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C3-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C31-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C32-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C5-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(C7-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D2-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D4-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D7-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D8-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(D9-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad5)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J12-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J2-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J22-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J22-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J27-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J28-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad5)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(J8-Pad7)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R26-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R27-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R28-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R29-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R30-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(R31-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U10-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U11-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U11-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U12-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U12-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad12)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U20-Pad8)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "Net-(U8-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "OE_A"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "OE_B"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "OE_IDX"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A1-Pad18)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A1-Pad27)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A1-Pad30)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A2-Pad18)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A2-Pad27)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A2-Pad30)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad1)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad12)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad13)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad14)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad15)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad16)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad30)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad31)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad32)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad33)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad34)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad35)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad36)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad37)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(A3-Pad8)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J13-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad2)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad3)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad6)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J5-Pad7)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(J7-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U14-Pad11)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U19-Pad4)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U5-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U5-Pad9)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U7-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U7-Pad9)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U8-Pad10)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U8-Pad12)"
+      },
+      {
+        "netclass": "DIGITAL",
+        "pattern": "unconnected-(U8-Pad8)"
+      },
+      {
+        "netclass": "D_GND",
+        "pattern": "GNDD"
+      },
+      {
+        "netclass": "PB_GND",
+        "pattern": "/Power Input & Distribution/PGND0"
+      },
+      {
+        "netclass": "PB_GND",
+        "pattern": "GND_PB"
+      },
+      {
+        "netclass": "P_GND",
+        "pattern": "GNDPWR"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(A4-Pad13)"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(A4-Pad14)"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(J19-Pad3)"
+      },
+      {
+        "netclass": "STEP_OP",
+        "pattern": "Net-(J19-Pad4)"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -938,6 +1566,8 @@
   "schematic": {
     "annotate_start_num": 0,
     "drawing": {
+      "dashed_lines_dash_length_ratio": 12.0,
+      "dashed_lines_gap_length_ratio": 3.0,
       "default_line_thickness": 6.0,
       "default_text_size": 50.0,
       "field_names": [],
@@ -969,7 +1599,11 @@
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
+    "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
+    "spice_model_current_sheet_as_root": true,
+    "spice_save_all_currents": false,
+    "spice_save_all_voltages": false,
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
