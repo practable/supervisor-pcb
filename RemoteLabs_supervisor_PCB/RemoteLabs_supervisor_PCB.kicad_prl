@@ -66,6 +66,12 @@
     "visible_layers": "3fffffd_80000007",
     "zone_display_mode": 0
   },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
+  },
   "meta": {
     "filename": "RemoteLabs_supervisor_PCB.kicad_prl",
     "version": 3
