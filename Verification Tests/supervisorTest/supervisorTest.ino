@@ -17,23 +17,23 @@
 
 #include <autoDelay.h>
 
-#include "supervisor_pinMap.h"    // PinMap for Supervisor pcb - Supervisor MCU
+#include "supervisor_pinMap.h"  // PinMap for Supervisor pcb - Supervisor MCU
 
-#include "testSettings.h"       // settings page sets up active functions for each test
+#include "testSettings.h"  // settings page sets up active functions for each test
 
-#include "basicFunctions.h"       // Basic functions like pin reads that didnt need an entire page
+#include "basicFunctions.h"  // Basic functions like pin reads that didnt need an entire page
 
-#include "shiftFunctions.h"       // Shiftregister functions (defined outside the library and specific to this project)
+#include "shiftFunctions.h"  // Shiftregister functions (defined outside the library and specific to this project)
 
-#include "dcMotorFunctions.h"     // DC Motor Functions
+#include "dcMotorFunctions.h"  // DC Motor Functions
 
-#include "encoderFunctions.h"     // Optical Encoder functions
+#include "encoderFunctions.h"  // Optical Encoder functions
 
-#include "stepperFunctions.h"     // Stepper Motor Functions
+#include "stepperFunctions.h"  // Stepper Motor Functions
 
-#include "servoFunctions.h"       // Servo Motor Functions
+#include "servoFunctions.h"  // Servo Motor Functions
 
-#include "pixelFunctions.h"        // WS2821b LED functions
+#include "pixelFunctions.h"  // WS2821b LED functions
 
 
 
@@ -48,36 +48,36 @@
 */
 
 
-#define STUDENT_MOTOR_ENABLE      false                     // Software Tested
-#define STUDENT_STEPPER_ENABLE    false                     // Software Tested
-#define STUDENT_PIXEL_ENABLE      false                     // Software Tested
+#define STUDENT_MOTOR_ENABLE false    // Software Tested
+#define STUDENT_STEPPER_ENABLE false  // Software Tested
+#define STUDENT_PIXEL_ENABLE false    // Software Tested
 
-#define SHIFTREG_OVERWRITE        0b00000000                // Software Tested
+#define SHIFTREG_OVERWRITE 0b00000000  // Software Tested
 
-#define DC_MOTOR_ENABLE           false                    // Software Tested
-#define DC_MOTOR_CLOCKWISE        false                     // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
-#define DC_MOTOR_SPEED            0                      // Software Tested
-#define DC_CURRENT_SENSE_ACTIVE   false                    // Software Tested - Maths might not be correct but gives (some) usable(ish) data
+#define DC_MOTOR_ENABLE false          // Software Tested
+#define DC_MOTOR_CLOCKWISE false       // Tested but difficult to prove without actual hardware due to amount of hardware logic introduced
+#define DC_MOTOR_SPEED 0               // Software Tested
+#define DC_CURRENT_SENSE_ACTIVE false  // Software Tested - Maths might not be correct but gives (some) usable(ish) data
 
-#define ENCODER_ACTIVE            false                    // Tested Working but maths not accurate
+#define ENCODER_ACTIVE false  // Tested Working but maths not accurate
 
-#define STEPPER_ENABLE            false                      // Enable pin now controlled from stepper function not independently
-#define STEPPER_CLOCKWISE         false                     // Stepper direction now controlled from stepper function not independently
-#define STEPPER_RESET             false                     // Software Tested // Must be hight to enable  
-
-
-#define STEPPER_ACTIVE            false                    // Software TEsted
-#define NUM_REVOLUTIONS           2
-#define STEPPER_FAULT_ACTIVE      false                     // Tested
+#define STEPPER_ENABLE false     // Enable pin now controlled from stepper function not independently
+#define STEPPER_CLOCKWISE false  // Stepper direction now controlled from stepper function not independently
+#define STEPPER_RESET false      // Software Tested // Must be hight to enable
 
 
-#define SERVO_ACTIVE              false                     // Tested
+#define STEPPER_ACTIVE false  // Software TEsted
+#define NUM_REVOLUTIONS 2
+#define STEPPER_FAULT_ACTIVE false  // Tested
 
-#define STUDENT_SERVO_DETECT      false                    // Needs Testing with 2nd MCU
 
-#define PIXEL_ACTIVE              false                     // Software Tested
+#define SERVO_ACTIVE false  // Tested
 
-#define LIMIT_SWITCH_ACTIVE       false                    // Tested
+#define STUDENT_SERVO_DETECT false  // Needs Testing with 2nd MCU
+
+#define PIXEL_ACTIVE false  // Software Tested
+
+#define LIMIT_SWITCH_ACTIVE false  // Tested
 
 
 
@@ -90,7 +90,7 @@
 void setup() {
 
   Serial.begin(115200);
-  while ( !Serial ) delay(10);   // Might be required for Nano IoT 33
+  while (!Serial) delay(10);  // Might be required for Nano IoT 33
 
   // LED BUILTIN
   ledBegin();
@@ -98,9 +98,9 @@ void setup() {
 
   // ShiftRegister and Enable Pins
 
-  shiftReg.begin();   // Begin opens serial comms and sets shiftReg data pins to output
-  shiftReg.allOff();  // Turn off all the shiftReg pins
-  shiftReg.printState();   // Prints the current state of the shiftregister to serial monitor for debugging
+  shiftReg.begin();       // Begin opens serial comms and sets shiftReg data pins to output
+  shiftReg.allOff();      // Turn off all the shiftReg pins
+  shiftReg.printState();  // Prints the current state of the shiftregister to serial monitor for debugging
   //  delay(1000);
 
 
@@ -118,10 +118,10 @@ void setup() {
 
   // DC Motor Control
 
-  dcMotorBegin();              // Set control pins to output
-  dcMotorEnable(DC_MOTOR_ENABLE );        // Need shift Register to enable board
-  dcMotorDirection(DC_MOTOR_CLOCKWISE);      // Set DC Motor Direction
-  dcMotorSpeed(DC_MOTOR_SPEED);             // Set DC Motor Speed   - default off
+  dcMotorBegin();                        // Set control pins to output
+  dcMotorEnable(DC_MOTOR_ENABLE);        // Need shift Register to enable board
+  dcMotorDirection(DC_MOTOR_CLOCKWISE);  // Set DC Motor Direction
+  dcMotorSpeed(DC_MOTOR_SPEED);          // Set DC Motor Speed   - default off
   // Still Need Current Sensing
 
   // Also Need Student Direction Detection
@@ -140,8 +140,8 @@ void setup() {
 
 
   // Servo Motor Control
-  servoBegin();                          // begin Servo functions
-  servoConstrain(0, 130);             // Constrain min max travel for servo position
+  servoBegin();            // begin Servo functions
+  servoConstrain(0, 130);  // Constrain min max travel for servo position
 
 
 
@@ -154,10 +154,11 @@ void setup() {
 
 
   // shiftReg.overwriteState(0b00000000);
-
 }
+
+
 void loop() {
-  if (STUDENT_MOTOR_ENABLE)
+  if (STUDENT_MOTOR_ENABLE){
     studentDCdirectionDectect();
 
   // Optical Encoder Loop
@@ -165,6 +166,8 @@ void loop() {
 
   // Stepper loop test
   //stepperPulse(STEPPER_ACTIVE, STEPPER_DELAY_mS);       // Move to loop to test
+  }
+
 
   stepper_test(STEPPER_ACTIVE, NUM_REVOLUTIONS);
 
@@ -172,12 +175,12 @@ void loop() {
   stepperFaultDetect(STEPPER_FAULT_ACTIVE);
 
   // Servo Loop Test
-  servoTest(SERVO_ACTIVE );                    // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
+  servoTest(SERVO_ACTIVE);  // Must be run in loop updates the servo to the position passed - NOTE this will prove servo works, however there is no actual control there - it just moves backwards and forwards at random
 
   studentServoDetect(STUDENT_SERVO_DETECT);
 
   // Pixel Loop Test
-  pixelLoop(PIXEL_ACTIVE );
+  pixelLoop(PIXEL_ACTIVE);
 
   // Limit Switch Test
   limitSwitchLoop(LIMIT_SWITCH_ACTIVE);
@@ -185,3 +188,4 @@ void loop() {
   // DC Motor Current Sensing
   dcMotorCurrent(DC_CURRENT_SENSE_ACTIVE);
 }
+
