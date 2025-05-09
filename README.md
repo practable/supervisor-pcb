@@ -1,4 +1,5 @@
 # Remote Labs Supervisor PCB V1.2
+NOTE: This project has been continued in a new location, please see: [rl-supervisor-two](https://github.com/practable/rl-supervisor-two) for the latest version of this project
 
 ## Project Brief - [Remote Labs Supervisor PCB V1.2]
 Design a PCB to provide power to remote labs experiments, which involve students programming microcontrollers remotely. PCB should also provide a supervisory role, blocking actuation of experimental hardware if it is likely to cause damage to the equipment. <br> <br>
